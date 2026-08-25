@@ -1,0 +1,522 @@
+/*
+ * ArtisanPack UI — front-end + canvas stylesheet
+ *
+ * Concatenated by cms-framework's GlobalStylesController::css() AFTER the
+ * emitter's `--wp--preset--*` custom properties and per-element/per-block
+ * rules. Also loaded on the public front-end via a <link rel>.
+ *
+ * Owns only what theme.json can't express:
+ *   1. Google-Fonts @font-face declarations (inlined — @import can't work at
+ *      this position in the concatenated response).
+ *   2. Atmospheric helpers (ap-*) referenced by templates + patterns.
+ *   3. Glow tokens the atmospheric helpers consume.
+ *
+ * Font Awesome is enqueued separately from Theme.php (see themes/artisanpack-ui/Theme.php).
+ * Editor-only overrides live in editor.css.
+ */
+
+/* ─── Fonts (inlined Google Fonts) ────────────────────────────────────── */
+
+@font-face { font-family: 'Poppins'; font-style: italic; font-weight: 400; font-display: swap; src: url(https://fonts.gstatic.com/s/poppins/v24/pxiGyp8kv8JHgFVrJJLecnFHGPc.woff2) format('woff2'); }
+@font-face { font-family: 'Poppins'; font-style: italic; font-weight: 500; font-display: swap; src: url(https://fonts.gstatic.com/s/poppins/v24/pxiDyp8kv8JHgFVrJJLmg1hlFd2JQEk.woff2) format('woff2'); }
+@font-face { font-family: 'Poppins'; font-style: italic; font-weight: 600; font-display: swap; src: url(https://fonts.gstatic.com/s/poppins/v24/pxiDyp8kv8JHgFVrJJLmr19lFd2JQEk.woff2) format('woff2'); }
+@font-face { font-family: 'Poppins'; font-style: normal; font-weight: 300; font-display: swap; src: url(https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLDz8V15vEv-L.woff2) format('woff2'); }
+@font-face { font-family: 'Poppins'; font-style: normal; font-weight: 400; font-display: swap; src: url(https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrFJXUdVNF.woff2) format('woff2'); }
+@font-face { font-family: 'Poppins'; font-style: normal; font-weight: 500; font-display: swap; src: url(https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLGT9V15vEv-L.woff2) format('woff2'); }
+@font-face { font-family: 'Poppins'; font-style: normal; font-weight: 600; font-display: swap; src: url(https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLEj6V15vEv-L.woff2) format('woff2'); }
+@font-face { font-family: 'Poppins'; font-style: normal; font-weight: 700; font-display: swap; src: url(https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLCz7V15vEv-L.woff2) format('woff2'); }
+@font-face { font-family: 'Poppins'; font-style: normal; font-weight: 800; font-display: swap; src: url(https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLDD4V15vEv-L.woff2) format('woff2'); }
+@font-face { font-family: 'Space Mono'; font-style: italic; font-weight: 400; font-display: swap; src: url(https://fonts.gstatic.com/s/spacemono/v17/i7dNIFZifjKcF5UAWdDRYER8RXi4EwQ.woff2) format('woff2'); }
+@font-face { font-family: 'Space Mono'; font-style: italic; font-weight: 700; font-display: swap; src: url(https://fonts.gstatic.com/s/spacemono/v17/i7dSIFZifjKcF5UAWdDRYERE_FeaHi6WZ3Q.woff2) format('woff2'); }
+@font-face { font-family: 'Space Mono'; font-style: normal; font-weight: 400; font-display: swap; src: url(https://fonts.gstatic.com/s/spacemono/v17/i7dPIFZifjKcF5UAWdDRUEN2Qlq6.woff2) format('woff2'); }
+@font-face { font-family: 'Space Mono'; font-style: normal; font-weight: 700; font-display: swap; src: url(https://fonts.gstatic.com/s/spacemono/v17/i7dMIFZifjKcF5UAWdDRaPpZYFeQGQyU.woff2) format('woff2'); }
+
+/* ─── Glow tokens ─────────────────────────────────────────────────────── */
+
+:root {
+    --ap-glow-primary:      0 0 24px color-mix(in oklab, var(--wp--preset--color--primary)   55%, transparent);
+    --ap-glow-secondary:    0 0 24px color-mix(in oklab, var(--wp--preset--color--secondary) 55%, transparent);
+    --ap-glow-accent:       0 0 24px color-mix(in oklab, var(--wp--preset--color--accent)    55%, transparent);
+    --ap-glow-primary-lg:   0 0 48px color-mix(in oklab, var(--wp--preset--color--primary)   55%, transparent);
+    --ap-glow-secondary-lg: 0 0 48px color-mix(in oklab, var(--wp--preset--color--secondary) 55%, transparent);
+    --ap-glow-accent-lg:    0 0 48px color-mix(in oklab, var(--wp--preset--color--accent)    55%, transparent);
+    --ap-glow-gradient:
+        0 0 32px color-mix(in oklab, var(--wp--preset--color--primary) 40%, transparent),
+        0 0 64px color-mix(in oklab, var(--wp--preset--color--accent)  30%, transparent);
+}
+
+/* ─── Buttons wrapper layout ─────────────────────────────────────────── */
+/*
+ * Fallback in case pattern markup lacks the `is-layout-flex` class Gutenberg
+ * normally emits. Non-destructive: only applies when the buttons wrapper
+ * doesn't already declare its own display.
+ */
+
+.wp-block-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+}
+.wp-block-buttons.is-content-justification-center { justify-content: center; }
+.wp-block-buttons.is-content-justification-right  { justify-content: flex-end; }
+
+/* ─── Atmospheric helpers ─────────────────────────────────────────────── */
+
+/* .ap-starfield — layered radial-gradient starfield for hero backdrops. */
+.ap-starfield {
+    background-color: var(--wp--preset--color--ink);
+    background-image:
+        radial-gradient(1px 1px at 20% 30%,  rgba(255,255,255,0.85), transparent 40%),
+        radial-gradient(1px 1px at 70% 20%,  rgba(255,255,255,0.70), transparent 40%),
+        radial-gradient(1.5px 1.5px at 40% 70%, rgba(255,255,255,0.65), transparent 40%),
+        radial-gradient(1px 1px at 85% 65%,  rgba(255,255,255,0.55), transparent 40%),
+        radial-gradient(1px 1px at 15% 85%,  rgba(255,255,255,0.50), transparent 40%),
+        radial-gradient(1.5px 1.5px at 55% 45%, rgba(255,255,255,0.75), transparent 40%);
+    background-size: 100% 100%;
+}
+
+/* .ap-aurora — soft aurora bloom overlay. */
+.ap-aurora {
+    position: relative;
+    isolation: isolate;
+}
+.ap-aurora::before {
+    content: '';
+    position: absolute;
+    inset: -20%;
+    z-index: -1;
+    background:
+        radial-gradient(60% 40% at 25% 30%, color-mix(in oklab, var(--wp--preset--color--primary)   40%, transparent) 0%, transparent 60%),
+        radial-gradient(50% 40% at 75% 40%, color-mix(in oklab, var(--wp--preset--color--accent)    35%, transparent) 0%, transparent 60%),
+        radial-gradient(40% 30% at 50% 80%, color-mix(in oklab, var(--wp--preset--color--secondary) 30%, transparent) 0%, transparent 60%);
+    filter: blur(40px);
+    pointer-events: none;
+}
+
+/* .ap-border-gradient — gradient-border glass box. */
+.ap-border-gradient {
+    position: relative;
+    background: color-mix(in oklab, var(--wp--preset--color--surface) 88%, transparent);
+    border-radius: 12px;
+    padding: 2rem;
+    isolation: isolate;
+}
+.ap-border-gradient::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 2px;
+    border-radius: inherit;
+    background: linear-gradient(115deg, var(--wp--preset--color--primary) 0%, var(--wp--preset--color--secondary) 50%, var(--wp--preset--color--accent) 100%);
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    pointer-events: none;
+}
+
+/* .ap-divider-neon — neon rule under editorial page headers. */
+.ap-divider-neon {
+    height: 2px;
+    border: 0;
+    background: linear-gradient(90deg, var(--wp--preset--color--primary) 0%, var(--wp--preset--color--secondary) 50%, var(--wp--preset--color--accent) 100%);
+    box-shadow: var(--ap-glow-primary);
+    border-radius: 999px;
+}
+
+/* .ap-header-blur — sticky, blurred site-header chrome. */
+.ap-header-blur {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: color-mix(in oklab, var(--wp--preset--color--ink) 72%, transparent);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--wp--preset--color--border-subtle);
+}
+
+/* .ap-gradient-text — text painted with the neon gradient. */
+.ap-gradient-text {
+    background: linear-gradient(115deg, var(--wp--preset--color--primary) 0%, var(--wp--preset--color--secondary) 50%, var(--wp--preset--color--accent) 100%);
+    -webkit-background-clip: text;
+            background-clip: text;
+    color: transparent;
+}
+
+/* ─── Single post layout ─────────────────────────────────────────────── */
+
+/* Featured image treatment: rounded, contained, with category badge overlay. */
+.ap-post-hero {
+    position: relative;
+}
+.ap-post-hero__image img,
+.ap-post-hero__image .wp-block-post-featured-image__image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 16px;
+    display: block;
+}
+.ap-post-hero__badge {
+    position: absolute;
+    left: 1.25rem;
+    bottom: 1.25rem;
+    font-family: var(--wp--preset--font-family--mono);
+    font-size: var(--wp--preset--font-size--xsmall);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--wp--preset--color--text);
+    background: color-mix(in oklab, var(--wp--preset--color--ink) 70%, transparent);
+    backdrop-filter: blur(8px);
+    padding: 0.35rem 0.75rem;
+    border-radius: 6px;
+}
+.ap-post-hero__badge a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Category chip used above title + in related-card. */
+.ap-post-chip {
+    display: inline-flex;
+    align-items: center;
+}
+.ap-post-chip a,
+.ap-post-chip {
+    font-family: var(--wp--preset--font-family--mono);
+    font-size: var(--wp--preset--font-size--xsmall);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+.ap-post-chip a {
+    display: inline-block;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    background: color-mix(in oklab, var(--wp--preset--color--primary) 15%, transparent);
+    color: var(--wp--preset--color--primary);
+    text-decoration: none;
+    border: 1px solid color-mix(in oklab, var(--wp--preset--color--primary) 30%, transparent);
+}
+.ap-post-chip a:hover {
+    background: color-mix(in oklab, var(--wp--preset--color--primary) 25%, transparent);
+}
+
+.ap-post-title {
+    font-size: clamp(2rem, 4.5vw, 3.25rem);
+}
+
+.ap-post-lede {
+    font-size: var(--wp--preset--font-size--large);
+    max-width: 42rem;
+}
+
+/* Two-column split with sticky sidebar. */
+.ap-post-columns {
+    align-items: flex-start;
+}
+.ap-post-body {
+    max-width: 720px;
+}
+.ap-post-body > .wp-block-post-content > * {
+    margin-block: 0 1.25rem;
+}
+.ap-post-body h2,
+.ap-post-body h3,
+.ap-post-body h4 {
+    margin-top: 2.25rem;
+    margin-bottom: 0.75rem;
+}
+.ap-post-body .wp-block-quote,
+.ap-post-body blockquote {
+    border-left: 3px solid var(--wp--preset--color--primary);
+    background: color-mix(in oklab, var(--wp--preset--color--surface) 60%, transparent);
+    padding: 1rem 1.25rem;
+    margin: 1.5rem 0;
+    border-radius: 0 8px 8px 0;
+}
+.ap-post-body .wp-block-code,
+.ap-post-body pre {
+    background: var(--wp--preset--color--ink);
+    border: 1px solid var(--wp--preset--color--border-subtle);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    font-family: var(--wp--preset--font-family--mono);
+    font-size: var(--wp--preset--font-size--small);
+    overflow-x: auto;
+}
+.ap-post-body .wp-block-list {
+    padding-left: 1.25rem;
+}
+.ap-post-body .wp-block-list li {
+    margin-bottom: 0.5rem;
+}
+
+.ap-post-sidebar {
+    position: sticky;
+    top: 96px;
+    align-self: flex-start;
+}
+.ap-post-meta-card {
+    padding: 1.75rem;
+    background: color-mix(in oklab, var(--wp--preset--color--surface) 80%, transparent);
+    border: 1px solid var(--wp--preset--color--border-subtle);
+    border-radius: 16px;
+}
+.ap-post-meta-card > * {
+    margin-block: 0;
+}
+.ap-post-meta-card > * + * {
+    margin-top: 0.5rem;
+}
+.ap-post-meta-card__label {
+    font-family: var(--wp--preset--font-family--mono);
+    font-size: var(--wp--preset--font-size--xsmall);
+    font-weight: 400;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--wp--preset--color--text-muted);
+    margin-top: 1.25rem !important;
+}
+.ap-post-meta-card__label:first-child {
+    margin-top: 0 !important;
+}
+.ap-post-meta-card .wp-block-post-author {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+.ap-post-meta-card .wp-block-post-author__avatar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    display: block;
+}
+.ap-post-meta-card .wp-block-post-author__name {
+    font-weight: 600;
+    color: var(--wp--preset--color--text);
+}
+.ap-post-meta-card .wp-block-post-author__bio {
+    font-size: var(--wp--preset--font-size--small);
+    color: var(--wp--preset--color--text-muted);
+    margin: 0;
+}
+.ap-post-meta-card__value,
+.ap-post-meta-card__value a {
+    font-weight: 600;
+    color: var(--wp--preset--color--text);
+    text-decoration: none;
+}
+.ap-post-meta-card__value a:hover {
+    color: var(--wp--preset--color--text-link);
+}
+
+/* Tag chips inside meta card. */
+.ap-post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+.ap-post-tags a {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.3rem 0.65rem;
+    border-radius: 6px;
+    background: color-mix(in oklab, var(--wp--preset--color--surface) 60%, transparent);
+    border: 1px solid var(--wp--preset--color--border-subtle);
+    font-family: var(--wp--preset--font-family--mono);
+    font-size: var(--wp--preset--font-size--xsmall);
+    color: var(--wp--preset--color--text-muted);
+    text-decoration: none;
+}
+.ap-post-tags a::before {
+    content: '#';
+    opacity: 0.6;
+    margin-right: 0.15rem;
+}
+.ap-post-tags a:hover {
+    color: var(--wp--preset--color--text);
+    border-color: color-mix(in oklab, var(--wp--preset--color--primary) 40%, transparent);
+}
+.ap-post-tags .wp-block-post-terms__separator {
+    display: none;
+}
+
+/* Share buttons — square icon tiles. */
+.ap-post-share {
+    display: flex !important;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+.ap-post-share a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: color-mix(in oklab, var(--wp--preset--color--surface) 60%, transparent);
+    border: 1px solid var(--wp--preset--color--border-subtle);
+    border-radius: 8px;
+    color: var(--wp--preset--color--text);
+    transition: border-color 0.15s ease, color 0.15s ease;
+}
+.ap-post-share a:hover {
+    border-color: color-mix(in oklab, var(--wp--preset--color--primary) 50%, transparent);
+    color: var(--wp--preset--color--primary);
+}
+.ap-post-share svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Previous / next post cards. */
+.ap-post-nav-card {
+    display: block;
+    padding: 1.25rem 1.5rem;
+    border: 1px solid var(--wp--preset--color--border-subtle);
+    background: color-mix(in oklab, var(--wp--preset--color--surface) 60%, transparent);
+    border-radius: 12px;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.ap-post-nav-card:hover {
+    border-color: color-mix(in oklab, var(--wp--preset--color--primary) 40%, transparent);
+    transform: translateY(-1px);
+}
+.ap-post-nav-card--next {
+    text-align: right;
+}
+.ap-post-nav-card__eyebrow {
+    font-family: var(--wp--preset--font-family--mono);
+    font-size: var(--wp--preset--font-size--xsmall);
+    font-weight: 400;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--wp--preset--color--text-link);
+    margin: 0 0 0.4rem;
+}
+.ap-post-nav-card__link,
+.ap-post-nav-card__link a {
+    font-weight: 600;
+    color: var(--wp--preset--color--text);
+    text-decoration: none;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+.ap-post-nav-card__link a:hover {
+    color: var(--wp--preset--color--primary);
+}
+
+/* Big gradient newsletter callout. */
+.ap-newsletter-box {
+    position: relative;
+    background:
+        linear-gradient(115deg,
+            var(--wp--preset--color--primary) 0%,
+            color-mix(in oklab, var(--wp--preset--color--secondary) 90%, var(--wp--preset--color--primary)) 50%,
+            var(--wp--preset--color--accent) 100%);
+    box-shadow: 0 0 80px color-mix(in oklab, var(--wp--preset--color--secondary) 25%, transparent);
+    color: var(--wp--preset--color--ink);
+}
+.ap-newsletter-box__title,
+.ap-newsletter-box__lede,
+.ap-newsletter-box__fineprint {
+    color: var(--wp--preset--color--ink) !important;
+}
+.ap-newsletter-box__title {
+    font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+}
+.ap-newsletter-box__lede {
+    max-width: 32rem;
+    margin-inline: auto;
+    opacity: 0.85;
+}
+.ap-newsletter-box__form {
+    display: flex;
+    gap: 0.5rem;
+    max-width: 32rem;
+    margin: 1.5rem auto 0.75rem;
+    padding: 0.4rem;
+    background: color-mix(in oklab, var(--wp--preset--color--ink) 85%, transparent);
+    border-radius: 12px;
+}
+.ap-newsletter-box__form input[type="email"] {
+    flex: 1;
+    background: transparent;
+    border: 0;
+    padding: 0.65rem 0.85rem;
+    color: var(--wp--preset--color--text);
+    font-family: inherit;
+    font-size: 0.95rem;
+    outline: none;
+}
+.ap-newsletter-box__form input[type="email"]::placeholder {
+    color: var(--wp--preset--color--text-muted);
+}
+.ap-newsletter-box__form button {
+    padding: 0.65rem 1.1rem;
+    background: linear-gradient(115deg, var(--wp--preset--color--primary), var(--wp--preset--color--accent));
+    color: var(--wp--preset--color--text);
+    font-weight: 600;
+    font-family: inherit;
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.ap-newsletter-box__fineprint {
+    opacity: 0.75;
+}
+
+/* Related posts grid. */
+.ap-related__eyebrow {
+    margin: 0;
+}
+.ap-related-posts.ap-related__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+.ap-related-card {
+    background: color-mix(in oklab, var(--wp--preset--color--surface) 60%, transparent);
+    border: 1px solid var(--wp--preset--color--border-subtle);
+    overflow: hidden;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.ap-related-card:hover {
+    border-color: color-mix(in oklab, var(--wp--preset--color--primary) 40%, transparent);
+    transform: translateY(-2px);
+}
+.ap-related-card__image img,
+.ap-related-card__image .wp-block-post-featured-image__image {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    display: block;
+}
+.ap-related-card__title a {
+    color: var(--wp--preset--color--text);
+    text-decoration: none;
+}
+.ap-related-card__title a:hover {
+    color: var(--wp--preset--color--primary);
+}
+
+/* Responsive collapse for the split. */
+@media (max-width: 900px) {
+    .ap-post-columns {
+        flex-direction: column;
+    }
+    .ap-post-body,
+    .ap-post-sidebar {
+        flex-basis: 100% !important;
+        max-width: 100%;
+    }
+    .ap-post-sidebar {
+        position: static;
+    }
+    .ap-post-nav-card--next {
+        text-align: left;
+    }
+}
