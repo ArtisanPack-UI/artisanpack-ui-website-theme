@@ -24,10 +24,10 @@
 
 <!-- TODO: install command each. -->
 
-<!-- wp:artisanpack/columns -->
-<div class="wp-block-artisanpack-columns wp-block-columns">
-<!-- wp:artisanpack/column -->
-<div class="wp-block-artisanpack-column wp-block-column">
+<!-- wp:artisanpack/grid {"numColumns":3} -->
+<div class="wp-block-artisanpack-grid">
+<!-- wp:artisanpack/grid-item -->
+<div class="wp-block-artisanpack-grid-item">
 <!-- wp:artisanpack/group {"backgroundColor":"surface-2","style":{"border":{"radius":"12px","width":"3px","color":"var:preset|color|surface-2","style":"solid"},"spacing":{"padding":{"top":"1.5rem","bottom":"1.5rem","left":"1.5rem","right":"1.5rem"}}}} --><div class="wp-block-artisanpack-group wp-block-group has-surface-2-background-color has-background" style="border-color:var(--wp--preset--color--surface-2);border-style:solid;border-width:3px;border-radius:12px;padding:1.5rem"><!-- wp:artisanpack/paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|mono","fontSize":"var:preset|font-size|xsmall","letterSpacing":"0.16em","textTransform":"uppercase"}},"textColor":"text-muted"} -->
 <p class="has-text-muted-color has-text-color" style="font-family:var(--wp--preset--font-family--mono);font-size:var(--wp--preset--font-size--xsmall);letter-spacing:0.16em;text-transform:uppercase">Package</p>
 <!-- /wp:artisanpack/paragraph -->
@@ -40,10 +40,10 @@
 <p class="has-text-muted-color has-text-color" style="line-height:1.65">Laravel-native content and templating.</p>
 <!-- /wp:artisanpack/paragraph --></div><!-- /wp:artisanpack/group -->
 </div>
-<!-- /wp:artisanpack/column -->
+<!-- /wp:artisanpack/grid-item -->
 
-<!-- wp:artisanpack/column -->
-<div class="wp-block-artisanpack-column wp-block-column">
+<!-- wp:artisanpack/grid-item -->
+<div class="wp-block-artisanpack-grid-item">
 <!-- wp:artisanpack/group {"backgroundColor":"surface-2","style":{"border":{"radius":"12px","width":"3px","color":"var:preset|color|surface-2","style":"solid"},"spacing":{"padding":{"top":"1.5rem","bottom":"1.5rem","left":"1.5rem","right":"1.5rem"}}}} --><div class="wp-block-artisanpack-group wp-block-group has-surface-2-background-color has-background" style="border-color:var(--wp--preset--color--surface-2);border-style:solid;border-width:3px;border-radius:12px;padding:1.5rem"><!-- wp:artisanpack/paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|mono","fontSize":"var:preset|font-size|xsmall","letterSpacing":"0.16em","textTransform":"uppercase"}},"textColor":"text-muted"} -->
 <p class="has-text-muted-color has-text-color" style="font-family:var(--wp--preset--font-family--mono);font-size:var(--wp--preset--font-size--xsmall);letter-spacing:0.16em;text-transform:uppercase">Package</p>
 <!-- /wp:artisanpack/paragraph -->
@@ -56,10 +56,10 @@
 <p class="has-text-muted-color has-text-color" style="line-height:1.65">Gutenberg-style block editing on Laravel.</p>
 <!-- /wp:artisanpack/paragraph --></div><!-- /wp:artisanpack/group -->
 </div>
-<!-- /wp:artisanpack/column -->
+<!-- /wp:artisanpack/grid-item -->
 
-<!-- wp:artisanpack/column -->
-<div class="wp-block-artisanpack-column wp-block-column">
+<!-- wp:artisanpack/grid-item -->
+<div class="wp-block-artisanpack-grid-item">
 <!-- wp:artisanpack/group {"backgroundColor":"surface-2","style":{"border":{"radius":"12px","width":"3px","color":"var:preset|color|surface-2","style":"solid"},"spacing":{"padding":{"top":"1.5rem","bottom":"1.5rem","left":"1.5rem","right":"1.5rem"}}}} --><div class="wp-block-artisanpack-group wp-block-group has-surface-2-background-color has-background" style="border-color:var(--wp--preset--color--surface-2);border-style:solid;border-width:3px;border-radius:12px;padding:1.5rem"><!-- wp:artisanpack/paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|mono","fontSize":"var:preset|font-size|xsmall","letterSpacing":"0.16em","textTransform":"uppercase"}},"textColor":"text-muted"} -->
 <p class="has-text-muted-color has-text-color" style="font-family:var(--wp--preset--font-family--mono);font-size:var(--wp--preset--font-size--xsmall);letter-spacing:0.16em;text-transform:uppercase">Package</p>
 <!-- /wp:artisanpack/paragraph -->
@@ -72,8 +72,8 @@
 <p class="has-text-muted-color has-text-color" style="line-height:1.65">Media IDs, image sizes, block requirements.</p>
 <!-- /wp:artisanpack/paragraph --></div><!-- /wp:artisanpack/group -->
 </div>
-<!-- /wp:artisanpack/column -->
+<!-- /wp:artisanpack/grid-item -->
 </div>
-<!-- /wp:artisanpack/columns -->
+<!-- /wp:artisanpack/grid -->
 </section>
 <!-- /wp:artisanpack/group -->

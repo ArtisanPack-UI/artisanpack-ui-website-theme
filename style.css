@@ -238,14 +238,24 @@
     border-radius: 0 8px 8px 0;
 }
 .ap-post-body .wp-block-code,
-.ap-post-body pre {
-    background: var(--wp--preset--color--ink);
+.ap-post-body pre,
+.wp-block-code {
+    background: var(--wp--preset--color--surface);
     border: 1px solid var(--wp--preset--color--border-subtle);
     border-radius: 8px;
     padding: 1rem 1.25rem;
     font-family: var(--wp--preset--font-family--mono);
     font-size: var(--wp--preset--font-size--small);
+    color: var(--wp--preset--color--text);
     overflow-x: auto;
+}
+.ap-post-body :not(pre) > code {
+    background: var(--wp--preset--color--surface);
+    border: 1px solid var(--wp--preset--color--border-subtle);
+    border-radius: 4px;
+    padding: 0.15em 0.4em;
+    font-family: var(--wp--preset--font-family--mono);
+    font-size: 0.9em;
 }
 .ap-post-body .wp-block-list {
     padding-left: 1.25rem;
@@ -518,5 +528,247 @@
     }
     .ap-post-nav-card--next {
         text-align: left;
+    }
+}
+
+/* ─── Hero primitives ────────────────────────────────────────────────── */
+
+/* .ap-eyebrow — mono uppercase kicker used above every hero title. */
+.ap-eyebrow {
+    display: inline-block;
+    font-family: var(--wp--preset--font-family--mono);
+    font-size: var(--wp--preset--font-size--xsmall);
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--wp--preset--color--text-muted);
+    margin: 0 0 0.75rem 0;
+}
+
+/* .ap-hero — atmospheric section wrapper; overrides padding for hero rhythm. */
+.ap-hero {
+    position: relative;
+    isolation: isolate;
+    padding-top: clamp(4rem, 8vw, 7.5rem);
+    padding-bottom: clamp(4rem, 8vw, 7.5rem);
+    overflow: hidden;
+}
+.ap-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        radial-gradient(90% 70% at 50% -10%, color-mix(in oklab, var(--wp--preset--color--primary) 22%, transparent), transparent 60%),
+        radial-gradient(70% 60% at 80% 110%, color-mix(in oklab, var(--wp--preset--color--accent) 18%, transparent), transparent 60%);
+}
+
+/* .ap-hero__inner — max-width 1200 grid host for split heroes. */
+.ap-hero__inner {
+    max-width: 1200px;
+    margin-inline: auto;
+}
+
+/* .ap-clipboard — mono chip with click-to-copy button. */
+.ap-clipboard {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    max-width: 100%;
+    padding: 0.375rem 0.5rem 0.375rem 1rem;
+    border-radius: 8px;
+    background: color-mix(in oklab, var(--wp--preset--color--ink) 85%, transparent);
+    border: 1px solid var(--wp--preset--color--border-subtle);
+    font-family: var(--wp--preset--font-family--mono);
+    font-size: var(--wp--preset--font-size--small);
+    color: var(--wp--preset--color--text);
+}
+.ap-clipboard__value {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    font-family: inherit;
+}
+.ap-clipboard__button {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.4rem 0.75rem;
+    border: 0;
+    border-radius: 5px;
+    background: linear-gradient(115deg, var(--wp--preset--color--primary) 0%, var(--wp--preset--color--secondary) 50%, var(--wp--preset--color--accent) 100%);
+    color: #fff;
+    font-family: var(--wp--preset--font-family--sans);
+    font-size: var(--wp--preset--font-size--xsmall);
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 120ms ease, box-shadow 120ms ease;
+}
+.ap-clipboard__button:hover {
+    box-shadow: var(--ap-glow-primary);
+    transform: translateY(-1px);
+}
+.ap-clipboard.is-copied .ap-clipboard__button {
+    background: var(--wp--preset--color--success, #22C55E);
+}
+
+/* .ap-terminal — fake terminal panel for hero-terminal / hero-package. */
+.ap-terminal {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--wp--preset--color--border-subtle);
+    background: var(--wp--preset--color--surface);
+    box-shadow: var(--ap-glow-gradient);
+}
+.ap-terminal__chrome {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0 0.875rem;
+    height: 40px;
+    background: var(--wp--preset--color--surface-2);
+    border-bottom: 1px solid var(--wp--preset--color--border-subtle);
+}
+.ap-terminal__dots {
+    display: inline-flex;
+    gap: 6px;
+}
+.ap-terminal__dots span {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: currentColor;
+    display: block;
+}
+.ap-terminal__dots span:nth-child(1) { color: #FF5F57; }
+.ap-terminal__dots span:nth-child(2) { color: #FEBC2E; }
+.ap-terminal__dots span:nth-child(3) { color: #28C840; }
+.ap-terminal__label {
+    margin-left: 0.5rem;
+    font-family: var(--wp--preset--font-family--mono);
+    font-size: 12px;
+    color: var(--wp--preset--color--text-muted);
+}
+.ap-terminal__body {
+    margin: 0;
+    padding: 1.375rem;
+    font-family: var(--wp--preset--font-family--mono);
+    font-size: 13px;
+    line-height: 1.85;
+    color: var(--wp--preset--color--text);
+    overflow: auto;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+}
+.ap-terminal__body .prompt { color: var(--wp--preset--color--secondary); }
+.ap-terminal__body .muted  { color: var(--wp--preset--color--text-muted); }
+.ap-terminal__body .ok     { color: #22C55E; }
+
+/* .ap-stats — strip of gradient-number stat tiles. */
+.ap-stats {
+    display: grid;
+    grid-template-columns: repeat(var(--ap-stats-cols, 4), 1fr);
+    gap: 1.5rem;
+    width: 100%;
+    padding-top: 2.5rem;
+    margin-top: 1.25rem;
+    border-top: 1px solid var(--wp--preset--color--border-subtle);
+}
+.ap-stats__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: center;
+}
+.ap-stats__value {
+    font-family: var(--wp--preset--font-family--display);
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    background: linear-gradient(115deg, var(--wp--preset--color--primary) 0%, var(--wp--preset--color--secondary) 50%, var(--wp--preset--color--accent) 100%);
+    -webkit-background-clip: text;
+            background-clip: text;
+    color: transparent;
+}
+.ap-stats__label {
+    font-family: var(--wp--preset--font-family--sans);
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--wp--preset--color--text-muted);
+}
+
+/* Split hero: two-column grid, symmetric column feels. */
+.ap-hero-split {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: center;
+}
+.ap-hero-split__media {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--wp--preset--color--border-subtle);
+    background: var(--wp--preset--color--surface-2);
+    box-shadow: var(--ap-glow-gradient);
+}
+.ap-hero-split__media img,
+.ap-hero-split__media .wp-block-image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Package hero: icon badge + heading row. */
+.ap-hero-package__ident {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.ap-hero-package__badge {
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    background: color-mix(in oklab, var(--wp--preset--color--primary) 18%, var(--wp--preset--color--surface));
+    border: 1px solid color-mix(in oklab, var(--wp--preset--color--primary) 40%, transparent);
+    color: var(--wp--preset--color--secondary);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+}
+.ap-hero-package__meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-family: var(--wp--preset--font-family--mono);
+    font-size: var(--wp--preset--font-size--xsmall);
+    color: var(--wp--preset--color--text-muted);
+}
+.ap-hero-package__meta span + span::before {
+    content: '·';
+    margin-right: 1rem;
+    color: var(--wp--preset--color--border-subtle);
+}
+
+/* Responsive collapse — split heroes stack under 900px. */
+@media (max-width: 900px) {
+    .ap-hero-split {
+        grid-template-columns: 1fr;
+    }
+    .ap-stats {
+        grid-template-columns: repeat(2, 1fr);
     }
 }

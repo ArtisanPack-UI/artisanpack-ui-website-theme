@@ -22,32 +22,32 @@
 <div style="height:30px" aria-hidden="true" class="wp-block-artisanpack-spacer wp-block-spacer"></div>
 <!-- /wp:artisanpack/spacer -->
 
-<!-- wp:artisanpack/columns -->
-<div class="wp-block-artisanpack-columns wp-block-columns">
-<!-- wp:artisanpack/column -->
-<div class="wp-block-artisanpack-column wp-block-column">
+<!-- wp:artisanpack/grid {"numColumns":3} -->
+<div class="wp-block-artisanpack-grid">
+<!-- wp:artisanpack/grid-item -->
+<div class="wp-block-artisanpack-grid-item">
 <!-- wp:artisanpack/quote {"style":{"typography":{"fontStyle":"italic"}}} -->
 <blockquote class="wp-block-quote"><!-- wp:artisanpack/paragraph --><p>"One gradient moment per view. Everything else respects the dark ground."</p><!-- /wp:artisanpack/paragraph --><cite>Jane Martella · JMWD</cite></blockquote>
 <!-- /wp:artisanpack/quote -->
 </div>
-<!-- /wp:artisanpack/column -->
+<!-- /wp:artisanpack/grid-item -->
 
-<!-- wp:artisanpack/column -->
-<div class="wp-block-artisanpack-column wp-block-column">
+<!-- wp:artisanpack/grid-item -->
+<div class="wp-block-artisanpack-grid-item">
 <!-- wp:artisanpack/quote {"style":{"typography":{"fontStyle":"italic"}}} -->
 <blockquote class="wp-block-quote"><!-- wp:artisanpack/paragraph --><p>"One gradient moment per view. Everything else respects the dark ground."</p><!-- /wp:artisanpack/paragraph --><cite>Jane Martella · JMWD</cite></blockquote>
 <!-- /wp:artisanpack/quote -->
 </div>
-<!-- /wp:artisanpack/column -->
+<!-- /wp:artisanpack/grid-item -->
 
-<!-- wp:artisanpack/column -->
-<div class="wp-block-artisanpack-column wp-block-column">
+<!-- wp:artisanpack/grid-item -->
+<div class="wp-block-artisanpack-grid-item">
 <!-- wp:artisanpack/quote {"style":{"typography":{"fontStyle":"italic"}}} -->
 <blockquote class="wp-block-quote"><!-- wp:artisanpack/paragraph --><p>"One gradient moment per view. Everything else respects the dark ground."</p><!-- /wp:artisanpack/paragraph --><cite>Jane Martella · JMWD</cite></blockquote>
 <!-- /wp:artisanpack/quote -->
 </div>
-<!-- /wp:artisanpack/column -->
+<!-- /wp:artisanpack/grid-item -->
 </div>
-<!-- /wp:artisanpack/columns -->
+<!-- /wp:artisanpack/grid -->
 </section>
 <!-- /wp:artisanpack/group -->

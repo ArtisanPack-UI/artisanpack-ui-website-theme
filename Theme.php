@@ -62,6 +62,24 @@ final class Theme extends BaseTheme
     }
 
     /**
+     * Front-end scripts.
+     *
+     * Ships the click-to-copy behavior for `.ap-clipboard` chips used in
+     * hero patterns.
+     */
+    public function frontendScripts(): array
+    {
+        return [
+            [
+                'handle' => 'artisanpack-ui-clipboard',
+                'src' => 'js/clipboard.js',
+                'defer' => true,
+                'ver' => '1.0.0',
+            ],
+        ];
+    }
+
+    /**
      * Custom image sizes the design brief documents. Registered before boot()
      * so any code that queries image variants sees the registrations first.
      */

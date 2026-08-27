@@ -22,10 +22,10 @@
 <div style="height:30px" aria-hidden="true" class="wp-block-artisanpack-spacer wp-block-spacer"></div>
 <!-- /wp:artisanpack/spacer -->
 
-<!-- wp:artisanpack/columns -->
-<div class="wp-block-artisanpack-columns wp-block-columns">
-<!-- wp:artisanpack/column -->
-<div class="wp-block-artisanpack-column wp-block-column">
+<!-- wp:artisanpack/grid {"numColumns":3} -->
+<div class="wp-block-artisanpack-grid">
+<!-- wp:artisanpack/grid-item -->
+<div class="wp-block-artisanpack-grid-item">
 <!-- wp:artisanpack/group {"className":"ap-border-gradient","layout":{"type":"constrained"}} -->
 <div class="wp-block-artisanpack-group wp-block-group is-layout-constrained ap-border-gradient">
 <!-- wp:artisanpack/paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|mono","fontSize":"var:preset|font-size|xsmall","letterSpacing":"0.16em","textTransform":"uppercase"}},"textColor":"text-muted"} -->
@@ -50,10 +50,10 @@
 </div>
 <!-- /wp:artisanpack/group -->
 </div>
-<!-- /wp:artisanpack/column -->
+<!-- /wp:artisanpack/grid-item -->
 
-<!-- wp:artisanpack/column -->
-<div class="wp-block-artisanpack-column wp-block-column">
+<!-- wp:artisanpack/grid-item -->
+<div class="wp-block-artisanpack-grid-item">
 <!-- wp:artisanpack/group {"className":"ap-border-gradient","style":{"border":{"width":"3px","color":"var:preset|color|accent"}}} --><div class="wp-block-artisanpack-group wp-block-group ap-border-gradient"><!-- wp:artisanpack/group {"className":"ap-border-gradient","layout":{"type":"constrained"}} -->
 <div class="wp-block-artisanpack-group wp-block-group is-layout-constrained ap-border-gradient">
 <!-- wp:artisanpack/paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|mono","fontSize":"var:preset|font-size|xsmall","letterSpacing":"0.16em","textTransform":"uppercase"}},"textColor":"text-muted"} -->
@@ -78,10 +78,10 @@
 </div>
 <!-- /wp:artisanpack/group --></div><!-- /wp:artisanpack/group -->
 </div>
-<!-- /wp:artisanpack/column -->
+<!-- /wp:artisanpack/grid-item -->
 
-<!-- wp:artisanpack/column -->
-<div class="wp-block-artisanpack-column wp-block-column">
+<!-- wp:artisanpack/grid-item -->
+<div class="wp-block-artisanpack-grid-item">
 <!-- wp:artisanpack/group {"className":"ap-border-gradient","layout":{"type":"constrained"}} -->
 <div class="wp-block-artisanpack-group wp-block-group is-layout-constrained ap-border-gradient">
 <!-- wp:artisanpack/paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|mono","fontSize":"var:preset|font-size|xsmall","letterSpacing":"0.16em","textTransform":"uppercase"}},"textColor":"text-muted"} -->
@@ -106,8 +106,8 @@
 </div>
 <!-- /wp:artisanpack/group -->
 </div>
-<!-- /wp:artisanpack/column -->
+<!-- /wp:artisanpack/grid-item -->
 </div>
-<!-- /wp:artisanpack/columns -->
+<!-- /wp:artisanpack/grid -->
 </section>
 <!-- /wp:artisanpack/group -->

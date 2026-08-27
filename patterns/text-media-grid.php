@@ -10,10 +10,10 @@
 ?>
 <!-- wp:artisanpack/group {"tagName":"section","layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"}}}} -->
 <section class="wp-block-artisanpack-group wp-block-group " style="padding-top:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80)">
-<!-- wp:artisanpack/columns -->
-<div class="wp-block-artisanpack-columns wp-block-columns">
-<!-- wp:artisanpack/column -->
-<div class="wp-block-artisanpack-column wp-block-column">
+<!-- wp:artisanpack/grid {"numColumns":3} -->
+<div class="wp-block-artisanpack-grid">
+<!-- wp:artisanpack/grid-item -->
+<div class="wp-block-artisanpack-grid-item">
 <!-- wp:artisanpack/image --><figure class="wp-block-image"><!-- TODO: media_id --><img alt=""/></figure><!-- /wp:artisanpack/image -->
 
 <!-- wp:artisanpack/heading {"level":4,"className":"","style":{"typography":{"fontFamily":"var:preset|font-family|display","fontWeight":"600","letterSpacing":"-0.02em","lineHeight":"1.15"}}} -->
@@ -24,10 +24,10 @@
 <p class="has-text-muted-color has-text-color" style="line-height:1.65">Short.</p>
 <!-- /wp:artisanpack/paragraph -->
 </div>
-<!-- /wp:artisanpack/column -->
+<!-- /wp:artisanpack/grid-item -->
 
-<!-- wp:artisanpack/column -->
-<div class="wp-block-artisanpack-column wp-block-column">
+<!-- wp:artisanpack/grid-item -->
+<div class="wp-block-artisanpack-grid-item">
 <!-- wp:artisanpack/image --><figure class="wp-block-image"><!-- TODO: media_id --><img alt=""/></figure><!-- /wp:artisanpack/image -->
 
 <!-- wp:artisanpack/heading {"level":4,"className":"","style":{"typography":{"fontFamily":"var:preset|font-family|display","fontWeight":"600","letterSpacing":"-0.02em","lineHeight":"1.15"}}} -->
@@ -38,10 +38,10 @@
 <p class="has-text-muted-color has-text-color" style="line-height:1.65">Short.</p>
 <!-- /wp:artisanpack/paragraph -->
 </div>
-<!-- /wp:artisanpack/column -->
+<!-- /wp:artisanpack/grid-item -->
 
-<!-- wp:artisanpack/column -->
-<div class="wp-block-artisanpack-column wp-block-column">
+<!-- wp:artisanpack/grid-item -->
+<div class="wp-block-artisanpack-grid-item">
 <!-- wp:artisanpack/image --><figure class="wp-block-image"><!-- TODO: media_id --><img alt=""/></figure><!-- /wp:artisanpack/image -->
 
 <!-- wp:artisanpack/heading {"level":4,"className":"","style":{"typography":{"fontFamily":"var:preset|font-family|display","fontWeight":"600","letterSpacing":"-0.02em","lineHeight":"1.15"}}} -->
@@ -52,8 +52,8 @@
 <p class="has-text-muted-color has-text-color" style="line-height:1.65">Short.</p>
 <!-- /wp:artisanpack/paragraph -->
 </div>
-<!-- /wp:artisanpack/column -->
+<!-- /wp:artisanpack/grid-item -->
 </div>
-<!-- /wp:artisanpack/columns -->
+<!-- /wp:artisanpack/grid -->
 </section>
 <!-- /wp:artisanpack/group -->

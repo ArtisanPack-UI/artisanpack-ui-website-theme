@@ -22,17 +22,15 @@
 <div style="height:30px" aria-hidden="true" class="wp-block-artisanpack-spacer wp-block-spacer"></div>
 <!-- /wp:artisanpack/spacer -->
 
-<!-- wp:artisanpack/columns -->
-<div class="wp-block-artisanpack-columns wp-block-columns">
-<!-- wp:artisanpack/column -->
-<div class="wp-block-artisanpack-column wp-block-column">
+<!-- wp:artisanpack/grid {"numColumns":3} -->
+<div class="wp-block-artisanpack-grid">
+<!-- wp:artisanpack/grid-item -->
+<div class="wp-block-artisanpack-grid-item">
 <!-- wp:artisanpack/group {"className":"ap-border-gradient"} --><div class="wp-block-artisanpack-group wp-block-group ap-border-gradient"><!-- wp:artisanpack/group {"style":{"spacing":{"blockGap":"1rem"}}} -->
 <div class="wp-block-artisanpack-group wp-block-group">
 <!-- wp:artisanpack/paragraph {"textColor":"secondary","style":{"typography":{"fontSize":"2rem"}}} -->
 <p class="has-secondary-color has-text-color" style="font-size:2rem"><i class="fa-solid fa-bolt"></i></p>
 <!-- /wp:artisanpack/paragraph -->
-
-fa-bolt
 <!-- wp:artisanpack/heading {"level":4,"className":"","style":{"typography":{"fontFamily":"var:preset|font-family|display","fontWeight":"600","letterSpacing":"-0.02em","lineHeight":"1.15"}}} -->
 <h4 class="wp-block-heading" style="font-family:var(--wp--preset--font-family--display);font-weight:600;letter-spacing:-0.02em;line-height:1.15">Fast</h4>
 <!-- /wp:artisanpack/heading -->
@@ -43,17 +41,15 @@ fa-bolt
 </div>
 <!-- /wp:artisanpack/group --></div><!-- /wp:artisanpack/group -->
 </div>
-<!-- /wp:artisanpack/column -->
+<!-- /wp:artisanpack/grid-item -->
 
-<!-- wp:artisanpack/column -->
-<div class="wp-block-artisanpack-column wp-block-column">
+<!-- wp:artisanpack/grid-item -->
+<div class="wp-block-artisanpack-grid-item">
 <!-- wp:artisanpack/group {"className":"ap-border-gradient"} --><div class="wp-block-artisanpack-group wp-block-group ap-border-gradient"><!-- wp:artisanpack/group {"style":{"spacing":{"blockGap":"1rem"}}} -->
 <div class="wp-block-artisanpack-group wp-block-group">
 <!-- wp:artisanpack/paragraph {"textColor":"secondary","style":{"typography":{"fontSize":"2rem"}}} -->
 <p class="has-secondary-color has-text-color" style="font-size:2rem"><i class="fa-solid fa-shield"></i></p>
 <!-- /wp:artisanpack/paragraph -->
-
-fa-shield
 <!-- wp:artisanpack/heading {"level":4,"className":"","style":{"typography":{"fontFamily":"var:preset|font-family|display","fontWeight":"600","letterSpacing":"-0.02em","lineHeight":"1.15"}}} -->
 <h4 class="wp-block-heading" style="font-family:var(--wp--preset--font-family--display);font-weight:600;letter-spacing:-0.02em;line-height:1.15">Safe</h4>
 <!-- /wp:artisanpack/heading -->
@@ -64,17 +60,15 @@ fa-shield
 </div>
 <!-- /wp:artisanpack/group --></div><!-- /wp:artisanpack/group -->
 </div>
-<!-- /wp:artisanpack/column -->
+<!-- /wp:artisanpack/grid-item -->
 
-<!-- wp:artisanpack/column -->
-<div class="wp-block-artisanpack-column wp-block-column">
+<!-- wp:artisanpack/grid-item -->
+<div class="wp-block-artisanpack-grid-item">
 <!-- wp:artisanpack/group {"className":"ap-border-gradient"} --><div class="wp-block-artisanpack-group wp-block-group ap-border-gradient"><!-- wp:artisanpack/group {"style":{"spacing":{"blockGap":"1rem"}}} -->
 <div class="wp-block-artisanpack-group wp-block-group">
 <!-- wp:artisanpack/paragraph {"textColor":"secondary","style":{"typography":{"fontSize":"2rem"}}} -->
 <p class="has-secondary-color has-text-color" style="font-size:2rem"><i class="fa-solid fa-gear"></i></p>
 <!-- /wp:artisanpack/paragraph -->
-
-fa-gear
 <!-- wp:artisanpack/heading {"level":4,"className":"","style":{"typography":{"fontFamily":"var:preset|font-family|display","fontWeight":"600","letterSpacing":"-0.02em","lineHeight":"1.15"}}} -->
 <h4 class="wp-block-heading" style="font-family:var(--wp--preset--font-family--display);font-weight:600;letter-spacing:-0.02em;line-height:1.15">Flexible</h4>
 <!-- /wp:artisanpack/heading -->
@@ -85,8 +79,8 @@ fa-gear
 </div>
 <!-- /wp:artisanpack/group --></div><!-- /wp:artisanpack/group -->
 </div>
-<!-- /wp:artisanpack/column -->
+<!-- /wp:artisanpack/grid-item -->
 </div>
-<!-- /wp:artisanpack/columns -->
+<!-- /wp:artisanpack/grid -->
 </section>
 <!-- /wp:artisanpack/group -->
