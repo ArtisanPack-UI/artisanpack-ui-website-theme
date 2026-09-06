@@ -661,7 +661,7 @@
     padding: 1.375rem;
     font-family: var(--wp--preset--font-family--mono);
     font-size: 13px;
-    line-height: 1.85;
+    line-height: 1.5;
     color: var(--wp--preset--color--text);
     overflow: auto;
     background: transparent;
@@ -671,6 +671,57 @@
 .ap-terminal__body .prompt { color: var(--wp--preset--color--secondary); }
 .ap-terminal__body .muted  { color: var(--wp--preset--color--text-muted); }
 .ap-terminal__body .ok     { color: #22C55E; }
+/* Line-based markup emitted by the artisanpack/terminal block. */
+.ap-terminal__body code {
+    font-family: inherit;
+    background: transparent;
+    padding: 0;
+    color: inherit;
+    display: block;
+}
+.ap-terminal__line {
+    display: block;
+    white-space: pre-wrap;
+}
+.ap-terminal__line--blank {
+    height: 0.6em;
+}
+.ap-terminal__line + .ap-terminal__line {
+    margin-top: 0.15em;
+}
+.ap-terminal__line--command {
+    margin-top: 0.4em;
+}
+.ap-terminal__line--command:first-child {
+    margin-top: 0;
+}
+.ap-terminal__line--command {
+    color: var(--wp--preset--color--text);
+}
+.ap-terminal__prompt {
+    color: var(--wp--preset--color--secondary);
+    font-weight: 600;
+    user-select: none;
+    margin-right: 0.35rem;
+}
+.ap-terminal__line--comment {
+    color: var(--wp--preset--color--text-muted);
+    padding-left: 1.35rem;
+}
+.ap-terminal__line--output {
+    color: var(--wp--preset--color--text-muted);
+    padding-left: 1.35rem;
+}
+.ap-terminal__line--success {
+    color: #22C55E;
+    padding-left: 1.35rem;
+    text-indent: -1.35rem;
+}
+.ap-terminal__tick {
+    color: #22C55E;
+    font-weight: 700;
+    margin-right: 0.35rem;
+}
 
 /* .ap-stats — strip of gradient-number stat tiles. */
 .ap-stats {
@@ -763,9 +814,92 @@
     color: var(--wp--preset--color--border-subtle);
 }
 
+/* Package hero (v2) — breadcrumb + two-column split. Matches design mockup. */
+.ap-hero-package {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+.ap-hero-package__crumbs {
+    margin: 0;
+    font-family: var(--wp--preset--font-family--sans);
+}
+.ap-hero-package__crumbs a {
+    color: var(--wp--preset--color--text-muted);
+    text-decoration: none;
+    transition: color 120ms ease;
+}
+.ap-hero-package__crumbs a:hover {
+    color: var(--wp--preset--color--text);
+}
+.ap-hero-package__crumbs-sep {
+    margin: 0 0.5rem;
+    color: var(--wp--preset--color--text-muted);
+}
+.ap-hero-package__crumbs-current {
+    color: var(--wp--preset--color--text);
+    font-weight: 500;
+}
+.ap-hero-package__split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: start;
+}
+.ap-hero-package__lede {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.ap-hero-package__title {
+    margin: 0;
+}
+.ap-hero-package__lede-copy {
+    margin: 0;
+}
+.ap-hero-package__meta {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    flex-wrap: wrap;
+}
+.ap-hero-package__meta-item {
+    font-family: var(--wp--preset--font-family--sans);
+    font-size: var(--wp--preset--font-size--small);
+    color: var(--wp--preset--color--text-muted);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+.ap-hero-package__version {
+    padding: 0.2rem 0.65rem;
+    border-radius: 999px;
+    background: color-mix(in oklab, var(--wp--preset--color--primary) 22%, transparent);
+    color: var(--wp--preset--color--secondary);
+    font-family: var(--wp--preset--font-family--mono);
+    font-weight: 500;
+    font-size: 0.78rem;
+}
+.ap-hero-package__stars i {
+    color: color-mix(in oklab, var(--wp--preset--color--secondary) 80%, var(--wp--preset--color--accent));
+    font-size: 0.8rem;
+}
+.ap-hero-package__ctas {
+    margin-top: 0.25rem;
+}
+.ap-hero-package__cta--github .wp-block-button__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
 /* Responsive collapse — split heroes stack under 900px. */
 @media (max-width: 900px) {
-    .ap-hero-split {
+    .ap-hero-split,
+    .ap-hero-package__split {
         grid-template-columns: 1fr;
     }
     .ap-stats {

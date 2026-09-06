@@ -16,14 +16,18 @@
         if (!chip) {
             return;
         }
-        const value = chip.querySelector('.ap-clipboard__value')?.textContent?.trim() ?? '';
+        const explicit = btn.getAttribute('data-clipboard-value');
+        const value = (explicit && explicit.length > 0)
+            ? explicit
+            : (chip.querySelector('.ap-clipboard__value')?.textContent?.trim() ?? '');
         if (!value) {
             return;
         }
+        const copiedLabel = chip.getAttribute('data-copied-label') ?? 'Copied';
         const commit = () => {
             chip.classList.add('is-copied');
             const original = btn.querySelector('span')?.textContent ?? 'Copy';
-            setLabel(btn, 'Copied');
+            setLabel(btn, copiedLabel);
             setTimeout(() => {
                 chip.classList.remove('is-copied');
                 setLabel(btn, original);
