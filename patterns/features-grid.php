@@ -28,9 +28,7 @@
 
 <!-- wp:artisanpack/grid-item -->
 <div class="wp-block-artisanpack-grid-item">
-<!-- wp:artisanpack/paragraph {"textColor":"secondary","style":{"typography":{"fontSize":"2rem"}}} -->
-<p class="has-secondary-color has-text-color" style="font-size:2rem"><i class="fa-solid fa-bolt"></i></p>
-<!-- /wp:artisanpack/paragraph -->
+<!-- wp:artisanpack/icon {"iconRef":{"set":"fas","name":"bolt"},"size":32,"iconColor":"#00E5FF"} /-->
 
 <!-- wp:artisanpack/heading {"level":4,"style":{"typography":{"fontFamily":"var:preset|font-family|display","fontWeight":"600","letterSpacing":"-0.02em","lineHeight":"1.15"}}} -->
 <h4 class="wp-block-heading" style="font-family:var(--wp--preset--font-family--display);font-weight:600;letter-spacing:-0.02em;line-height:1.15">Fast</h4>
@@ -44,9 +42,7 @@
 
 <!-- wp:artisanpack/grid-item -->
 <div class="wp-block-artisanpack-grid-item">
-<!-- wp:artisanpack/paragraph {"textColor":"secondary","style":{"typography":{"fontSize":"2rem"}}} -->
-<p class="has-secondary-color has-text-color" style="font-size:2rem"><i class="fa-solid fa-shield"></i></p>
-<!-- /wp:artisanpack/paragraph -->
+<!-- wp:artisanpack/icon {"iconRef":{"set":"fas","name":"shield"},"size":32,"iconColor":"#00E5FF"} /-->
 
 <!-- wp:artisanpack/heading {"level":4,"style":{"typography":{"fontFamily":"var:preset|font-family|display","fontWeight":"600","letterSpacing":"-0.02em","lineHeight":"1.15"}}} -->
 <h4 class="wp-block-heading" style="font-family:var(--wp--preset--font-family--display);font-weight:600;letter-spacing:-0.02em;line-height:1.15">Safe</h4>
@@ -60,9 +56,7 @@
 
 <!-- wp:artisanpack/grid-item -->
 <div class="wp-block-artisanpack-grid-item">
-<!-- wp:artisanpack/paragraph {"textColor":"secondary","style":{"typography":{"fontSize":"2rem"}}} -->
-<p class="has-secondary-color has-text-color" style="font-size:2rem"><i class="fa-solid fa-gear"></i></p>
-<!-- /wp:artisanpack/paragraph -->
+<!-- wp:artisanpack/icon {"iconRef":{"set":"fas","name":"gear"},"size":32,"iconColor":"#00E5FF"} /-->
 
 <!-- wp:artisanpack/heading {"level":4,"style":{"typography":{"fontFamily":"var:preset|font-family|display","fontWeight":"600","letterSpacing":"-0.02em","lineHeight":"1.15"}}} -->
 <h4 class="wp-block-heading" style="font-family:var(--wp--preset--font-family--display);font-weight:600;letter-spacing:-0.02em;line-height:1.15">Flexible</h4>
@@ -76,9 +70,7 @@
 
 <!-- wp:artisanpack/grid-item -->
 <div class="wp-block-artisanpack-grid-item">
-<!-- wp:artisanpack/paragraph {"textColor":"secondary","style":{"typography":{"fontSize":"2rem"}}} -->
-<p class="has-secondary-color has-text-color" style="font-size:2rem"><i class="fa-solid fa-palette"></i></p>
-<!-- /wp:artisanpack/paragraph -->
+<!-- wp:artisanpack/icon {"iconRef":{"set":"fas","name":"palette"},"size":32,"iconColor":"#00E5FF"} /-->
 
 <!-- wp:artisanpack/heading {"level":4,"style":{"typography":{"fontFamily":"var:preset|font-family|display","fontWeight":"600","letterSpacing":"-0.02em","lineHeight":"1.15"}}} -->
 <h4 class="wp-block-heading" style="font-family:var(--wp--preset--font-family--display);font-weight:600;letter-spacing:-0.02em;line-height:1.15">Themed</h4>
@@ -92,9 +84,7 @@
 
 <!-- wp:artisanpack/grid-item -->
 <div class="wp-block-artisanpack-grid-item">
-<!-- wp:artisanpack/paragraph {"textColor":"secondary","style":{"typography":{"fontSize":"2rem"}}} -->
-<p class="has-secondary-color has-text-color" style="font-size:2rem"><i class="fa-solid fa-plug"></i></p>
-<!-- /wp:artisanpack/paragraph -->
+<!-- wp:artisanpack/icon {"iconRef":{"set":"fas","name":"plug"},"size":32,"iconColor":"#00E5FF"} /-->
 
 <!-- wp:artisanpack/heading {"level":4,"style":{"typography":{"fontFamily":"var:preset|font-family|display","fontWeight":"600","letterSpacing":"-0.02em","lineHeight":"1.15"}}} -->
 <h4 class="wp-block-heading" style="font-family:var(--wp--preset--font-family--display);font-weight:600;letter-spacing:-0.02em;line-height:1.15">Composable</h4>
@@ -108,9 +98,7 @@
 
 <!-- wp:artisanpack/grid-item -->
 <div class="wp-block-artisanpack-grid-item">
-<!-- wp:artisanpack/paragraph {"textColor":"secondary","style":{"typography":{"fontSize":"2rem"}}} -->
-<p class="has-secondary-color has-text-color" style="font-size:2rem"><i class="fa-solid fa-terminal"></i></p>
-<!-- /wp:artisanpack/paragraph -->
+<!-- wp:artisanpack/icon {"iconRef":{"set":"fas","name":"terminal"},"size":32,"iconColor":"#00E5FF"} /-->
 
 <!-- wp:artisanpack/heading {"level":4,"style":{"typography":{"fontFamily":"var:preset|font-family|display","fontWeight":"600","letterSpacing":"-0.02em","lineHeight":"1.15"}}} -->
 <h4 class="wp-block-heading" style="font-family:var(--wp--preset--font-family--display);font-weight:600;letter-spacing:-0.02em;line-height:1.15">CLI-first</h4>
