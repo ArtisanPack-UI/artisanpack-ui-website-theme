@@ -2,11 +2,14 @@
     "$schema": "https://schemas.wp.org/wp/6.8/theme.json",
     "name": "ArtisanPack UI",
     "slug": "artisanpack-ui",
-    "version": "1.0.0",
+    "version": "0.1.0",
     "description": "Atmospheric, dark-first marketing theme for JMWD Keystone. Neon triad (blue / cyan / magenta) over deep space-black grounds with one gradient moment per view. Ships blog, packages, and a rich pattern library.",
     "author": "Jacob Martella",
     "screenshot": "screenshot.png",
     "requires": "2.0.0",
+    "update": {
+        "github": "ArtisanPack-UI/artisanpack-ui-website-theme"
+    },
 
     "settings": {
         "appearanceTools": true,
