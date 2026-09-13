@@ -10,8 +10,6 @@
 ?>
 <!-- wp:pattern {"slug":"artisanpack-ui/page-header-centered"} /-->
 
-<!-- TODO: step-by-step content blocks. -->
-
 <!-- wp:artisanpack/group {"tagName":"section","layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}}} -->
 <section class="wp-block-artisanpack-group wp-block-group " style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
 <!-- wp:artisanpack/heading {"level":2,"className":"","style":{"typography":{"fontFamily":"var:preset|font-family|display","fontWeight":"600","letterSpacing":"-0.02em","lineHeight":"1.15"}}} -->

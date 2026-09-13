@@ -22,8 +22,6 @@
 <div style="height:30px" aria-hidden="true" class="wp-block-artisanpack-spacer wp-block-spacer"></div>
 <!-- /wp:artisanpack/spacer -->
 
-<!-- TODO: magazine layout — 1 large + 4 small. -->
-
 <!-- wp:artisanpack/query {"queryId":0,"query":{"perPage":3,"postType":"post","inherit":false},"layout":{"type":"constrained"}} -->
 <div class="wp-block-artisanpack-query wp-block-query"><!-- wp:artisanpack/post-template {"layout":{"type":"grid","columnCount":3}} -->
 <!-- wp:artisanpack/post-featured-image {"style":{"border":{"radius":"12px"}}} /-->

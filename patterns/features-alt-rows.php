@@ -22,8 +22,6 @@
 <div style="height:30px" aria-hidden="true" class="wp-block-artisanpack-spacer wp-block-spacer"></div>
 <!-- /wp:artisanpack/spacer -->
 
-<!-- TODO: alternating rows of text+media, 3 rows. -->
-
 <!-- wp:artisanpack/columns -->
 <div class="wp-block-artisanpack-columns wp-block-columns">
 <!-- wp:artisanpack/column -->

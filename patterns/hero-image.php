@@ -9,7 +9,7 @@
  */
 ?>
 <!-- wp:artisanpack/cover {"align":"full","overlayColor":"ink","dimRatio":70,"minHeight":600,"contentPosition":"center center","layout":{"type":"constrained","contentSize":"760px"}} -->
-<div class="wp-block-cover alignfull has-custom-content-position is-position-center-center" style="min-height:600px"><span aria-hidden="true" class="wp-block-cover__background has-ink-background-color has-background-dim-70 has-background-dim"></span><!-- TODO: media_id for hero-wide image --><div class="wp-block-cover__inner-container">
+<div class="wp-block-cover alignfull has-custom-content-position is-position-center-center" style="min-height:600px"><span aria-hidden="true" class="wp-block-cover__background has-ink-background-color has-background-dim-70 has-background-dim"></span><div class="wp-block-cover__inner-container">
 
 <!-- wp:artisanpack/paragraph {"align":"center","className":"ap-eyebrow"} -->
 <p class="has-text-align-center ap-eyebrow">ArtisanPack UI</p>

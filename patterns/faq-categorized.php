@@ -22,8 +22,6 @@
 <div style="height:30px" aria-hidden="true" class="wp-block-artisanpack-spacer wp-block-spacer"></div>
 <!-- /wp:artisanpack/spacer -->
 
-<!-- TODO: categorized tabs. -->
-
 <!-- wp:artisanpack/details --><details class="wp-block-artisanpack-details wp-block-details"><summary>What is ArtisanPack UI?</summary><!-- wp:artisanpack/paragraph {"textColor":"text-muted","style":{"typography":{"lineHeight":"1.65"}}} -->
 <p class="has-text-muted-color has-text-color" style="line-height:1.65">A JMWD Keystone theme built on the ArtisanPack UI design system.</p>
 <!-- /wp:artisanpack/paragraph --></details><!-- /wp:artisanpack/details -->

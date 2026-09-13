@@ -14,7 +14,7 @@
 <div class="wp-block-artisanpack-grid">
 <!-- wp:artisanpack/grid-item -->
 <div class="wp-block-artisanpack-grid-item">
-<!-- wp:artisanpack/image --><figure class="wp-block-image"><!-- TODO: media_id --><img alt=""/></figure><!-- /wp:artisanpack/image -->
+<!-- wp:artisanpack/image --><figure class="wp-block-image"><img alt=""/></figure><!-- /wp:artisanpack/image -->
 
 <!-- wp:artisanpack/heading {"level":4,"className":"","style":{"typography":{"fontFamily":"var:preset|font-family|display","fontWeight":"600","letterSpacing":"-0.02em","lineHeight":"1.15"}}} -->
 <h4 class="wp-block-heading" style="font-family:var(--wp--preset--font-family--display);font-weight:600;letter-spacing:-0.02em;line-height:1.15">Tile title</h4>
@@ -28,7 +28,7 @@
 
 <!-- wp:artisanpack/grid-item -->
 <div class="wp-block-artisanpack-grid-item">
-<!-- wp:artisanpack/image --><figure class="wp-block-image"><!-- TODO: media_id --><img alt=""/></figure><!-- /wp:artisanpack/image -->
+<!-- wp:artisanpack/image --><figure class="wp-block-image"><img alt=""/></figure><!-- /wp:artisanpack/image -->
 
 <!-- wp:artisanpack/heading {"level":4,"className":"","style":{"typography":{"fontFamily":"var:preset|font-family|display","fontWeight":"600","letterSpacing":"-0.02em","lineHeight":"1.15"}}} -->
 <h4 class="wp-block-heading" style="font-family:var(--wp--preset--font-family--display);font-weight:600;letter-spacing:-0.02em;line-height:1.15">Tile title</h4>
@@ -42,7 +42,7 @@
 
 <!-- wp:artisanpack/grid-item -->
 <div class="wp-block-artisanpack-grid-item">
-<!-- wp:artisanpack/image --><figure class="wp-block-image"><!-- TODO: media_id --><img alt=""/></figure><!-- /wp:artisanpack/image -->
+<!-- wp:artisanpack/image --><figure class="wp-block-image"><img alt=""/></figure><!-- /wp:artisanpack/image -->
 
 <!-- wp:artisanpack/heading {"level":4,"className":"","style":{"typography":{"fontFamily":"var:preset|font-family|display","fontWeight":"600","letterSpacing":"-0.02em","lineHeight":"1.15"}}} -->
 <h4 class="wp-block-heading" style="font-family:var(--wp--preset--font-family--display);font-weight:600;letter-spacing:-0.02em;line-height:1.15">Tile title</h4>

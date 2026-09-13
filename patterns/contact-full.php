@@ -10,6 +10,4 @@
 ?>
 <!-- wp:pattern {"slug":"artisanpack-ui/page-header-centered"} /-->
 
-<!-- TODO: contact form block. -->
-
 <!-- wp:pattern {"slug":"artisanpack-ui/cta-signup-gradient"} /-->

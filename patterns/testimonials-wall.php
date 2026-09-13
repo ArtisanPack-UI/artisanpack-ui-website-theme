@@ -22,8 +22,6 @@
 <div style="height:30px" aria-hidden="true" class="wp-block-artisanpack-spacer wp-block-spacer"></div>
 <!-- /wp:artisanpack/spacer -->
 
-<!-- TODO: masonry wall — many short quotes. Starter: 3x3 grid. -->
-
 <!-- wp:artisanpack/grid {"numColumns":3} -->
 <div class="wp-block-artisanpack-grid">
 <!-- wp:artisanpack/grid-item -->

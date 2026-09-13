@@ -22,8 +22,6 @@
 <div style="height:30px" aria-hidden="true" class="wp-block-artisanpack-spacer wp-block-spacer"></div>
 <!-- /wp:artisanpack/spacer -->
 
-<!-- TODO: comparison table — feature rows × tier columns. -->
-
 <!-- wp:artisanpack/table --><figure class="wp-block-table"><table><thead><tr><th>Feature</th><th>Free</th><th>Pro</th><th>Team</th></tr></thead><tbody><tr><td>Templates</td><td>3</td><td>All</td><td>All</td></tr></tbody></table></figure><!-- /wp:artisanpack/table -->
 </section>
 <!-- /wp:artisanpack/group -->

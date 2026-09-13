@@ -22,8 +22,6 @@
 <div style="height:30px" aria-hidden="true" class="wp-block-artisanpack-spacer wp-block-spacer"></div>
 <!-- /wp:artisanpack/spacer -->
 
-<!-- TODO: overlapping card layout. Starter: 3-col grid. -->
-
 <!-- wp:artisanpack/columns -->
 <div class="wp-block-artisanpack-columns wp-block-columns">
 <!-- wp:artisanpack/column -->

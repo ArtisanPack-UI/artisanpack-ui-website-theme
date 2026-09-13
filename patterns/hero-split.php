@@ -54,7 +54,7 @@
 <!-- wp:artisanpack/group {"className":"ap-hero-split__media","layout":{"type":"default"}} -->
 <div class="wp-block-artisanpack-group wp-block-group ap-hero-split__media">
 <!-- wp:artisanpack/image {"sizeSlug":"large"} -->
-<figure class="wp-block-image size-large"><!-- TODO: media_id for hero-wide image --><img alt="Product screenshot"/></figure>
+<figure class="wp-block-image size-large"><img alt="Product screenshot"/></figure>
 <!-- /wp:artisanpack/image -->
 </div>
 <!-- /wp:artisanpack/group -->

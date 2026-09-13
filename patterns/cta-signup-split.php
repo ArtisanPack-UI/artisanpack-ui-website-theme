@@ -26,7 +26,6 @@
 
 <!-- wp:artisanpack/column -->
 <div class="wp-block-artisanpack-column wp-block-column">
-<!-- TODO: newsletter form. -->
 
 <!-- wp:artisanpack/buttons {"layout":{"type":"flex"}} -->
 <div class="wp-block-artisanpack-buttons wp-block-buttons is-layout-flex">

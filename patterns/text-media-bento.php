@@ -10,10 +10,9 @@
 ?>
 <!-- wp:artisanpack/group {"tagName":"section","layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"}}}} -->
 <section class="wp-block-artisanpack-group wp-block-group " style="padding-top:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80)">
-<!-- TODO: bento grid mixed sizes. -->
 
 <!-- wp:artisanpack/media-text {"mediaPosition":"right","mediaType":"image","verticalAlignment":"center"} -->
-<div class="wp-block-media-text has-media-on-the-right is-stacked-on-mobile is-vertically-aligned-center"><figure class="wp-block-media-text__media"><!-- TODO: media_id --><img alt=""/></figure><div class="wp-block-media-text__content"><!-- wp:artisanpack/paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|mono","fontSize":"var:preset|font-size|xsmall","letterSpacing":"0.16em","textTransform":"uppercase"}},"textColor":"text-muted"} -->
+<div class="wp-block-media-text has-media-on-the-right is-stacked-on-mobile is-vertically-aligned-center"><figure class="wp-block-media-text__media"><img alt=""/></figure><div class="wp-block-media-text__content"><!-- wp:artisanpack/paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|mono","fontSize":"var:preset|font-size|xsmall","letterSpacing":"0.16em","textTransform":"uppercase"}},"textColor":"text-muted"} -->
 <p class="has-text-muted-color has-text-color" style="font-family:var(--wp--preset--font-family--mono);font-size:var(--wp--preset--font-size--xsmall);letter-spacing:0.16em;text-transform:uppercase">Section</p>
 <!-- /wp:artisanpack/paragraph -->
 

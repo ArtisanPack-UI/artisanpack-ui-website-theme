@@ -22,8 +22,6 @@
 <div style="height:30px" aria-hidden="true" class="wp-block-artisanpack-spacer wp-block-spacer"></div>
 <!-- /wp:artisanpack/spacer -->
 
-<!-- TODO: monthly/annual toggle — needs interactive block. Starter: 3-col. -->
-
 <!-- wp:artisanpack/grid {"numColumns":3} -->
 <div class="wp-block-artisanpack-grid">
 <!-- wp:artisanpack/grid-item -->

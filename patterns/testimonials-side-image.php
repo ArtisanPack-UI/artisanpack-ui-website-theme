@@ -26,7 +26,7 @@
 <div class="wp-block-artisanpack-columns wp-block-columns">
 <!-- wp:artisanpack/column -->
 <div class="wp-block-artisanpack-column wp-block-column">
-<!-- wp:artisanpack/image --><figure class="wp-block-image"><!-- TODO: media_id --><img alt=""/></figure><!-- /wp:artisanpack/image -->
+<!-- wp:artisanpack/image --><figure class="wp-block-image"><img alt=""/></figure><!-- /wp:artisanpack/image -->
 </div>
 <!-- /wp:artisanpack/column -->
 

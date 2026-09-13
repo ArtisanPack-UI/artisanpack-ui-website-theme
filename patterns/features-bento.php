@@ -22,8 +22,6 @@
 <div style="height:30px" aria-hidden="true" class="wp-block-artisanpack-spacer wp-block-spacer"></div>
 <!-- /wp:artisanpack/spacer -->
 
-<!-- TODO: bento grid — mixed cell sizes. Starter: 3-column with tall/wide cards. -->
-
 <!-- wp:artisanpack/grid {"numColumns":3} -->
 <div class="wp-block-artisanpack-grid">
 <!-- wp:artisanpack/grid-item -->

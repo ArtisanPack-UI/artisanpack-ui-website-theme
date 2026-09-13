@@ -18,8 +18,6 @@
 <p class="has-text-muted-color has-text-color has-text-align-center" style="line-height:1.65">One email a month. No spam.</p>
 <!-- /wp:artisanpack/paragraph -->
 
-<!-- TODO: newsletter form block. -->
-
 <!-- wp:artisanpack/buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
 <div class="wp-block-artisanpack-buttons wp-block-buttons is-layout-flex is-content-justification-center">
 <!-- wp:artisanpack/button -->
