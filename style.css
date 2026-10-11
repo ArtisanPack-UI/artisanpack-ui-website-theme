@@ -584,7 +584,9 @@
     font-size: var(--wp--preset--font-size--small);
     color: var(--wp--preset--color--text);
 }
-.ap-clipboard__value {
+/* Two-class selectors so these beat the editor canvas baseline
+   (`.editor-styles-wrapper code` / `pre`), which paints #f3f4f6. */
+.ap-clipboard .ap-clipboard__value {
     flex: 1 1 auto;
     min-width: 0;
     overflow: hidden;
@@ -592,8 +594,22 @@
     text-overflow: ellipsis;
     background: transparent;
     border: 0;
+    border-radius: 0;
     padding: 0;
     font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+}
+.ap-clipboard .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 .ap-clipboard__button {
     flex-shrink: 0;
@@ -603,7 +619,7 @@
     padding: 0.4rem 0.75rem;
     border: 0;
     border-radius: 5px;
-    background: linear-gradient(115deg, var(--wp--preset--color--primary) 0%, var(--wp--preset--color--secondary) 50%, var(--wp--preset--color--accent) 100%);
+    background: linear-gradient(115deg, var(--wp--preset--color--primary), var(--wp--preset--color--accent));
     color: #fff;
     font-family: var(--wp--preset--font-family--sans);
     font-size: var(--wp--preset--font-size--xsmall);
@@ -656,7 +672,7 @@
     font-size: 12px;
     color: var(--wp--preset--color--text-muted);
 }
-.ap-terminal__body {
+.ap-terminal .ap-terminal__body {
     margin: 0;
     padding: 1.375rem;
     font-family: var(--wp--preset--font-family--mono);
@@ -672,9 +688,11 @@
 .ap-terminal__body .muted  { color: var(--wp--preset--color--text-muted); }
 .ap-terminal__body .ok     { color: #22C55E; }
 /* Line-based markup emitted by the artisanpack/terminal block. */
-.ap-terminal__body code {
+.ap-terminal .ap-terminal__body code {
     font-family: inherit;
+    font-size: inherit;
     background: transparent;
+    border-radius: 0;
     padding: 0;
     color: inherit;
     display: block;
