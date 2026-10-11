@@ -113,9 +113,12 @@ final class Theme extends BaseTheme
      * the modal is a starter picker for a fresh record, not a snippet
      * catalogue, so surfacing hero / CTA / testimonial sections there
      * would drown the actual full-page options. Section patterns keep
-     * working through the sidebar inserter regardless. Priority 20 puts
-     * this pass after cms-framework's own merge (default priority 10) so
-     * we see the theme entries it just added.
+     * working through the sidebar inserter regardless. Each pattern
+     * declares its post types with a WordPress-style `Post Types:` header
+     * (read here because cms-framework's parser ignores it); full-page
+     * patterns without one default to `page`. Priority 20 puts this pass
+     * after cms-framework's own merge (default priority 10) so we see the
+     * theme entries it just added.
      */
     public function extend(): void
     {
@@ -142,7 +145,7 @@ final class Theme extends BaseTheme
                     }
 
                     if (! array_key_exists('post_types', $entry) || $entry['post_types'] === null) {
-                        $entry['post_types'] = ['page', 'package'];
+                        $entry['post_types'] = self::declaredPostTypes((string) $slug) ?? ['page'];
                         $patterns[$slug]     = $entry;
                     }
                 }
@@ -177,6 +180,39 @@ final class Theme extends BaseTheme
             },
             10,
         );
+    }
+
+    /**
+     * Read the `Post Types:` header from a theme pattern file's leading
+     * doc-comment, mirroring WordPress's `register_block_pattern_from_file()`
+     * convention. Returns null when the file or header is missing.
+     *
+     * @return list<string>|null
+     */
+    private static function declaredPostTypes(string $slug): ?array
+    {
+        $path = __DIR__.'/patterns/'.basename($slug).'.php';
+
+        if (! is_file($path)) {
+            return null;
+        }
+
+        $contents = (string) file_get_contents($path);
+
+        if (! preg_match('#\A\s*(?:<\?php\s*)?/\*\*?(.*?)\*/#s', $contents, $docblock)) {
+            return null;
+        }
+
+        if (! preg_match('/^\s*\*?\s*Post Types:\s*(.+)$/mi', $docblock[1], $header)) {
+            return null;
+        }
+
+        $postTypes = array_values(array_filter(array_map(
+            static fn (string $postType): string => strtolower(trim($postType)),
+            explode(',', $header[1]),
+        )));
+
+        return $postTypes === [] ? null : $postTypes;
     }
 
     /**

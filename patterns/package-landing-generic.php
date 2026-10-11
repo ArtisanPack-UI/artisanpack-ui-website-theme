@@ -4,6 +4,7 @@
  * Title: Package Landing — Generic
  * Slug: artisanpack-ui/package-landing-generic
  * Categories: featured, full-page
+ * Post Types: package
  * Synced: no
  * Description: Generic package landing composition.
  */
