@@ -1,0 +1,85 @@
+name: Release
+
+# Builds the installable theme ZIP and publishes a GitHub release whenever a
+# version tag (e.g. v0.1.4) is pushed.
+#
+# Keystone's GitHub update source picks the first `.zip` asset on the latest
+# non-prerelease and verifies it against a sidecar named `<asset>.zip.sha256`
+# (falling back to a `SHA-256: <hex>` line in the release body). The theme
+# installer requires every entry in the ZIP to live under a single top-level
+# directory matching the theme slug, which is why GitHub's auto-generated
+# source zipball can't be used.
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out tag
+        uses: actions/checkout@v4
+
+      - name: Read theme metadata
+        id: meta
+        run: |
+          slug=$(jq -r '.slug' theme.json)
+          version=$(jq -r '.version' theme.json)
+          tag="${GITHUB_REF_NAME}"
+
+          if [ "${tag#v}" != "$version" ]; then
+            echo "::error file=theme.json::Tag $tag does not match theme.json version $version"
+            exit 1
+          fi
+
+          if [[ "$version" == *-* ]]; then
+            prerelease=true
+          else
+            prerelease=false
+          fi
+
+          {
+            echo "slug=$slug"
+            echo "version=$version"
+            echo "tag=$tag"
+            echo "prerelease=$prerelease"
+            echo "zip=$slug-$version.zip"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Build theme ZIP
+        run: |
+          mkdir -p build
+          git archive --format=tar --prefix="${{ steps.meta.outputs.slug }}/" HEAD | tar -x -C build
+          rm -rf "build/${{ steps.meta.outputs.slug }}/.github"
+
+          (cd build && zip -rqX "../${{ steps.meta.outputs.zip }}" "${{ steps.meta.outputs.slug }}")
+          sha256sum "${{ steps.meta.outputs.zip }}" > "${{ steps.meta.outputs.zip }}.sha256"
+
+          unzip -l "${{ steps.meta.outputs.zip }}" | head -n 20
+          cat "${{ steps.meta.outputs.zip }}.sha256"
+
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          sha=$(cut -d ' ' -f 1 "${{ steps.meta.outputs.zip }}.sha256")
+
+          args=()
+          if [ "${{ steps.meta.outputs.prerelease }}" = "true" ]; then
+            args+=(--prerelease)
+          fi
+
+          gh release create "${{ steps.meta.outputs.tag }}" \
+            "${{ steps.meta.outputs.zip }}" \
+            "${{ steps.meta.outputs.zip }}.sha256" \
+            --title "${{ steps.meta.outputs.tag }}" \
+            --notes "SHA-256: \`$sha\`" \
+            --generate-notes \
+            --verify-tag \
+            "${args[@]}"
