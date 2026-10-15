@@ -61,6 +61,54 @@
 .wp-block-buttons.is-content-justification-center { justify-content: center; }
 .wp-block-buttons.is-content-justification-right  { justify-content: flex-end; }
 
+/* ─── Button states + outline variant ────────────────────────────────── */
+/*
+ * The global-styles emitter has no pseudo-selector or block-style-variation
+ * support, so hover/focus and `is-style-outline` live here. Base fill, border,
+ * radius and padding still come from theme.json `styles.elements.button`.
+ */
+
+.wp-block-button__link,
+.wp-element-button {
+    transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease, box-shadow 150ms ease;
+}
+
+.wp-block-button__link:not(.has-background):hover,
+.wp-block-button__link:not(.has-background):focus-visible,
+.wp-element-button:not(.has-background):hover,
+.wp-element-button:not(.has-background):focus-visible {
+    background-color: color-mix(in oklab, var(--wp--preset--color--primary) 82%, var(--wp--preset--color--ink));
+    border-color: color-mix(in oklab, var(--wp--preset--color--primary) 82%, var(--wp--preset--color--ink));
+}
+
+.wp-block-button__link:hover,
+.wp-element-button:hover {
+    box-shadow: var(--ap-glow-primary);
+}
+
+.wp-block-button__link:focus-visible,
+.wp-element-button:focus-visible {
+    outline: 2px solid var(--wp--preset--color--secondary);
+    outline-offset: 3px;
+    box-shadow: var(--ap-glow-primary);
+}
+
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-background) {
+    background-color: transparent;
+}
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color) {
+    color: var(--wp--preset--color--text);
+}
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-border-color) {
+    border-color: var(--wp--preset--color--primary);
+}
+
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):hover,
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):focus-visible {
+    background-color: color-mix(in oklab, var(--wp--preset--color--primary) 18%, transparent);
+    border-color: var(--wp--preset--color--secondary);
+}
+
 /* ─── Atmospheric helpers ─────────────────────────────────────────────── */
 
 /* .ap-starfield — layered radial-gradient starfield for hero backdrops. */
