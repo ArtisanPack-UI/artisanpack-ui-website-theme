@@ -1,0 +1,11 @@
+{
+    "$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+    "version": 3,
+    "slug": "lead",
+    "title": "Lead",
+    "blockTypes": ["artisanpack/paragraph"],
+    "styles": {
+        "color": { "text": "var:preset|color|text-muted" },
+        "typography": { "fontSize": "var:preset|font-size|lead", "fontWeight": "500", "lineHeight": "1.65" }
+    }
+}

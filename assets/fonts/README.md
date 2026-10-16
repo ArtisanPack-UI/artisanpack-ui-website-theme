@@ -1,29 +1,14 @@
 # Fonts
 
-## Installed
+All fonts are bundled, so the theme makes no external font requests. They are
+declared as `fontFace` entries in `theme.json`, which Keystone emits as
+`@font-face` rules pointing at this directory.
 
-Poppins is installed as `.ttf` (Google Fonts download), renamed to weight-based filenames:
+| Family | Files | Use |
+|---|---|---|
+| Poppins | `poppins-{300,400,500,600,700,800}.woff2`, `poppins-{400,500,600}-italic.woff2` | headings and body |
+| Space Mono | `space-mono-{400,700}.woff2`, `space-mono-{400,700}-italic.woff2` | code, versions, meta, placeholder labels |
 
-- `poppins-300.ttf` (Light)
-- `poppins-400.ttf` (Regular) · `poppins-400-italic.ttf`
-- `poppins-500.ttf` (Medium) · `poppins-500-italic.ttf`
-- `poppins-600.ttf` (SemiBold) · `poppins-600-italic.ttf`
-- `poppins-700.ttf` (Bold)
-- `poppins-800.ttf` (ExtraBold)
-
-`css/theme.css` `@font-face` rules reference these with `format('truetype')`.
-
-## Not yet installed
-
-Space Mono. Falls back to platform monospace stack (`ui-monospace, SFMono-Regular, Menlo, Consolas`) until dropped in.
-
-Grab from https://fonts.google.com/specimen/Space+Mono and drop the following into this directory:
-
-- `space-mono-400.ttf` (Regular) · `space-mono-400-italic.ttf`
-- `space-mono-700.ttf` (Bold) · `space-mono-700-italic.ttf`
-
-Then add matching `@font-face` rules to `css/theme.css` (mirror the Poppins block).
-
-## Conversion to woff2 (later)
-
-TTFs work fine but are ~2× the wire size of woff2. When bundling the deployable theme in `/build-theme`, run TTFs through a converter (e.g. `pyftsubset` from `fonttools`, or `woff2_compress`) and swap the `@font-face` `format()` to `woff2`.
+The files are the Google Fonts `latin` subset (woff2). Poppins is © The Poppins
+Project Authors and Space Mono © Google. Both are licensed under the SIL
+Open Font License 1.1 (`OFL.txt`).
