@@ -625,12 +625,33 @@
     gap: 0.5rem;
     max-width: 100%;
     padding: 0.375rem 0.5rem 0.375rem 1rem;
+    font-family: var(--wp--preset--font-family--mono);
+    font-size: var(--wp--preset--font-size--small);
+}
+/* Box defaults sit at zero specificity so the Copy Command block's color,
+   border and shadow picks win. On the front end the block class and
+   `.ap-clipboard` are one element; in the editor canvas the block class is
+   the editor's wrapper, so it takes the box and the preview inside it is
+   reset. Hand-written `.ap-clipboard` markup gets the same defaults. */
+:where(.wp-block-artisanpack-copy-command, .ap-clipboard) {
     border-radius: 8px;
     background: color-mix(in oklab, var(--wp--preset--color--ink) 85%, transparent);
     border: 1px solid var(--wp--preset--color--border-subtle);
-    font-family: var(--wp--preset--font-family--mono);
-    font-size: var(--wp--preset--font-size--small);
     color: var(--wp--preset--color--text);
+}
+:where(.wp-block-artisanpack-copy-command) {
+    width: fit-content;
+    max-width: 100%;
+}
+.wp-block-artisanpack-copy-command > div {
+    border-radius: inherit;
+}
+.wp-block-artisanpack-copy-command .ap-clipboard {
+    background: transparent;
+    border: 0;
+    border-radius: inherit;
+    box-shadow: none;
+    color: inherit;
 }
 /* Two-class selectors so these beat the editor canvas baseline
    (`.editor-styles-wrapper code` / `pre`), which paints #f3f4f6. */
@@ -683,15 +704,31 @@
     background: var(--wp--preset--color--success, #22C55E);
 }
 
-/* .ap-terminal — fake terminal panel for hero-terminal / hero-package. */
-.ap-terminal {
+/* .ap-terminal — fake terminal panel for hero-terminal / hero-package.
+   Box defaults sit at zero specificity so the Terminal block's color, border
+   and shadow picks win; see the Copy Command note above for the canvas
+   wrapper reset. No `overflow: hidden` here: it would clip a gradient
+   border's ring, so the chrome rounds its own top corners instead. */
+:where(.wp-block-artisanpack-terminal, .ap-terminal) {
     border-radius: 12px;
-    overflow: hidden;
     border: 1px solid var(--wp--preset--color--border-subtle);
     background: var(--wp--preset--color--surface);
     box-shadow: var(--ap-glow-gradient);
+    color: var(--wp--preset--color--text);
+}
+.wp-block-artisanpack-terminal > div {
+    border-radius: inherit;
+}
+.wp-block-artisanpack-terminal .ap-terminal {
+    background: transparent;
+    border: 0;
+    border-radius: inherit;
+    box-shadow: none;
+    color: inherit;
 }
 .ap-terminal__chrome {
+    border-start-start-radius: inherit;
+    border-start-end-radius: inherit;
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -726,7 +763,7 @@
     font-family: var(--wp--preset--font-family--mono);
     font-size: 13px;
     line-height: 1.5;
-    color: var(--wp--preset--color--text);
+    color: inherit;
     overflow: auto;
     background: transparent;
     border: 0;
@@ -762,7 +799,7 @@
     margin-top: 0;
 }
 .ap-terminal__line--command {
-    color: var(--wp--preset--color--text);
+    color: inherit;
 }
 .ap-terminal__prompt {
     color: var(--wp--preset--color--secondary);
