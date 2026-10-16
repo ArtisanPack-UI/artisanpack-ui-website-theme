@@ -10,7 +10,8 @@
  * an editor shortcoming in the rebuild report before it lands here:
  *
  *   1. Document basics (border-box sizing, body margin, screen-reader
- *      text), as the design's base layer sets them.
+ *      text), as the design's base layer sets them, plus the design's
+ *      `text-wrap` on headings and leads (theme.json has no text-wrap).
  *   2. Button hover lift and brightness (element `:hover` can't set
  *      transform or filter), plus the Hollow variation's hover fill
  *      (variations have no pseudo-states).
@@ -36,6 +37,14 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+}
+
+:where(h1, h2, h3).wp-block-heading {
+    text-wrap: balance;
+}
+
+.is-style-lead {
+    text-wrap: pretty;
 }
 
 .screen-reader-text {

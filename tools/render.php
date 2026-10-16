@@ -36,8 +36,21 @@ $themeDir = dirname(__DIR__);
 $keystone = getenv('KEYSTONE_PATH') ?: dirname($themeDir, 2);
 $renderDir = $keystone.'/public/_ap-render';
 
-$options = getopt('', ['out:', 'head-url:', 'clean'], $restIndex);
-$target = $argv[$restIndex] ?? null;
+/*
+ * Parse `--name=value` / `--flag` options in any position: getopt() stops at
+ * the first positional argument, so `render.php file --out=x` would silently
+ * ignore `--out`.
+ */
+$options = [];
+$target = null;
+
+foreach (array_slice($argv, 1) as $argument) {
+    if (preg_match('/^--([a-z-]+)(?:=(.*))?$/', $argument, $match)) {
+        $options[$match[1]] = $match[2] ?? true;
+    } else {
+        $target ??= $argument;
+    }
+}
 
 if (isset($options['clean'])) {
     if (is_dir($renderDir)) {
