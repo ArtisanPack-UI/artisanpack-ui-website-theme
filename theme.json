@@ -128,10 +128,12 @@
                 { "slug": "eyebrow",    "name": "Eyebrow",     "size": "0.8125rem" },
                 { "slug": "small",      "name": "Small",       "size": "0.875rem" },
                 { "slug": "button",     "name": "Button",      "size": "0.9375rem" },
+                { "slug": "body-sm",    "name": "Body (sm)",   "size": "0.9375rem" },
                 { "slug": "body",       "name": "Body",        "size": "1rem" },
                 { "slug": "button-lg",  "name": "Button (lg)", "size": "1.0625rem" },
                 { "slug": "lead",       "name": "Lead",        "size": "1.125rem" },
                 { "slug": "h6",         "name": "H6",          "size": "clamp(1.0625rem, 1.0341rem + 0.1212vw, 1.125rem)" },
+                { "slug": "card-title", "name": "Card title",  "size": "1.3125rem" },
                 { "slug": "h5",         "name": "H5",          "size": "clamp(1.25rem, 1.1932rem + 0.2424vw, 1.375rem)" },
                 { "slug": "blockquote", "name": "Blockquote",  "size": "clamp(1.25rem, 1.1932rem + 0.2424vw, 1.375rem)" },
                 { "slug": "h4",         "name": "H4",          "size": "clamp(1.5rem, 1.3864rem + 0.4848vw, 1.75rem)" },
@@ -158,7 +160,7 @@
                 { "slug": "grid",      "name": "Grid gap",   "size": "22px"    },
                 { "slug": "gutter",    "name": "Gutter",     "size": "24px"    },
                 { "slug": "title-gap", "name": "Title gap",  "size": "56px"    },
-                { "slug": "section",   "name": "Section",    "size": "120px"   }
+                { "slug": "section",   "name": "Section",    "size": "clamp(4.5rem, 3.1364rem + 5.8182vw, 7.5rem)" }
             ],
             "customSpacingSize": true,
             "padding": true,
@@ -273,7 +275,7 @@
             },
             "artisanpack/card": {
                 "color": { "background": "var:preset|color|surface" },
-                "border": { "color": "var:preset|color|border", "style": "solid", "width": "3px", "radius": "12px" },
+                "border": { "color": "var:preset|color|border-subtle", "style": "solid", "width": "3px", "radius": "12px" },
                 "spacing": { "padding": { "top": "32px", "bottom": "32px", "left": "32px", "right": "32px" } }
             }
         }
@@ -297,6 +299,11 @@
     ],
 
     "patterns": [
+        "element-section-title",
+        "element-section-title-centered",
+        "element-feature",
+        "element-buttons",
+
         "page-header-centered",
         "page-header-display",
         "page-header-editorial",

@@ -12,6 +12,8 @@ php tools/render.php tools/fixtures/x.html   # or any block-markup file
 php tools/render.php --clean                 # delete public/_ap-render when done
 ```
 
+Options can go before or after the target.
+
 Runs the markup through Keystone's real `BlockRenderer::renderMarkup()`,
 drains the collected support CSS, and wraps it in the `<head>` of the live
 `/packages` page. That page uses the block-theme layout, so the render gets
@@ -38,6 +40,24 @@ root.
 - `--theme=URL` shoots another page; `--widths=1440,768,375` changes widths;
   `--out-dir` changes the output folder.
 
+## Validate markup in the editor
+
+```bash
+node tools/editor.mjs element-feature          # report invalid blocks, print saved markup
+node tools/editor.mjs element-feature --write  # replace the pattern body with it
+```
+
+Logs in headlessly (`AP_ADMIN_EMAIL` / `AP_ADMIN_PASSWORD` from the Keystone
+`.env`), opens the Site Editor and runs the markup through the editor's own
+block library (`window.ApSiteEditor.libs.blocks`). `parse()` flags each block
+whose HTML doesn't match its `save()` (the canvas's "invalid block" state),
+unregistered block names are flagged too (`parse()` drops them silently), and
+`serialize()` gives the markup the editor would save. Nothing is saved to the
+site. Exits 1 on any invalid block; `--write` refuses until all are valid.
+
+Hand-write a pattern, then `--write` it: the file ends up exactly as the
+editor would save it, which is what §11 step 3 of the rebuild report asks for.
+
 ## Requirements
 
 | What | Default | Override |
@@ -46,6 +66,7 @@ root.
 | Design export | `~/Downloads/ArtisanPack UI Design System` | `AP_DESIGN_PATH` |
 | Headless Chromium | `~/Library/Caches/ms-playwright/chromium_headless_shell-1234/…/chrome-headless-shell` | `AP_CHROMIUM` |
 | Playwright | the Keystone app's `node_modules` | — |
+| Admin login (editor.mjs) | `AP_ADMIN_EMAIL` / `AP_ADMIN_PASSWORD` in the Keystone `.env` | the same environment variables |
 
 The design side loads React, Babel and Font Awesome from CDNs, so it needs a
 network connection.
