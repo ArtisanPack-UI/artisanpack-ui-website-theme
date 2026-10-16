@@ -37,19 +37,32 @@ $keystone = getenv('KEYSTONE_PATH') ?: dirname($themeDir, 2);
 $renderDir = $keystone.'/public/_ap-render';
 
 /*
- * Parse `--name=value` / `--flag` options in any position: getopt() stops at
- * the first positional argument, so `render.php file --out=x` would silently
- * ignore `--out`.
+ * Parse options in any position: getopt() stops at the first positional
+ * argument, so `render.php file --out=x` would silently ignore `--out`.
+ * Value options take `--name=value` or `--name value`; `--clean` is a flag.
  */
+$valueOptions = ['out', 'head-url'];
 $options = [];
 $target = null;
+$arguments = array_slice($argv, 1);
 
-foreach (array_slice($argv, 1) as $argument) {
-    if (preg_match('/^--([a-z-]+)(?:=(.*))?$/', $argument, $match)) {
-        $options[$match[1]] = $match[2] ?? true;
-    } else {
+for ($index = 0, $count = count($arguments); $index < $count; $index++) {
+    $argument = $arguments[$index];
+
+    if (! preg_match('/^--([a-z-]+)(?:=(.*))?$/', $argument, $match)) {
         $target ??= $argument;
+
+        continue;
     }
+
+    $name = $match[1];
+    $value = $match[2] ?? null;
+
+    if ($value === null && in_array($name, $valueOptions, true) && isset($arguments[$index + 1])) {
+        $value = $arguments[++$index];
+    }
+
+    $options[$name] = $value ?? true;
 }
 
 if (isset($options['clean'])) {

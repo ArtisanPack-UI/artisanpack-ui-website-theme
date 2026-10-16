@@ -5,6 +5,14 @@ const { SectionTitle, Button, Feature } = DS;
 const shell = (background) => ({ background, padding: '120px 24px' });
 const inner = { maxWidth: 1200, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 56 };
 
+// The design templates collapse grids at about 1080px and 860px; mirror the
+// editor's Tablet (≤1023px) and Mobile (≤767px) breakpoints the theme uses.
+const gridCss = `
+.fixture-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+@media (max-width: 1023px) { .fixture-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 767px) { .fixture-grid { grid-template-columns: minmax(0, 1fr); } }
+`;
+
 const items = [
     ['primary', 'fa-rocket', 'gradient', 'Ship faster', 'Pre-built Livewire blocks, ready to drop in.'],
     ['secondary', 'fa-palette', 'secondary', 'Theme in one line', 'Swap data-theme for dark or light — no rebuild.'],
@@ -17,6 +25,7 @@ const items = [
 function Primitives() {
     return (
         <>
+            <style>{gridCss}</style>
             <section style={shell('var(--color-base)')}>
                 <div style={inner}>
                     <SectionTitle eyebrow="At a glance" title="A bento of what's inside" lead="Mixed tile sizes, with an image in the mix." />
@@ -29,7 +38,7 @@ function Primitives() {
             <section style={shell('var(--color-section)')}>
                 <div style={inner}>
                     <SectionTitle align="center" eyebrow="At a glance" title="A bento of what's inside" lead="Mixed tile sizes, with an image in the mix." />
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 22 }}>
+                    <div className="fixture-grid">
                         {items.map(([border, icon, iconStyle, title, body]) => (
                             <Feature key={title} boxed border={border} iconStyle={iconStyle} icon={<i className={`fa-solid ${icon}`} />} title={title}>{body}</Feature>
                         ))}

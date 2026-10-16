@@ -182,6 +182,14 @@ for (const problem of result.problems) {
 
 const output = `${result.serialized}\n`;
 
+// `--out` aimed at the input file is a rewrite in place: route it through
+// `--write`, which keeps the PHP header and refuses while any block is
+// invalid (serialize() drops unregistered blocks, so writing then would
+// lose them).
+if (values.out && resolve(values.out) === file) {
+    values.write = true;
+}
+
 if (values.write) {
     if (result.problems.length) {
         console.error('Not written: fix the invalid blocks first.');
