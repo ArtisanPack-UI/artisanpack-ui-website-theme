@@ -13,8 +13,8 @@
  *      text), as the design's base layer sets them, plus the design's
  *      `text-wrap` on headings and leads (theme.json has no text-wrap).
  *   2. Button hover lift and brightness (element `:hover` can't set
- *      transform or filter), plus the Hollow variation's hover fill
- *      (variations have no pseudo-states).
+ *      transform or filter), plus the Hollow and White variations' hover
+ *      fills (variations have no pseudo-states).
  *   3. The Eyebrow variation's gradient tick (a pseudo-element), and the
  *      Tile variation's shrink-to-fit (the Icon block has no width control).
  *   4. `.ap-gradient-text` for a gradient on one word inside rich text.
@@ -96,10 +96,17 @@ body {
     transform: translateY(0) scale(0.98);
 }
 
-.wp-block-button.is-style-hollow .wp-block-button__link:hover {
+/* Skipped when the button has its own text colour (e.g. the ink hollow
+   button on HeroImage's light neon ground), where a dark fill would hide it. */
+.wp-block-button.is-style-hollow .wp-block-button__link:not(.has-text-color):hover {
     filter: none;
     background-color: var(--wp--preset--color--surface-2);
     box-shadow: inset 0 0 0 1.5px var(--wp--preset--color--border-strong);
+}
+
+.wp-block-button.is-style-white .wp-block-button__link:hover {
+    filter: none;
+    background-color: var(--wp--preset--color--neutral-0);
 }
 
 /* ─── 3. Eyebrow tick ────────────────────────────────────────────────── */

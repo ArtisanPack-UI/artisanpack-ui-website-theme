@@ -206,11 +206,23 @@ try {
         // read from the HTML, then save it through the block's own save().
         // Hand-written HTML then never has to match save() exactly.
         if (rebuild) {
-            const recreate = (block) => createBlock(
-                block.name,
-                { ...block.attributes, ...(rawFor.get(block) ?? {}) },
-                (block.innerBlocks ?? []).map(recreate),
-            );
+            // Comment-stored attributes come only from the comment; only
+            // attributes the block sources from its HTML (text, links) come
+            // from parse(). For a block that failed validation, parse()
+            // folds stray root classes into `className`, so trusting its
+            // comment attributes would carry broken markup forward.
+            const recreate = (block) => {
+                const schema = getBlockType(block.name)?.attributes ?? {};
+                const fromHtml = Object.fromEntries(
+                    Object.entries(block.attributes ?? {}).filter(([key]) => schema[key]?.source !== undefined),
+                );
+
+                return createBlock(
+                    block.name,
+                    { ...fromHtml, ...(rawFor.get(block) ?? {}) },
+                    (block.innerBlocks ?? []).map(recreate),
+                );
+            };
             const rebuilt = blocks.map(recreate);
 
             return {
