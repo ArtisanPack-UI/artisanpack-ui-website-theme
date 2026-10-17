@@ -242,8 +242,8 @@ body {
     padding: 6px 10px;
     border: 0;
     border-radius: 3px;
-    background: var(--wp--preset--gradient--brand);
-    color: #fff;
+    background: var(--wp--preset--gradient--brand-button);
+    color: var(--wp--preset--color--on-gradient);
     font-family: var(--wp--preset--font-family--sans);
     font-size: 12px;
     font-weight: 600;
@@ -261,6 +261,7 @@ body {
 }
 .ap-clipboard.is-copied .ap-clipboard__button {
     background: var(--wp--preset--color--success, #22C55E);
+    color: var(--wp--preset--color--ink);
 }
 
 /* .ap-terminal — fake terminal panel for hero-terminal / hero-package.

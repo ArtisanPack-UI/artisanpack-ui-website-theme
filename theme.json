@@ -26,6 +26,7 @@
                 { "slug": "on-primary",     "name": "On Primary",     "color": "#FFFFFF" },
                 { "slug": "on-secondary",   "name": "On Secondary",   "color": "#0B1120" },
                 { "slug": "on-accent",      "name": "On Accent",      "color": "#0B1120" },
+                { "slug": "on-gradient",    "name": "On Gradient",    "color": "#000000" },
                 { "slug": "base",           "name": "Base",           "color": "#111827" },
                 { "slug": "section",        "name": "Section",        "color": "#1F2937" },
                 { "slug": "surface",        "name": "Surface",        "color": "#1F2937" },
@@ -57,6 +58,7 @@
             ],
             "gradients": [
                 { "slug": "brand",             "name": "Brand (primary → accent)",  "gradient": "linear-gradient(115deg, var(--wp--preset--color--primary) 0%, var(--wp--preset--color--accent) 100%)" },
+                { "slug": "brand-button",      "name": "Brand (buttons)",           "gradient": "linear-gradient(115deg, color-mix(in srgb, var(--wp--preset--color--primary) 94%, #FFFFFF) 0%, var(--wp--preset--color--accent) 100%)" },
                 { "slug": "neon",              "name": "Neon (three-stop)",         "gradient": "linear-gradient(115deg, var(--wp--preset--color--primary) 0%, var(--wp--preset--color--secondary) 55%, var(--wp--preset--color--accent) 100%)" },
                 { "slug": "primary-secondary", "name": "Primary → Secondary",       "gradient": "linear-gradient(115deg, var(--wp--preset--color--primary) 0%, var(--wp--preset--color--secondary) 100%)" },
                 { "slug": "primary-accent",    "name": "Primary → Accent",          "gradient": "linear-gradient(115deg, var(--wp--preset--color--primary) 0%, var(--wp--preset--color--accent) 100%)" },
@@ -228,8 +230,8 @@
             },
             "button": {
                 "color": {
-                    "gradient": "var:preset|gradient|brand",
-                    "text":     "var:preset|color|white"
+                    "gradient": "var:preset|gradient|brand-button",
+                    "text":     "var:preset|color|on-gradient"
                 },
                 "border": { "width": "0", "style": "none", "radius": "5px" },
                 "shadow": "var:preset|shadow|sm",
