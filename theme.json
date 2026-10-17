@@ -306,7 +306,8 @@
     "templateParts": [
         { "name": "header",      "title": "Header",      "area": "header" },
         { "name": "footer",      "title": "Footer",      "area": "footer" },
-        { "name": "mobile-menu", "title": "Mobile Menu", "area": "navigation-overlay" }
+        { "name": "mobile-menu", "title": "Mobile Menu", "area": "navigation-overlay" },
+        { "name": "newsletter-cta", "title": "Newsletter CTA", "area": "uncategorized" }
     ],
 
     "patterns": [
