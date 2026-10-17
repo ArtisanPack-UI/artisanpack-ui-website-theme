@@ -3,7 +3,7 @@
     "version": 3,
     "slug": "night",
     "title": "Night",
-    "blockTypes": ["artisanpack/group"],
+    "blockTypes": ["artisanpack/group", "artisanpack/cover", "artisanpack/copy-command", "artisanpack/terminal"],
     "styles": {
         "color": { "text": "var:preset|color|text" }
     }

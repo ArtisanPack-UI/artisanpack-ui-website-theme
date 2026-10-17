@@ -35,7 +35,7 @@
 <!-- /wp:artisanpack/button --></div>
 <!-- /wp:artisanpack/buttons -->
 
-<!-- wp:artisanpack/copy-command {"command":"composer require artisanpack-ui/livewire-ui-components","backgroundColor":"ink"} /--></div>
+<!-- wp:artisanpack/copy-command {"className":"is-style-night","command":"composer require artisanpack-ui/livewire-ui-components","backgroundColor":"ink"} /--></div>
 <!-- /wp:artisanpack/column -->
 
 <!-- wp:artisanpack/column {"verticalAlignment":"center","width":"47.5%"} -->

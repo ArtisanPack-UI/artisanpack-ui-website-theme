@@ -28,7 +28,7 @@
                 { "slug": "text-muted",     "name": "Text Muted",     "color": "#4B5563" },
                 { "slug": "text-subtle",    "name": "Text Subtle",    "color": "#9CA3AF" },
                 { "slug": "text-invert",    "name": "Text Invert",    "color": "#FFFFFF" },
-                { "slug": "text-link",      "name": "Text Link",      "color": "#00838F" },
+                { "slug": "text-link",      "name": "Text Link",      "color": "#006D75" },
                 { "slug": "border",         "name": "Border",         "color": "#E5E7EB" },
                 { "slug": "border-subtle",  "name": "Border Subtle",  "color": "#EEF1F5" },
                 { "slug": "border-strong",  "name": "Border Strong",  "color": "#D1D5DB" },

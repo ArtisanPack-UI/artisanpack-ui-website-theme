@@ -384,7 +384,7 @@ body {
     --wp--preset--color--secondary: #00E5FF;
     --wp--preset--color--accent: #E040FB;
     --wp--preset--color--primary-tint: color-mix(in srgb, var(--wp--preset--color--primary) 18%, transparent);
-    --wp--preset--color--primary-text: #6B8FFF;
+    --wp--preset--color--primary-text: #7A9DFF;
     --wp--preset--color--secondary-tint: color-mix(in srgb, var(--wp--preset--color--secondary) 18%, transparent);
     --wp--preset--color--accent-tint: color-mix(in srgb, var(--wp--preset--color--accent) 20%, transparent);
     --wp--preset--color--on-secondary: #0B1120;

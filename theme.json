@@ -21,7 +21,7 @@
                 { "slug": "secondary",      "name": "Secondary",      "color": "#00E5FF" },
                 { "slug": "accent",         "name": "Accent",         "color": "#E040FB" },
                 { "slug": "primary-tint",   "name": "Primary Tint",   "color": "color-mix(in srgb, var(--wp--preset--color--primary) 18%, transparent)" },
-                { "slug": "primary-text",   "name": "Primary Text",   "color": "#6B8FFF" },
+                { "slug": "primary-text",   "name": "Primary Text",   "color": "#7A9DFF" },
                 { "slug": "secondary-tint", "name": "Secondary Tint", "color": "color-mix(in srgb, var(--wp--preset--color--secondary) 18%, transparent)" },
                 { "slug": "accent-tint",    "name": "Accent Tint",    "color": "color-mix(in srgb, var(--wp--preset--color--accent) 20%, transparent)" },
                 { "slug": "on-primary",     "name": "On Primary",     "color": "#FFFFFF" },
