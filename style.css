@@ -11,7 +11,7 @@
  *
  *   1. Document basics (border-box sizing, body margin, screen-reader
  *      text), as the design's base layer sets them, plus the design's
- *      `text-wrap` on headings and leads (theme.json has no text-wrap).
+ *      `text-wrap` on headings, quotes and leads (theme.json has no text-wrap).
  *   2. Button hover lift and brightness (element `:hover` can't set
  *      transform or filter), plus the Hollow and White variations' hover
  *      fills (variations have no pseudo-states).
@@ -23,6 +23,10 @@
  *      redefine preset custom properties).
  *   7. Forms block fields (the block's daisyUI controls don't read
  *      theme.json), plus the Signup variation's hidden label.
+ *   8. Pricing: the Checks list marker, the Pill tabs and the Compare
+ *      table's featured column.
+ *   9. The Scroll strip variation's scroll-snap (no block exposes
+ *      `scroll-snap-*`).
  *
  * Font Awesome is enqueued from Theme.php. Editor-only overrides live in
  * editor.css.
@@ -43,7 +47,8 @@ body {
     text-rendering: optimizeLegibility;
 }
 
-:where(h1, h2, h3).wp-block-heading {
+:where(h1, h2, h3).wp-block-heading,
+.wp-block-quote > p {
     text-wrap: balance;
 }
 
@@ -432,6 +437,7 @@ body {
     --wp--preset--shadow--glow-secondary-lg: 0 0 48px color-mix(in srgb, var(--wp--preset--color--secondary) 45%, transparent);
     --wp--preset--shadow--glow-accent-lg: 0 0 48px color-mix(in srgb, var(--wp--preset--color--accent) 45%, transparent);
     --wp--preset--shadow--glow-gradient: 0 0 20px color-mix(in srgb, var(--wp--preset--color--primary) 45%, transparent), 0 0 34px color-mix(in srgb, var(--wp--preset--color--accent) 40%, transparent);
+    --wp--preset--shadow--ring-primary: 0 0 0 2px var(--wp--preset--color--surface), 0 0 0 4px var(--wp--preset--color--primary);
 }
 /* night:end */
 
@@ -725,6 +731,19 @@ body {
         line-height: 1.2;
         white-space: normal;
     }
+}
+
+/* ─── 9. Testimonials ───────────────────────────────────────────────── */
+
+/* Scroll strip (styles/snap.json): the Row scrolls natively (Effects
+   overflow-x: auto) and its cards keep a native flex basis, but nothing
+   exposes scroll-snap. Each direct child snaps to the strip's start. */
+.wp-block-group.is-style-snap {
+    scroll-snap-type: x mandatory;
+}
+
+.wp-block-group.is-style-snap > * {
+    scroll-snap-align: start;
 }
 
 /* ─── Reduced motion ─────────────────────────────────────────────────── */
