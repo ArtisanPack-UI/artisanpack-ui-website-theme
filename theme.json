@@ -61,6 +61,7 @@
             ],
             "gradients": [
                 { "slug": "brand",             "name": "Brand (primary → accent)",  "gradient": "linear-gradient(115deg, var(--wp--preset--color--primary) 0%, var(--wp--preset--color--accent) 100%)" },
+                { "slug": "brand-card",        "name": "Brand (featured card)",     "gradient": "linear-gradient(115deg, color-mix(in srgb, var(--wp--preset--color--primary) 88%, #000000) 0%, color-mix(in srgb, var(--wp--preset--color--accent) 70%, #000000) 100%)" },
                 { "slug": "brand-button",      "name": "Brand (buttons)",           "gradient": "linear-gradient(115deg, color-mix(in srgb, var(--wp--preset--color--primary) 94%, #FFFFFF) 0%, var(--wp--preset--color--accent) 100%)" },
                 { "slug": "neon",              "name": "Neon (three-stop)",         "gradient": "linear-gradient(115deg, var(--wp--preset--color--primary) 0%, var(--wp--preset--color--secondary) 55%, var(--wp--preset--color--accent) 100%)" },
                 { "slug": "primary-secondary", "name": "Primary → Secondary",       "gradient": "linear-gradient(115deg, var(--wp--preset--color--primary) 0%, var(--wp--preset--color--secondary) 100%)" },
@@ -353,6 +354,9 @@
         "pricing-toggle",
         "pricing-spotlight",
         "pricing-comparison",
+        "pricing-featured-stacked",
+        "pricing-single",
+        "pricing-rows",
 
         "packages-portfolio",
         "packages-install",
