@@ -8,70 +8,56 @@
  * Description: Package landing hero — breadcrumb, ident row, description, meta strip, click-to-copy install, buttons, plus a terminal panel on the right.
  */
 ?>
-<!-- wp:artisanpack/group {"tagName":"section","align":"full","className":"ap-hero","layout":{"type":"constrained","contentSize":"1200px","wideSize":"1200px"},"style":{"border":{"bottom":{"color":"var:preset|color|border-subtle","width":"1px","style":"solid"}},"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"}}}} -->
-<section class="alignfull wp-block-artisanpack-group wp-block-group is-layout-constrained ap-hero" style="border-bottom-color:var(--wp--preset--color--border-subtle);border-bottom-style:solid;border-bottom-width:1px;padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70)">
-
-<!-- wp:artisanpack/group {"className":"ap-hero-package","layout":{"type":"default"}} -->
-<div class="wp-block-artisanpack-group wp-block-group ap-hero-package">
-
-<!-- wp:artisanpack/paragraph {"className":"ap-hero-package__crumbs","textColor":"text-muted","style":{"typography":{"fontSize":"var:preset|font-size|small"}}} -->
-<p class="ap-hero-package__crumbs has-text-muted-color has-text-color" style="font-size:var(--wp--preset--font-size--small)"><a href="/packages">Packages</a><span class="ap-hero-package__crumbs-sep" aria-hidden="true"> › </span><span class="ap-hero-package__crumbs-current">Foundation</span></p>
+<!-- wp:artisanpack/group {"tagName":"section","gradient":"wash-diagonal","align":"full","style":{"spacing":{"padding":{"top":"80px","bottom":"80px","left":"var:preset|spacing|gutter","right":"var:preset|spacing|gutter"}},"border":{"bottom":{"color":"var:preset|color|border-subtle","width":"1px","style":"solid"}}},"layout":{"type":"constrained","contentSize":"1200px"}} -->
+<section class="wp-block-artisanpack-group alignfull wp-block-group has-wash-diagonal-gradient-background has-background" style="border-bottom-color:var(--wp--preset--color--border-subtle);border-bottom-style:solid;border-bottom-width:1px;padding-top:80px;padding-right:var(--wp--preset--spacing--gutter);padding-bottom:80px;padding-left:var(--wp--preset--spacing--gutter)"><!-- wp:artisanpack/columns {"verticalAlignment":"center","style":{"spacing":{"blockGap":{"left":"56px","top":"48px"}}}} -->
+<div class="wp-block-artisanpack-columns wp-block-columns are-vertically-aligned-center"><!-- wp:artisanpack/column {"verticalAlignment":"center","width":"55%","style":{"spacing":{"blockGap":"24px"}}} -->
+<div class="wp-block-artisanpack-column wp-block-column is-vertically-aligned-center" style="flex-basis:55%"><!-- wp:artisanpack/paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"13px"},"elements":{"link":{"color":{"text":"var:preset|color|text-muted"},"typography":{"textDecoration":"none"}}}}} -->
+<p class="wp-block-paragraph has-text-muted-color has-text-color has-link-color" style="font-size:13px"><a href="/packages">Packages</a> <span data-icon-set="fas" data-icon-name="chevron-right" style="font-size:0.7em;color:var(--wp--preset--color--text-subtle)" aria-hidden="true" class="ap-inline-icon"><svg aria-hidden="true" viewBox="0 0 24 24"></svg></span> <span style="color:var(--wp--preset--color--text)">Components</span></p>
 <!-- /wp:artisanpack/paragraph -->
 
-<!-- wp:artisanpack/group {"className":"ap-hero-package__split","layout":{"type":"default"}} -->
-<div class="wp-block-artisanpack-group wp-block-group ap-hero-package__split">
+<!-- wp:artisanpack/group {"artisanpackFlex":{"container":{"enabled":{"base":true},"direction":{"base":"row"},"wrap":{"base":"nowrap"},"alignItems":{"base":"center"}}},"style":{"spacing":{"blockGap":"16px"}}} -->
+<div class="wp-block-artisanpack-group wp-block-group ap-flex ap-flex-row ap-flex-nowrap ap-items-center"><!-- wp:artisanpack/icon {"iconRef":{"set":"fas","name":"cubes"},"size":26,"backgroundColor":"primary-tint","iconColor":"#00E5FF","isDecorative":true,"style":{"spacing":{"padding":"17px"},"border":{"radius":"12px","width":"1px","style":"solid","color":"color-mix(in srgb, #2962FF 40%, transparent)"}}} /-->
 
-<!-- wp:artisanpack/group {"className":"ap-hero-package__lede","layout":{"type":"default"}} -->
-<div class="wp-block-artisanpack-group wp-block-group ap-hero-package__lede">
-
-<!-- wp:artisanpack/group {"className":"ap-hero-package__ident","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
-<div class="wp-block-artisanpack-group wp-block-group ap-hero-package__ident is-layout-flex is-vertical-align-center">
-
-<!-- wp:artisanpack/icon {"iconRef":{"set":"fas","name":"cube"},"size":32,"iconColor":"accent","backgroundColor":"surface-raised","className":"ap-hero-package__badge","style":{"spacing":{"padding":{"top":"14px","right":"14px","bottom":"14px","left":"14px"}},"border":{"radius":"12px"}}} /-->
-
-<!-- wp:artisanpack/heading {"level":1,"className":"ap-hero-package__title","style":{"typography":{"fontFamily":"var:preset|font-family|display","fontWeight":"700","letterSpacing":"-0.02em","lineHeight":"1.05","fontSize":"clamp(2.5rem, 5vw, 3.5rem)"},"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<h1 class="wp-block-heading ap-hero-package__title" style="margin-top:0;margin-bottom:0;font-family:var(--wp--preset--font-family--display);font-size:clamp(2.5rem, 5vw, 3.5rem);font-weight:700;letter-spacing:-0.02em;line-height:1.05">Core</h1>
-<!-- /wp:artisanpack/heading -->
-
-</div>
+<!-- wp:artisanpack/heading {"level":1,"fontSize":"h2","style":{"typography":{"fontWeight":"800","lineHeight":"1.1"}}} -->
+<h1 class="wp-block-heading has-h-2-font-size" style="font-weight:800;line-height:1.1">Livewire UI Components</h1>
+<!-- /wp:artisanpack/heading --></div>
 <!-- /wp:artisanpack/group -->
 
-<!-- wp:artisanpack/paragraph {"className":"ap-hero-package__lede-copy","textColor":"text-muted","style":{"typography":{"lineHeight":"1.6","fontSize":"var:preset|font-size|h6"}}} -->
-<p class="ap-hero-package__lede-copy has-text-muted-color has-text-color" style="font-size:var(--wp--preset--font-size--h6);line-height:1.6">The foundational package that powers the entire ecosystem. Core unifies every ArtisanPack UI package's configuration into a single artisanpack.php file — one source of truth, zero configuration sprawl.</p>
+<!-- wp:artisanpack/group {"layout":{"type":"constrained","contentSize":"520px","justifyContent":"left"}} -->
+<div class="wp-block-artisanpack-group wp-block-group"><!-- wp:artisanpack/paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"18px","lineHeight":"1.65"}}} -->
+<p class="wp-block-paragraph has-text-muted-color has-text-color" style="font-size:18px;line-height:1.65">70+ accessible Blade components — forms, tables, charts, modals and more — for the Laravel TALL stack.</p>
+<!-- /wp:artisanpack/paragraph --></div>
+<!-- /wp:artisanpack/group -->
+
+<!-- wp:artisanpack/group {"artisanpackFlex":{"container":{"enabled":{"base":true},"direction":{"base":"row"},"wrap":{"base":"wrap"},"alignItems":{"base":"center"}}},"style":{"spacing":{"blockGap":"10px"}}} -->
+<div class="wp-block-artisanpack-group wp-block-group ap-flex ap-flex-row ap-flex-wrap ap-items-center"><!-- wp:artisanpack/paragraph {"backgroundColor":"primary-tint","textColor":"primary","className":"is-style-badge"} -->
+<p class="wp-block-paragraph is-style-badge has-primary-color has-primary-tint-background-color has-text-color has-background">v2.0.1</p>
 <!-- /wp:artisanpack/paragraph -->
 
-<!-- wp:artisanpack/html -->
-<ul class="ap-hero-package__meta">
-<li class="ap-hero-package__meta-item ap-hero-package__version"><span>v1.2.0</span></li>
-<li class="ap-hero-package__meta-item">MIT License</li>
-<li class="ap-hero-package__meta-item ap-hero-package__stars"><i class="fa-solid fa-star" aria-hidden="true"></i><span>1</span></li>
-</ul>
-<!-- /wp:artisanpack/html -->
+<!-- wp:artisanpack/paragraph {"className":"is-style-badge"} -->
+<p class="wp-block-paragraph is-style-badge">MIT License</p>
+<!-- /wp:artisanpack/paragraph -->
 
-<!-- wp:artisanpack/copy-command {"command":"composer require artisanpack-ui/core","prefix":"$","buttonLabel":"Copy","copiedLabel":"Copied"} /-->
+<!-- wp:artisanpack/paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"13px","fontWeight":"600"}}} -->
+<p class="wp-block-paragraph has-text-muted-color has-text-color" style="font-size:13px;font-weight:600"><span data-icon-set="fas" data-icon-name="star" style="font-size:0.92em;color:var(--wp--preset--color--secondary)" aria-hidden="true" class="ap-inline-icon"><svg aria-hidden="true" viewBox="0 0 24 24"></svg></span> 2.4k</p>
+<!-- /wp:artisanpack/paragraph --></div>
+<!-- /wp:artisanpack/group -->
 
-<!-- wp:artisanpack/buttons {"className":"ap-hero-package__ctas","layout":{"type":"flex"}} -->
-<div class="wp-block-artisanpack-buttons wp-block-buttons ap-hero-package__ctas is-layout-flex">
-<!-- wp:artisanpack/button {"className":"ap-hero-package__cta ap-hero-package__cta--primary"} -->
-<div class="wp-block-artisanpack-button wp-block-button ap-hero-package__cta ap-hero-package__cta--primary"><a class="wp-block-button__link wp-element-button" href="#">Read the docs →</a></div>
+<!-- wp:artisanpack/copy-command {"command":"composer require artisanpack-ui/livewire-ui-components","backgroundColor":"ink","style":{"spacing":{"margin":{"top":"26px"}}}} /-->
+
+<!-- wp:artisanpack/buttons {"style":{"spacing":{"blockGap":"12px","margin":{"top":"26px"}}}} -->
+<div class="wp-block-artisanpack-buttons wp-block-buttons" style="margin-top:26px"><!-- wp:artisanpack/button {"style":{"spacing":{"padding":{"top":"13px","bottom":"13px","left":"18px","right":"18px"}}}} -->
+<div class="wp-block-artisanpack-button wp-block-button"><a class="wp-block-button__link wp-element-button" href="#" style="padding-top:13px;padding-right:18px;padding-bottom:13px;padding-left:18px">Read the docs <span class="ap-inline-icon" data-icon-set="fas" data-icon-name="arrow-right" aria-hidden="true"><svg aria-hidden="true" viewBox="0 0 24 24"></svg></span></a></div>
 <!-- /wp:artisanpack/button -->
 
-<!-- wp:artisanpack/button {"className":"is-style-outline ap-hero-package__cta ap-hero-package__cta--github"} -->
-<div class="wp-block-artisanpack-button wp-block-button is-style-outline ap-hero-package__cta ap-hero-package__cta--github"><a class="wp-block-button__link wp-element-button" href="#"><i class="fa-brands fa-github" aria-hidden="true"></i> View on GitHub</a></div>
-<!-- /wp:artisanpack/button -->
-</div>
-<!-- /wp:artisanpack/buttons -->
+<!-- wp:artisanpack/button {"className":"is-style-hollow","style":{"spacing":{"padding":{"top":"13px","bottom":"13px","left":"18px","right":"18px"}}}} -->
+<div class="wp-block-artisanpack-button wp-block-button is-style-hollow"><a class="wp-block-button__link wp-element-button" href="https://github.com/ArtisanPack-UI" style="padding-top:13px;padding-right:18px;padding-bottom:13px;padding-left:18px"><span class="ap-inline-icon" data-icon-set="fab" data-icon-name="github" aria-hidden="true"><svg aria-hidden="true" viewBox="0 0 24 24"></svg></span> GitHub</a></div>
+<!-- /wp:artisanpack/button --></div>
+<!-- /wp:artisanpack/buttons --></div>
+<!-- /wp:artisanpack/column -->
 
-</div>
-<!-- /wp:artisanpack/group -->
-
-<!-- wp:artisanpack/terminal {"chromeStyle":"terminal","showChrome":true,"label":"terminal","lines":"$ composer require artisanpack-ui/core\n# Using version ^1.2 for artisanpack-ui/core\n✓ Installed\n\n$ php artisan vendor:publish --tag=artisanpack-config\n✓ Published config/artisanpack.php\n\n$ php artisan artisanpack:scaffold-config\n✓ Merged config from 4 packages"} /-->
-
-</div>
-<!-- /wp:artisanpack/group -->
-
-</div>
-<!-- /wp:artisanpack/group -->
-
-</section>
+<!-- wp:artisanpack/column {"verticalAlignment":"center","width":"45%"} -->
+<div class="wp-block-artisanpack-column wp-block-column is-vertically-aligned-center" style="flex-basis:45%"><!-- wp:artisanpack/terminal {"lines":"$ composer require artisanpack-ui/livewire-ui-components\n# Using version ^2.0 for artisanpack-ui/livewire-ui-components\n# ✓ Installed\n\n$ php artisan vendor:publish \u002d\u002dtag=artisanpack-config\n✓ Published config \u0026 assets\n✓ Ready to build"} /--></div>
+<!-- /wp:artisanpack/column --></div>
+<!-- /wp:artisanpack/columns --></section>
 <!-- /wp:artisanpack/group -->

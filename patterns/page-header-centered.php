@@ -8,18 +8,18 @@
  * Description: Centered aurora header with eyebrow, title, and lead.
  */
 ?>
-<!-- wp:artisanpack/group {"tagName":"section","layout":{"type":"constrained"},"className":"ap-aurora","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}}} -->
-<section class="wp-block-artisanpack-group wp-block-group ap-aurora" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
-<!-- wp:artisanpack/paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|mono","fontSize":"var:preset|font-size|xsmall","letterSpacing":"0.16em","textTransform":"uppercase"}},"textColor":"text-muted"} -->
-<p class="has-text-muted-color has-text-color" style="font-family:var(--wp--preset--font-family--mono);font-size:var(--wp--preset--font-size--xsmall);letter-spacing:0.16em;text-transform:uppercase">Section</p>
+<!-- wp:artisanpack/group {"tagName":"header","gradient":"aurora","align":"full","style":{"spacing":{"padding":{"top":"88px","bottom":"80px","left":"var:preset|spacing|gutter","right":"var:preset|spacing|gutter"},"blockGap":"20px"},"border":{"bottom":{"color":"var:preset|color|border-subtle","width":"1px","style":"solid"}}},"layout":{"type":"constrained","contentSize":"760px"}} -->
+<header class="wp-block-artisanpack-group alignfull wp-block-group has-aurora-gradient-background has-background" style="border-bottom-color:var(--wp--preset--color--border-subtle);border-bottom-style:solid;border-bottom-width:1px;padding-top:88px;padding-right:var(--wp--preset--spacing--gutter);padding-bottom:80px;padding-left:var(--wp--preset--spacing--gutter)"><!-- wp:artisanpack/paragraph {"textColor":"primary","style":{"typography":{"textAlign":"center","fontSize":"13px","fontWeight":"600","letterSpacing":"0.16em","textTransform":"uppercase"}}} -->
+<p class="has-text-align-center wp-block-paragraph has-primary-color has-text-color" style="font-size:13px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase"><span data-icon-set="fas" data-icon-name="book-open" style="font-size:12px" aria-hidden="true" class="ap-inline-icon"><svg aria-hidden="true" viewBox="0 0 24 24"></svg></span> Documentation</p>
 <!-- /wp:artisanpack/paragraph -->
 
-<!-- wp:artisanpack/heading {"level":1,"textAlign":"center","className":"","style":{"typography":{"fontFamily":"var:preset|font-family|display","fontWeight":"600","letterSpacing":"-0.02em","lineHeight":"1.15"}}} -->
-<h1 class="wp-block-heading has-text-align-center" style="font-family:var(--wp--preset--font-family--display);font-weight:600;letter-spacing:-0.02em;line-height:1.15">Page title goes here</h1>
+<!-- wp:artisanpack/heading {"level":1,"style":{"typography":{"textAlign":"center"}}} -->
+<h1 class="wp-block-heading has-text-align-center">Everything you need to <span class="ap-gradient-text">pack &amp; ship</span></h1>
 <!-- /wp:artisanpack/heading -->
 
-<!-- wp:artisanpack/paragraph {"textColor":"text-muted","align":"center","style":{"typography":{"lineHeight":"1.65"}}} -->
-<p class="has-text-muted-color has-text-color has-text-align-center" style="line-height:1.65">Supporting subheading — one or two sentences that set expectation for the page.</p>
-<!-- /wp:artisanpack/paragraph -->
-</section>
+<!-- wp:artisanpack/group {"layout":{"type":"constrained","contentSize":"620px"}} -->
+<div class="wp-block-artisanpack-group wp-block-group"><!-- wp:artisanpack/paragraph {"textColor":"text-muted","style":{"typography":{"textAlign":"center","fontSize":"18px","lineHeight":"1.65"}}} -->
+<p class="has-text-align-center wp-block-paragraph has-text-muted-color has-text-color" style="font-size:18px;line-height:1.65">Guides, references and recipes for building with the ArtisanPack component kit — from first install to production.</p>
+<!-- /wp:artisanpack/paragraph --></div>
+<!-- /wp:artisanpack/group --></header>
 <!-- /wp:artisanpack/group -->

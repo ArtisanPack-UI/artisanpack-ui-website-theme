@@ -13,8 +13,8 @@
  *      text), as the design's base layer sets them, plus the design's
  *      `text-wrap` on headings and leads (theme.json has no text-wrap).
  *   2. Button hover lift and brightness (element `:hover` can't set
- *      transform or filter), plus the Hollow variation's hover fill
- *      (variations have no pseudo-states).
+ *      transform or filter), plus the Hollow and White variations' hover
+ *      fills (variations have no pseudo-states).
  *   3. The Eyebrow variation's gradient tick (a pseudo-element), and the
  *      Tile variation's shrink-to-fit (the Icon block has no width control).
  *   4. `.ap-gradient-text` for a gradient on one word inside rich text.
@@ -96,10 +96,17 @@ body {
     transform: translateY(0) scale(0.98);
 }
 
-.wp-block-button.is-style-hollow .wp-block-button__link:hover {
+/* Skipped when the button has its own text colour (e.g. the ink hollow
+   button on HeroImage's light neon ground), where a dark fill would hide it. */
+.wp-block-button.is-style-hollow .wp-block-button__link:not(.has-text-color):hover {
     filter: none;
     background-color: var(--wp--preset--color--surface-2);
     box-shadow: inset 0 0 0 1.5px var(--wp--preset--color--border-strong);
+}
+
+.wp-block-button.is-style-white .wp-block-button__link:hover {
+    filter: none;
+    background-color: var(--wp--preset--color--neutral-0);
 }
 
 /* ─── 3. Eyebrow tick ────────────────────────────────────────────────── */
@@ -146,30 +153,42 @@ body {
 
 /* ─── 5. Plugin blocks: Terminal and Copy Command ────────────────────── */
 
-/* .ap-clipboard — mono chip with click-to-copy button. */
+/* .ap-clipboard — mono chip with click-to-copy button (design
+   CopyToClipboard: 14px Space Mono, 10/12/10/16 padding, 12px gap). */
 .ap-clipboard {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 12px;
     max-width: 100%;
-    padding: 0.375rem 0.5rem 0.375rem 1rem;
+    padding: 10px 12px 10px 16px;
     font-family: var(--wp--preset--font-family--mono);
-    font-size: var(--wp--preset--font-size--small);
+    font-size: 14px;
+    line-height: 1.4;
 }
 /* Box defaults sit at zero specificity so the Copy Command block's color,
    border and shadow picks win. On the front end the block class and
    `.ap-clipboard` are one element; in the editor canvas the block class is
    the editor's wrapper, so it takes the box and the preview inside it is
-   reset. Hand-written `.ap-clipboard` markup gets the same defaults. */
+   reset. Hand-written `.ap-clipboard` markup gets the same defaults: the
+   design's default "surface" chip; heroes pick `ink` per instance. */
 :where(.wp-block-artisanpack-copy-command, .ap-clipboard) {
-    border-radius: 8px;
-    background: color-mix(in oklab, var(--wp--preset--color--ink) 85%, transparent);
-    border: 1px solid var(--wp--preset--color--border-subtle);
+    border-radius: 5px;
+    background: var(--wp--preset--color--surface);
+    border: 1px solid var(--wp--preset--color--border);
     color: var(--wp--preset--color--text);
 }
 :where(.wp-block-artisanpack-copy-command) {
     width: fit-content;
     max-width: 100%;
+}
+/* Block-level on the block itself, so a constrained parent's auto side
+   margins can centre it (inline boxes ignore them). `!important` because
+   the constrained layout's content-size cap (three classes, printed after
+   this file) would otherwise keep max-width at the content size, so on
+   narrow screens the chip overflowed the page instead of ellipsizing. */
+.wp-block-artisanpack-copy-command.ap-clipboard {
+    display: flex;
+    max-width: 100% !important;
 }
 .wp-block-artisanpack-copy-command > div {
     border-radius: inherit;
@@ -197,6 +216,12 @@ body {
     font-size: inherit;
     color: inherit;
 }
+/* The prompt sits 12px from the command, like the design's flex gap; the
+   space character after it already covers 1ch of that. */
+.ap-clipboard .ap-clipboard__prompt {
+    margin-right: calc(12px - 1ch);
+    color: var(--wp--preset--color--secondary);
+}
 .ap-clipboard .sr-only {
     position: absolute;
     width: 1px;
@@ -212,15 +237,17 @@ body {
     flex-shrink: 0;
     display: inline-flex;
     align-items: center;
-    gap: 0.375rem;
-    padding: 0.4rem 0.75rem;
+    gap: 6px;
+    margin-left: 4px;
+    padding: 6px 10px;
     border: 0;
-    border-radius: 5px;
-    background: linear-gradient(115deg, var(--wp--preset--color--primary), var(--wp--preset--color--accent));
-    color: #fff;
+    border-radius: 3px;
+    background: var(--wp--preset--gradient--brand-button);
+    color: var(--wp--preset--color--on-gradient);
     font-family: var(--wp--preset--font-family--sans);
-    font-size: var(--wp--preset--font-size--xsmall);
+    font-size: 12px;
     font-weight: 600;
+    line-height: 1.4;
     cursor: pointer;
     transition: transform 120ms ease, box-shadow 120ms ease;
 }
@@ -228,8 +255,13 @@ body {
     box-shadow: var(--wp--preset--shadow--glow-primary);
     transform: translateY(-1px);
 }
+/* The design's button is text only. */
+.ap-clipboard__button svg {
+    display: none;
+}
 .ap-clipboard.is-copied .ap-clipboard__button {
     background: var(--wp--preset--color--success, #22C55E);
+    color: var(--wp--preset--color--ink);
 }
 
 /* .ap-terminal — fake terminal panel for hero-terminal / hero-package.
@@ -239,7 +271,7 @@ body {
    border's ring, so the chrome rounds its own top corners instead. */
 :where(.wp-block-artisanpack-terminal, .ap-terminal) {
     border-radius: 12px;
-    border: 1px solid var(--wp--preset--color--border-subtle);
+    border: 1px solid var(--wp--preset--color--border);
     background: var(--wp--preset--color--surface);
     box-shadow: var(--wp--preset--shadow--glow-gradient);
     color: var(--wp--preset--color--text);
@@ -259,15 +291,15 @@ body {
     border-start-end-radius: inherit;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0 0.875rem;
+    gap: 8px;
+    padding: 0 14px;
     height: 40px;
     background: var(--wp--preset--color--surface-2);
-    border-bottom: 1px solid var(--wp--preset--color--border-subtle);
+    border-bottom: 1px solid var(--wp--preset--color--border);
 }
 .ap-terminal__dots {
     display: inline-flex;
-    gap: 6px;
+    gap: 7px;
 }
 .ap-terminal__dots span {
     width: 11px;
@@ -280,78 +312,60 @@ body {
 .ap-terminal__dots span:nth-child(2) { color: #FEBC2E; }
 .ap-terminal__dots span:nth-child(3) { color: #28C840; }
 .ap-terminal__label {
-    margin-left: 0.5rem;
+    margin-left: 8px;
     font-family: var(--wp--preset--font-family--mono);
     font-size: 12px;
     color: var(--wp--preset--color--text-muted);
 }
+/* Design terminal: Space Mono 13/1.85 with 22px padding. The block prints a
+   newline after every line inside the <pre>, so inline lines get exactly
+   one row each (and an empty row for a blank line) with no extra spacing. */
 .ap-terminal .ap-terminal__body {
     margin: 0;
-    padding: 1.375rem;
+    padding: 22px;
     font-family: var(--wp--preset--font-family--mono);
     font-size: 13px;
-    line-height: 1.5;
+    line-height: 1.85;
     color: inherit;
     overflow: auto;
     background: transparent;
     border: 0;
     border-radius: 0;
 }
-.ap-terminal__body .prompt { color: var(--wp--preset--color--secondary); }
-.ap-terminal__body .muted  { color: var(--wp--preset--color--text-muted); }
-.ap-terminal__body .ok     { color: #22C55E; }
-/* Line-based markup emitted by the artisanpack/terminal block. */
 .ap-terminal .ap-terminal__body code {
     font-family: inherit;
     font-size: inherit;
+    line-height: inherit;
     background: transparent;
     border-radius: 0;
     padding: 0;
     color: inherit;
     display: block;
+    white-space: pre;
 }
 .ap-terminal__line {
-    display: block;
-    white-space: pre-wrap;
-}
-.ap-terminal__line--blank {
-    height: 0.6em;
-}
-.ap-terminal__line + .ap-terminal__line {
-    margin-top: 0.15em;
-}
-.ap-terminal__line--command {
-    margin-top: 0.4em;
-}
-.ap-terminal__line--command:first-child {
-    margin-top: 0;
-}
-.ap-terminal__line--command {
-    color: inherit;
+    display: inline;
 }
 .ap-terminal__prompt {
     color: var(--wp--preset--color--secondary);
-    font-weight: 600;
     user-select: none;
-    margin-right: 0.35rem;
 }
-.ap-terminal__line--comment {
-    color: var(--wp--preset--color--text-muted);
-    padding-left: 1.35rem;
+/* Output, comments and successes sit two characters in, as in the design. */
+.ap-terminal__line--comment,
+.ap-terminal__line--output,
+.ap-terminal__line--success {
+    padding-left: 2ch;
 }
+/* The design paints these in text-subtle, but at 12-13px that is 3.0:1 on
+   the terminal's surface (3.7:1 on the title bar); text-muted meets WCAG
+   AA's 4.5:1 on both. */
+.ap-terminal__line--comment,
 .ap-terminal__line--output {
     color: var(--wp--preset--color--text-muted);
-    padding-left: 1.35rem;
 }
-.ap-terminal__line--success {
-    color: #22C55E;
-    padding-left: 1.35rem;
-    text-indent: -1.35rem;
-}
+.ap-terminal__line--success,
 .ap-terminal__tick {
     color: #22C55E;
-    font-weight: 700;
-    margin-right: 0.35rem;
 }
 
 

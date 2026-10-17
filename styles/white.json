@@ -1,0 +1,10 @@
+{
+    "$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+    "version": 3,
+    "slug": "white",
+    "title": "White",
+    "blockTypes": ["artisanpack/button"],
+    "styles": {
+        "color": { "gradient": "none", "background": "var:preset|color|white", "text": "var:preset|color|neutral-9" }
+    }
+}
