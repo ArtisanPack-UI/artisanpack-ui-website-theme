@@ -461,7 +461,10 @@ body {
     box-shadow: none;
 }
 
-.wp-block-artisanpack-form :is(.input, .textarea, .select) ::placeholder {
+/* daisyUI's `.input` is a wrapper around the real <input>, while `.textarea`
+   and `.select` sit on the control itself, so match both. */
+.wp-block-artisanpack-form :is(.input, .textarea, .select) ::placeholder,
+.wp-block-artisanpack-form :is(.input, .textarea, .select)::placeholder {
     color: var(--wp--preset--color--text-muted);
     opacity: 1;
 }
