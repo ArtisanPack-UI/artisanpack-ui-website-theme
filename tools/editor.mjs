@@ -137,57 +137,95 @@ try {
     const page = await openEditor();
 
     result = await page.evaluate(({ input, rebuild }) => {
-        const { parse, serialize, getBlockType, createBlock } = window.ApSiteEditor.libs.blocks;
+        const { parse, serialize, getBlockType, createBlock, getFreeformContentHandlerName } = window.ApSiteEditor.libs.blocks;
         const blocks = parse(input);
         const problems = [];
         const migrations = [];
 
-        // Raw comment attributes, in document (pre-)order, to spot blocks a
-        // deprecation silently migrated: parse() reports those as valid
-        // even when attributes were dropped or rewritten.
-        const raw = [...input.matchAll(/<!--\s+wp:([a-z0-9-]+(?:\/[a-z0-9-]+)?)(\s+(\{.*?\}))?\s*\/?-->/g)]
-            .filter((match) => getBlockType(match[1].includes('/') ? match[1] : `core/${match[1]}`))
-            .map((match) => {
-                try {
-                    return match[3] ? JSON.parse(match[3]) : {};
-                } catch {
-                    // parse() silently drops attributes it can't read.
-                    problems.push({ path: match[1], issue: `invalid comment JSON: ${match[3].slice(0, 120)}` });
+        // The raw comment tree, from the block delimiters themselves, so each
+        // parsed block is paired with its own comment attributes: parse()
+        // reports a block a deprecation silently migrated as valid even when
+        // attributes were dropped or rewritten, and freeform HTML between
+        // blocks has no comment at all.
+        const rawTree = { children: [] };
+        const stack = [rawTree];
 
-                    return {};
+        for (const match of input.matchAll(/<!--\s+(\/)?wp:([a-z0-9-]+(?:\/[a-z0-9-]+)?)(\s+(\{.*?\}))?\s*(\/)?-->/g)) {
+            const [, closing, rawName, , json, selfClosing] = match;
+
+            if (closing) {
+                if (stack.length > 1) {
+                    stack.pop();
                 }
-            });
-        let rawIndex = 0;
+
+                continue;
+            }
+
+            const name = rawName.includes('/') ? rawName : `core/${rawName}`;
+            let attrs = {};
+
+            if (json) {
+                try {
+                    attrs = JSON.parse(json);
+                } catch {
+                    // parse() silently drops attributes it can't read, and a
+                    // rebuild can't recover them either: keep this blocking.
+                    problems.push({ path: name, issue: `invalid comment JSON: ${json.slice(0, 120)}`, blocking: true });
+                    attrs = null;
+                }
+            }
+
+            const node = { name, attrs, children: [] };
+            stack[stack.length - 1].children.push(node);
+
+            if (!selfClosing) {
+                stack.push(node);
+            }
+        }
+
+        const freeform = getFreeformContentHandlerName?.();
         const rawFor = new Map();
         const canonical = (value) => JSON.stringify(value, (key, inner) => (inner && typeof inner === 'object' && !Array.isArray(inner)
             ? Object.fromEntries(Object.entries(inner).sort(([a], [b]) => a.localeCompare(b)))
             : inner));
 
-        const walk = (list, trail) => list.forEach((block, index) => {
-            const path = `${trail}${trail ? ' > ' : ''}${block.name ?? 'freeform'}[${index}]`;
+        const walk = (list, rawList, trail) => {
+            // parse() drops unregistered blocks and adds freeform blocks for
+            // loose HTML; skip both sides of those so the pairing holds.
+            const rawNodes = rawList.filter((node) => getBlockType(node.name));
+            let rawIndex = 0;
 
-            if (block.name === 'core/missing') {
-                problems.push({ path, issue: `unregistered block ${block.attributes?.originalName}` });
-            } else if (block.isValid === false) {
-                const issues = (block.validationIssues ?? []).map((issue) => {
-                    const args = (issue.args ?? []).map((arg) => (typeof arg === 'string' ? arg : JSON.stringify(arg)));
-                    return args.length ? args.join(' ').replace(/%[so]/g, '').replace(/\s+/g, ' ').trim().slice(0, 600) : String(issue);
-                });
-                problems.push({ path, issue: issues.join(' | ') || 'invalid' });
-            }
+            list.forEach((block, index) => {
+                const path = `${trail}${trail ? ' > ' : ''}${block.name ?? 'freeform'}[${index}]`;
 
-            const before = raw[rawIndex++] ?? {};
-            rawFor.set(block, before);
-            const changed = Object.keys(before).filter((key) => canonical(before[key]) !== canonical(block.attributes?.[key]));
+                if (!block.name || block.name === freeform) {
+                    return;
+                }
 
-            if (changed.length) {
-                migrations.push({ path, keys: changed });
-            }
+                if (block.name === 'core/missing') {
+                    problems.push({ path, issue: `unregistered block ${block.attributes?.originalName}` });
+                } else if (block.isValid === false) {
+                    const issues = (block.validationIssues ?? []).map((issue) => {
+                        const args = (issue.args ?? []).map((arg) => (typeof arg === 'string' ? arg : JSON.stringify(arg)));
+                        return args.length ? args.join(' ').replace(/%[so]/g, '').replace(/\s+/g, ' ').trim().slice(0, 600) : String(issue);
+                    });
+                    problems.push({ path, issue: issues.join(' | ') || 'invalid' });
+                }
 
-            walk(block.innerBlocks ?? [], path);
-        });
+                const node = rawNodes[rawIndex++] ?? { attrs: {}, children: [] };
+                const before = node.attrs ?? {};
+                rawFor.set(block, node.attrs);
+                const changed = Object.keys(before).filter((key) => canonical(before[key]) !== canonical(block.attributes?.[key]));
 
-        walk(blocks, '');
+                if (changed.length) {
+                    migrations.push({ path, keys: changed });
+                }
+
+                walk(block.innerBlocks ?? [], node.children, path);
+            });
+        };
+
+        walk(blocks, rawTree.children, '');
 
         // parse() drops blocks whose type isn't registered, so check every
         // name in the raw markup as well.
@@ -206,27 +244,36 @@ try {
         // read from the HTML, then save it through the block's own save().
         // Hand-written HTML then never has to match save() exactly.
         if (rebuild) {
-            // Comment-stored attributes come only from the comment; only
-            // attributes the block sources from its HTML (text, links) come
-            // from parse(). For a block that failed validation, parse()
-            // folds stray root classes into `className`, so trusting its
-            // comment attributes would carry broken markup forward.
+            // Start from what parse() read (HTML-sourced text, defaults, and
+            // values a deprecation renamed into current keys), then let the
+            // comment win for the current, comment-stored keys it sets. A
+            // block that failed validation has its stray root classes folded
+            // into `className`; drop that unless the comment sets it.
             const recreate = (block) => {
-                const schema = getBlockType(block.name)?.attributes ?? {};
-                const fromHtml = Object.fromEntries(
-                    Object.entries(block.attributes ?? {}).filter(([key]) => schema[key]?.source !== undefined),
-                );
+                if (!block.name || block.name === freeform) {
+                    return block;
+                }
 
-                return createBlock(
-                    block.name,
-                    { ...fromHtml, ...(rawFor.get(block) ?? {}) },
-                    (block.innerBlocks ?? []).map(recreate),
-                );
+                const schema = getBlockType(block.name)?.attributes ?? {};
+                const comment = rawFor.get(block) ?? {};
+                const attributes = { ...(block.attributes ?? {}) };
+
+                if (block.isValid === false && !('className' in comment)) {
+                    delete attributes.className;
+                }
+
+                for (const [key, value] of Object.entries(comment)) {
+                    if (key in schema && schema[key]?.source === undefined) {
+                        attributes[key] = value;
+                    }
+                }
+
+                return createBlock(block.name, attributes, (block.innerBlocks ?? []).map(recreate));
             };
             const rebuilt = blocks.map(recreate);
 
             return {
-                problems: problems.filter((problem) => problem.issue.startsWith('unregistered')),
+                problems: problems.filter((problem) => problem.blocking || problem.issue.startsWith('unregistered')),
                 migrations: [],
                 serialized: serialize(rebuilt),
                 count: rebuilt.length,
@@ -260,7 +307,9 @@ if (values.out && resolve(values.out) === file) {
 
 if (values.write) {
     if (result.problems.length || result.migrations.length) {
-        console.error('Not written: fix the invalid or migrated blocks first (or pass --rebuild).');
+        console.error(values.rebuild
+            ? 'Not written: --rebuild cannot recover unreadable comment JSON or unregistered blocks.'
+            : 'Not written: fix the invalid or migrated blocks first (or pass --rebuild).');
         process.exit(1);
     }
 

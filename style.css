@@ -314,7 +314,7 @@ body {
     margin-left: 8px;
     font-family: var(--wp--preset--font-family--mono);
     font-size: 12px;
-    color: var(--wp--preset--color--text-subtle);
+    color: var(--wp--preset--color--text-muted);
 }
 /* Design terminal: Space Mono 13/1.85 with 22px padding. The block prints a
    newline after every line inside the <pre>, so inline lines get exactly
@@ -355,9 +355,12 @@ body {
 .ap-terminal__line--success {
     padding-left: 2ch;
 }
+/* The design paints these in text-subtle, but at 12-13px that is 3.0:1 on
+   the terminal's surface (3.7:1 on the title bar); text-muted meets WCAG
+   AA's 4.5:1 on both. */
 .ap-terminal__line--comment,
 .ap-terminal__line--output {
-    color: var(--wp--preset--color--text-subtle);
+    color: var(--wp--preset--color--text-muted);
 }
 .ap-terminal__line--success,
 .ap-terminal__tick {
