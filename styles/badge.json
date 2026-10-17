@@ -7,7 +7,7 @@
     "styles": {
         "color": { "background": "var:preset|color|surface-2", "text": "var:preset|color|text" },
         "border": { "radius": "999px" },
-        "spacing": { "padding": { "top": "4px", "right": "10px", "bottom": "4px", "left": "10px" } },
-        "typography": { "fontSize": "12px", "fontWeight": "600", "lineHeight": "1", "letterSpacing": "0.01em" }
+        "spacing": { "padding": { "top": "0.25rem", "right": "0.625rem", "bottom": "0.25rem", "left": "0.625rem" } },
+        "typography": { "fontSize": "0.75rem", "fontWeight": "600", "lineHeight": "1", "letterSpacing": "0.01em" }
     }
 }
