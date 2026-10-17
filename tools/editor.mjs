@@ -291,6 +291,24 @@ for (const migration of result.migrations) {
     console.error(`MIGRATED ${migration.path}\n  a deprecation rewrote: ${migration.keys.join(', ')} (check the serialized markup before keeping it)`);
 }
 
+// --rebuild re-saves invalid blocks from what parse() read, and for a block
+// whose saved HTML no longer matches its attributes that can be the block's
+// whole root element (a paragraph's `content` becomes `<p …>text</p>`, saved
+// as `<p><p>…</p></p>`, which the next parse reads as empty). Refuse to keep
+// a rebuild that changes the pattern's visible text.
+const visibleText = (html) => html
+    .replace(/<!--[\s\S]*?-->/g, ' ')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+if (values.rebuild && visibleText(markup) !== visibleText(result.serialized)) {
+    result.problems.push({
+        path: '(pattern)',
+        issue: 'the rebuild changed the visible text, probably by nesting a block\'s stale root element in its content. Update the saved HTML with the attributes instead of rebuilding.',
+    });
+}
+
 for (const problem of result.problems) {
     console.error(`INVALID ${problem.path}\n  ${problem.issue}`);
 }

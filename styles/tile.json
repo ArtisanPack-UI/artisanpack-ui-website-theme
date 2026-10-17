@@ -6,6 +6,6 @@
     "blockTypes": ["artisanpack/icon"],
     "styles": {
         "border": { "radius": "14px" },
-        "spacing": { "padding": "17px" }
+        "spacing": { "padding": "1.0625rem" }
     }
 }

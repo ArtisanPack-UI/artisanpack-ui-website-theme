@@ -27,6 +27,7 @@
                 { "slug": "on-secondary",   "name": "On Secondary",   "color": "#0B1120" },
                 { "slug": "on-accent",      "name": "On Accent",      "color": "#0B1120" },
                 { "slug": "on-gradient",    "name": "On Gradient",    "color": "#000000" },
+                { "slug": "on-media",       "name": "On Media",       "color": "rgba(255, 255, 255, 0.82)" },
                 { "slug": "base",           "name": "Base",           "color": "#111827" },
                 { "slug": "section",        "name": "Section",        "color": "#1F2937" },
                 { "slug": "surface",        "name": "Surface",        "color": "#1F2937" },
@@ -163,9 +164,9 @@
                 { "slug": "80",        "name": "2X-Large",   "size": "4rem"    },
                 { "slug": "90",        "name": "3X-Large",   "size": "6rem"    },
                 { "slug": "100",       "name": "4X-Large",   "size": "7.5rem"  },
-                { "slug": "grid",      "name": "Grid gap",   "size": "22px"    },
-                { "slug": "gutter",    "name": "Gutter",     "size": "24px"    },
-                { "slug": "title-gap", "name": "Title gap",  "size": "56px"    },
+                { "slug": "grid",      "name": "Grid gap",   "size": "1.375rem" },
+                { "slug": "gutter",    "name": "Gutter",     "size": "1.5rem"   },
+                { "slug": "title-gap", "name": "Title gap",  "size": "3.5rem"   },
                 { "slug": "section",   "name": "Section",    "size": "clamp(4.5rem, 3.1364rem + 5.8182vw, 7.5rem)" }
             ],
             "customSpacingSize": true,
@@ -243,7 +244,7 @@
                     "letterSpacing": "0.01em"
                 },
                 "spacing": {
-                    "padding": { "top": "13px", "bottom": "13px", "left": "18px", "right": "18px" }
+                    "padding": { "top": "0.8125rem", "bottom": "0.8125rem", "left": "1.125rem", "right": "1.125rem" }
                 },
                 ":hover": {
                     "shadow": "var:preset|shadow|md"
@@ -282,7 +283,7 @@
             "artisanpack/card": {
                 "color": { "background": "var:preset|color|surface" },
                 "border": { "color": "var:preset|color|border-subtle", "style": "solid", "width": "3px", "radius": "12px" },
-                "spacing": { "padding": { "top": "32px", "bottom": "32px", "left": "32px", "right": "32px" } }
+                "spacing": { "padding": { "top": "2rem", "bottom": "2rem", "left": "2rem", "right": "2rem" } }
             }
         }
     },

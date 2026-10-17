@@ -16,6 +16,7 @@
                 { "slug": "on-secondary",   "name": "On Secondary",   "color": "#FFFFFF" },
                 { "slug": "on-accent",      "name": "On Accent",      "color": "#FFFFFF" },
                 { "slug": "on-gradient",    "name": "On Gradient",    "color": "#FFFFFF" },
+                { "slug": "on-media",       "name": "On Media",       "color": "#0B1120" },
                 { "slug": "base",           "name": "Base",           "color": "#F9FAFB" },
                 { "slug": "section",        "name": "Section",        "color": "#FFFFFF" },
                 { "slug": "surface",        "name": "Surface",        "color": "#FFFFFF" },

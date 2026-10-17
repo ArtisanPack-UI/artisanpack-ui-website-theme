@@ -75,7 +75,7 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 0.625rem;
     text-decoration: none;
     white-space: nowrap;
     transition:
@@ -114,7 +114,7 @@ body {
 .is-style-eyebrow {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 0.5rem;
 }
 
 .is-style-eyebrow::before {
@@ -158,11 +158,11 @@ body {
 .ap-clipboard {
     display: inline-flex;
     align-items: center;
-    gap: 12px;
+    gap: 0.75rem;
     max-width: 100%;
-    padding: 10px 12px 10px 16px;
+    padding: 0.625rem 0.75rem 0.625rem 1rem;
     font-family: var(--wp--preset--font-family--mono);
-    font-size: 14px;
+    font-size: 0.875rem;
     line-height: 1.4;
 }
 /* Box defaults sit at zero specificity so the Copy Command block's color,
@@ -219,7 +219,7 @@ body {
 /* The prompt sits 12px from the command, like the design's flex gap; the
    space character after it already covers 1ch of that. */
 .ap-clipboard .ap-clipboard__prompt {
-    margin-right: calc(12px - 1ch);
+    margin-right: calc(0.75rem - 1ch);
     color: var(--wp--preset--color--secondary);
 }
 .ap-clipboard .sr-only {
@@ -237,15 +237,15 @@ body {
     flex-shrink: 0;
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    margin-left: 4px;
-    padding: 6px 10px;
+    gap: 0.375rem;
+    margin-left: 0.25rem;
+    padding: 0.375rem 0.625rem;
     border: 0;
     border-radius: 3px;
     background: var(--wp--preset--gradient--brand-button);
     color: var(--wp--preset--color--on-gradient);
     font-family: var(--wp--preset--font-family--sans);
-    font-size: 12px;
+    font-size: 0.75rem;
     font-weight: 600;
     line-height: 1.4;
     cursor: pointer;
@@ -291,15 +291,15 @@ body {
     border-start-end-radius: inherit;
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 0 14px;
-    height: 40px;
+    gap: 0.5rem;
+    padding: 0 0.875rem;
+    height: 2.5rem;
     background: var(--wp--preset--color--surface-2);
     border-bottom: 1px solid var(--wp--preset--color--border);
 }
 .ap-terminal__dots {
     display: inline-flex;
-    gap: 7px;
+    gap: 0.4375rem;
 }
 .ap-terminal__dots span {
     width: 11px;
@@ -312,9 +312,9 @@ body {
 .ap-terminal__dots span:nth-child(2) { color: #FEBC2E; }
 .ap-terminal__dots span:nth-child(3) { color: #28C840; }
 .ap-terminal__label {
-    margin-left: 8px;
+    margin-left: 0.5rem;
     font-family: var(--wp--preset--font-family--mono);
-    font-size: 12px;
+    font-size: 0.75rem;
     color: var(--wp--preset--color--text-muted);
 }
 /* Design terminal: Space Mono 13/1.85 with 22px padding. The block prints a
@@ -322,9 +322,9 @@ body {
    one row each (and an empty row for a blank line) with no extra spacing. */
 .ap-terminal .ap-terminal__body {
     margin: 0;
-    padding: 22px;
+    padding: 1.375rem;
     font-family: var(--wp--preset--font-family--mono);
-    font-size: 13px;
+    font-size: 0.8125rem;
     line-height: 1.85;
     color: inherit;
     overflow: auto;
