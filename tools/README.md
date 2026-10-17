@@ -66,6 +66,29 @@ read the whole root element as the block's rich-text content and nest it
 visible text. To change attributes in bulk, edit the comment JSON and the
 matching inline `style` together, then validate without `--rebuild`.
 
+## Check contrast in dark and Light
+
+```bash
+node tools/contrast.mjs text-media-split pricing   # one or more rendered pages
+node tools/contrast.mjs pricing --modes=light --no-shot
+```
+
+Scans pages rendered by `tools/render.php` for text below WCAG AA (4.5:1,
+or 3:1 for large text), in the default (dark) variation and in Light.
+Light applies `styles/light.json`'s palette to `:root`, which is how the
+variation re-points the preset custom properties. Each Light pass also
+writes `theme-light-<width>.png` next to the other shots (`--no-shot`
+skips it).
+
+Each text node in `<main>` is measured against the pixels just outside
+its box on a screenshot, so text on gradients, media placeholders and
+glows counts too. When the text's own element has a border (a badge), the
+samples stay inside its padding box. Screen-reader text and `aria-hidden`
+subtrees are skipped. Failing texts are listed with their ratio, and the
+script exits 1 if there are any.
+
+Options: `--modes=dark,light` (default both), `--width=1440`, `--no-shot`.
+
 ## Night token block
 
 ```bash
