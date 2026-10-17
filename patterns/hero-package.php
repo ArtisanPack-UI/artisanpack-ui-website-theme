@@ -30,8 +30,8 @@
 <!-- /wp:artisanpack/group -->
 
 <!-- wp:artisanpack/group {"artisanpackFlex":{"container":{"enabled":{"base":true},"direction":{"base":"row"},"wrap":{"base":"wrap"},"alignItems":{"base":"center"}}},"style":{"spacing":{"blockGap":"0.625rem"}}} -->
-<div class="wp-block-artisanpack-group wp-block-group ap-flex ap-flex-row ap-flex-wrap ap-items-center"><!-- wp:artisanpack/paragraph {"backgroundColor":"primary-tint","textColor":"primary","className":"is-style-badge"} -->
-<p class="wp-block-paragraph is-style-badge has-primary-color has-primary-tint-background-color has-text-color has-background">v2.0.1</p>
+<div class="wp-block-artisanpack-group wp-block-group ap-flex ap-flex-row ap-flex-wrap ap-items-center"><!-- wp:artisanpack/paragraph {"backgroundColor":"primary-tint","textColor":"primary-text","className":"is-style-badge"} -->
+<p class="wp-block-paragraph is-style-badge has-primary-text-color has-primary-tint-background-color has-text-color has-background">v2.0.1</p>
 <!-- /wp:artisanpack/paragraph -->
 
 <!-- wp:artisanpack/paragraph {"className":"is-style-badge"} -->

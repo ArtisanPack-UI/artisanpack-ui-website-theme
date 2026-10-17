@@ -66,6 +66,19 @@ read the whole root element as the block's rich-text content and nest it
 visible text. To change attributes in bulk, edit the comment JSON and the
 matching inline `style` together, then validate without `--rebuild`.
 
+## Night token block
+
+```bash
+node tools/night-css.mjs          # regenerate style.css §6 from theme.json
+node tools/night-css.mjs --check  # exit 1 if it's stale
+```
+
+The Night Group style keeps the dark palette inside a band in every
+variation. `style.css` §6 re-declares, on `.is-style-night`, every palette
+colour that differs in `styles/light.json`, plus every colour, gradient and
+shadow preset that references another preset. Run it after changing any of
+those in theme.json.
+
 ## Requirements
 
 | What | Default | Override |

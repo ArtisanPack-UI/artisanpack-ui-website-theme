@@ -21,6 +21,7 @@
                 { "slug": "secondary",      "name": "Secondary",      "color": "#00E5FF" },
                 { "slug": "accent",         "name": "Accent",         "color": "#E040FB" },
                 { "slug": "primary-tint",   "name": "Primary Tint",   "color": "color-mix(in srgb, var(--wp--preset--color--primary) 18%, transparent)" },
+                { "slug": "primary-text",   "name": "Primary Text",   "color": "#6B8FFF" },
                 { "slug": "secondary-tint", "name": "Secondary Tint", "color": "color-mix(in srgb, var(--wp--preset--color--secondary) 18%, transparent)" },
                 { "slug": "accent-tint",    "name": "Accent Tint",    "color": "color-mix(in srgb, var(--wp--preset--color--accent) 20%, transparent)" },
                 { "slug": "on-primary",     "name": "On Primary",     "color": "#FFFFFF" },
@@ -28,6 +29,7 @@
                 { "slug": "on-accent",      "name": "On Accent",      "color": "#0B1120" },
                 { "slug": "on-gradient",    "name": "On Gradient",    "color": "#000000" },
                 { "slug": "on-media",       "name": "On Media",       "color": "rgba(255, 255, 255, 0.82)" },
+                { "slug": "on-neon",        "name": "On Neon",        "color": "#0B1120" },
                 { "slug": "base",           "name": "Base",           "color": "#111827" },
                 { "slug": "section",        "name": "Section",        "color": "#1F2937" },
                 { "slug": "surface",        "name": "Surface",        "color": "#1F2937" },
@@ -73,7 +75,9 @@
                 { "slug": "starfield-glow", "name": "Starfield + glow (on ink)", "gradient": "radial-gradient(90% 70% at 50% -10%, color-mix(in srgb, var(--wp--preset--color--primary) 22%, transparent), transparent 60%), radial-gradient(70% 60% at 80% 110%, color-mix(in srgb, var(--wp--preset--color--accent) 18%, transparent), transparent 60%), radial-gradient(1.5px 1.5px at 20% 30%, rgba(255,255,255,0.55), transparent 60%), radial-gradient(1.5px 1.5px at 75% 15%, rgba(255,255,255,0.40), transparent 60%), radial-gradient(1px 1px at 40% 70%, rgba(255,255,255,0.45), transparent 60%), radial-gradient(1px 1px at 88% 55%, rgba(0,229,255,0.55), transparent 60%), radial-gradient(1.5px 1.5px at 60% 85%, rgba(255,255,255,0.35), transparent 60%), radial-gradient(1px 1px at 10% 80%, rgba(224,64,251,0.50), transparent 60%), radial-gradient(1px 1px at 50% 45%, rgba(255,255,255,0.30), transparent 60%), var(--wp--preset--color--ink)" },
                 { "slug": "wash-corners", "name": "Corner washes (on base)", "gradient": "radial-gradient(70% 60% at 100% 0%, color-mix(in srgb, var(--wp--preset--color--accent) 12%, transparent), transparent 55%), radial-gradient(70% 60% at 0% 100%, color-mix(in srgb, var(--wp--preset--color--primary) 12%, transparent), transparent 55%), var(--wp--preset--color--base)" },
                 { "slug": "wash-diagonal", "name": "Diagonal washes (on ink)", "gradient": "radial-gradient(70% 70% at 0% 0%, color-mix(in srgb, var(--wp--preset--color--primary) 18%, transparent), transparent 55%), radial-gradient(70% 70% at 100% 100%, color-mix(in srgb, var(--wp--preset--color--accent) 16%, transparent), transparent 55%), var(--wp--preset--color--ink)" },
-                { "slug": "neon-glow", "name": "Neon + highlight", "gradient": "radial-gradient(80% 120% at 50% -10%, rgba(255,255,255,0.18), transparent 60%), var(--wp--preset--gradient--neon)" }
+                { "slug": "neon-glow", "name": "Neon + highlight", "gradient": "radial-gradient(80% 120% at 50% -10%, rgba(255,255,255,0.18), transparent 60%), var(--wp--preset--gradient--neon)" },
+                { "slug": "neon-gloss", "name": "Neon + gloss (CTA panel)", "gradient": "radial-gradient(80% 120% at 50% -20%, rgba(255,255,255,0.22), transparent 60%), var(--wp--preset--gradient--neon)" },
+                { "slug": "starfield-wash", "name": "Starfield + top wash (CTA)", "gradient": "radial-gradient(80% 70% at 50% -10%, color-mix(in srgb, var(--wp--preset--color--primary) 20%, transparent), transparent 60%), radial-gradient(1.5px 1.5px at 20% 30%, rgba(255,255,255,0.55), transparent 60%), radial-gradient(1.5px 1.5px at 75% 15%, rgba(255,255,255,0.40), transparent 60%), radial-gradient(1px 1px at 40% 70%, rgba(255,255,255,0.45), transparent 60%), radial-gradient(1px 1px at 88% 55%, rgba(0,229,255,0.55), transparent 60%), radial-gradient(1.5px 1.5px at 60% 85%, rgba(255,255,255,0.35), transparent 60%), radial-gradient(1px 1px at 10% 80%, rgba(224,64,251,0.50), transparent 60%), radial-gradient(1px 1px at 50% 45%, rgba(255,255,255,0.30), transparent 60%), var(--wp--preset--color--ink)" }
             ]
         },
         "shadow": {

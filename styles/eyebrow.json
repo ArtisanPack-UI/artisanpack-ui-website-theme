@@ -5,7 +5,7 @@
     "title": "Eyebrow",
     "blockTypes": ["artisanpack/paragraph"],
     "styles": {
-        "color": { "text": "var:preset|color|primary" },
+        "color": { "text": "var:preset|color|primary-text" },
         "typography": {
             "fontSize": "var:preset|font-size|eyebrow",
             "fontWeight": "600",
