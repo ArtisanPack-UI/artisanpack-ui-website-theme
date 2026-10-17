@@ -27,6 +27,9 @@
  *      table's featured column.
  *   9. The Scroll strip variation's scroll-snap (no block exposes
  *      `scroll-snap-*`).
+ *  10. The FAQ variation's accordion toggle chip, click-target padding
+ *      and open-panel border (the renderer draws these itself), and the
+ *      FAQ Search block's field.
  *
  * Font Awesome is enqueued from Theme.php. Editor-only overrides live in
  * editor.css.
@@ -746,12 +749,121 @@ body {
     scroll-snap-align: start;
 }
 
+/* ─── 10. FAQ ───────────────────────────────────────────────────────── */
+
+/* FAQ (styles/faq.json) on Accordions. Each panel's box, title type and
+   answer padding are native; the renderer draws the toggle icon and the
+   click target itself, so only these are styled here. */
+
+/* The title's own padding sits outside the click target, so the padding
+   goes on the target and the icon is placed against it. */
+.is-style-faq .ap-accordion__title {
+    padding: 0;
+}
+
+.is-style-faq .ap-accordion__title-content {
+    padding: 1.125rem 3.875rem 1.125rem 1.25rem;
+}
+
+.is-style-faq .ap-accordion__title-content:focus-visible {
+    outline: 2px solid var(--wp--preset--color--primary-text);
+    outline-offset: -2px;
+    border-radius: 9px;
+}
+
+/* The design's "+" chip, which turns into "×" when open. */
+.is-style-faq .ap-accordion__icon--plus-minus {
+    right: 1.25rem;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--wp--preset--color--surface-2);
+    color: var(--wp--preset--color--text-muted);
+    transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.is-style-faq .ap-accordion__icon--plus-minus::before,
+.is-style-faq .ap-accordion__icon--plus-minus::after {
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 1.5px;
+    margin: -0.75px 0 0 -5px;
+    border-radius: 1px;
+}
+
+.is-style-faq .ap-accordion__icon--plus-minus::before {
+    width: 1.5px;
+    height: 10px;
+    margin: -5px 0 0 -0.75px;
+}
+
+.is-style-faq .ap-accordion__title-content[aria-expanded="true"] ~ .ap-accordion__icon--plus-minus {
+    background: var(--wp--preset--gradient--brand);
+    color: #fff;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.is-style-faq .ap-accordion__title-content[aria-expanded="true"] ~ .ap-accordion__icon--plus-minus::before {
+    transform: none;
+}
+
+/* A panel on the subtle border turns primary while open; panels given
+   their own colour (FAQ Boxed) keep it. */
+.is-style-faq .ap-accordion.has-border-subtle-border-color:has(> .ap-accordion__title [aria-expanded="true"]) {
+    border-color: var(--wp--preset--color--primary) !important;
+}
+
+/* FAQ Search (the plugin's `artisanpack/faq-search`) renders its own field,
+   which no support reaches: the design's search field, with the icon
+   inside it and the same focus ring as the Forms block's fields (§7). */
+.ap-faq-search__field {
+    position: relative;
+}
+
+.ap-faq-search__icon {
+    position: absolute;
+    top: 50%;
+    left: 1.125rem;
+    transform: translateY(-50%);
+    color: var(--wp--preset--color--text-muted);
+    pointer-events: none;
+}
+
+.ap-faq-search__input {
+    width: 100%;
+    padding: 0.875rem 1rem 0.875rem 2.75rem;
+    border: 2px solid var(--wp--preset--color--border);
+    border-radius: 5px;
+    background-color: var(--wp--preset--color--surface);
+    color: var(--wp--preset--color--text);
+    font: inherit;
+    font-size: 1rem;
+}
+
+.ap-faq-search__input::placeholder {
+    color: var(--wp--preset--color--text-muted);
+    opacity: 1;
+}
+
+.ap-faq-search__input:focus-visible {
+    outline: 2px solid var(--wp--preset--color--secondary);
+    outline-offset: 2px;
+}
+
+.ap-faq-search__empty {
+    margin: 2rem 0 0;
+    color: var(--wp--preset--color--text-muted);
+    text-align: center;
+}
+
 /* ─── Reduced motion ─────────────────────────────────────────────────── */
 
 @media (prefers-reduced-motion: reduce) {
     .wp-block-button__link,
     .wp-element-button,
-    .ap-clipboard__button {
+    .ap-clipboard__button,
+    .is-style-faq .ap-accordion__icon {
         transition: none;
     }
 
