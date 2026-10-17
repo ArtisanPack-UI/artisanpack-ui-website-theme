@@ -80,32 +80,6 @@
 <!-- /wp:artisanpack/column --></div>
 <!-- /wp:artisanpack/columns -->
 
-<!-- wp:artisanpack/group {"className":"ap-newsletter-box","style":{"spacing":{"margin":{"top":"var:preset|spacing|80"},"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80","left":"var:preset|spacing|60","right":"var:preset|spacing|60"}},"border":{"radius":"24px"}},"layout":{"type":"constrained","contentSize":"640px"}} -->
-<div class="wp-block-artisanpack-group wp-block-group is-layout-constrained ap-newsletter-box" style="border-radius:24px;margin-top:var(--wp--preset--spacing--80);padding-top:var(--wp--preset--spacing--80);padding-right:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--80);padding-left:var(--wp--preset--spacing--60)">
-
-<!-- wp:artisanpack/heading {"level":2,"textAlign":"center","className":"ap-newsletter-box__title","style":{"typography":{"fontFamily":"var:preset|font-family|display","fontWeight":"700","letterSpacing":"-0.02em","lineHeight":"1.1"}}} -->
-<h2 class="wp-block-heading has-text-align-center ap-newsletter-box__title" style="font-family:var(--wp--preset--font-family--display);font-weight:700;letter-spacing:-0.02em;line-height:1.1">Stay in the loop</h2>
-<!-- /wp:artisanpack/heading -->
-
-<!-- wp:artisanpack/paragraph {"align":"center","className":"ap-newsletter-box__lede","style":{"typography":{"lineHeight":"1.6"}}} -->
-<p class="has-text-align-center ap-newsletter-box__lede" style="line-height:1.6">Monthly tips, tutorials and updates from the ArtisanPack UI Dispatch. No spam, unsubscribe anytime.</p>
-<!-- /wp:artisanpack/paragraph -->
-
-<!-- wp:artisanpack/html {"className":"ap-newsletter-box__form"} -->
-<form class="ap-newsletter-box__form" action="#" method="post">
-	<label class="screen-reader-text" for="ap-newsletter-email">Email address</label>
-	<input id="ap-newsletter-email" type="email" name="email" placeholder="you@studio.com" autocomplete="email" required />
-	<button type="submit">Subscribe to the newsletter</button>
-</form>
-<!-- /wp:artisanpack/html -->
-
-<!-- wp:artisanpack/paragraph {"align":"center","className":"ap-newsletter-box__fineprint","style":{"typography":{"fontSize":"var:preset|font-size|xsmall"}}} -->
-<p class="has-text-align-center ap-newsletter-box__fineprint" style="font-size:var(--wp--preset--font-size--xsmall)">A monthly newsletter covering what's new in the ecosystem, practical tips and upcoming features.</p>
-<!-- /wp:artisanpack/paragraph -->
-
-</div>
-<!-- /wp:artisanpack/group -->
-
 <!-- wp:artisanpack/group {"className":"ap-related","style":{"spacing":{"margin":{"top":"var:preset|spacing|80"}}}} -->
 <div class="wp-block-artisanpack-group wp-block-group ap-related" style="margin-top:var(--wp--preset--spacing--80)">
 <!-- wp:artisanpack/heading {"level":6,"className":"ap-related__eyebrow","textColor":"text-link","style":{"typography":{"fontFamily":"var:preset|font-family|mono","fontSize":"var:preset|font-size|xsmall","letterSpacing":"0.16em","textTransform":"uppercase","fontWeight":"400"}}} -->
@@ -138,5 +112,7 @@
 </article>
 <!-- /wp:artisanpack/group --></main>
 <!-- /wp:artisanpack/group -->
+
+<!-- wp:template-part {"slug":"newsletter-cta","theme":"artisanpack-ui"} /-->
 
 <!-- wp:template-part {"slug":"footer","theme":"artisanpack-ui","tagName":"footer"} /-->

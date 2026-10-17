@@ -8,8 +8,8 @@
  * Description: Starfield hero leading with social proof — eyebrow, gradient title, dual CTAs, install command, and a stat strip.
  */
 ?>
-<!-- wp:artisanpack/group {"tagName":"section","gradient":"starfield-glow","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|section","bottom":"var:preset|spacing|section","left":"var:preset|spacing|gutter","right":"var:preset|spacing|gutter"},"blockGap":"2.25rem"}},"layout":{"type":"constrained","contentSize":"900px"}} -->
-<section class="wp-block-artisanpack-group alignfull wp-block-group has-starfield-glow-gradient-background has-background" style="padding-top:var(--wp--preset--spacing--section);padding-right:var(--wp--preset--spacing--gutter);padding-bottom:var(--wp--preset--spacing--section);padding-left:var(--wp--preset--spacing--gutter)"><!-- wp:artisanpack/group {"tagName":"header","style":{"spacing":{"blockGap":"1.25rem"}},"layout":{"type":"constrained","contentSize":"760px"}} -->
+<!-- wp:artisanpack/group {"tagName":"section","className":"is-style-night","gradient":"starfield-glow","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|section","bottom":"var:preset|spacing|section","left":"var:preset|spacing|gutter","right":"var:preset|spacing|gutter"},"blockGap":"2.25rem"}},"layout":{"type":"constrained","contentSize":"900px"}} -->
+<section class="wp-block-artisanpack-group alignfull wp-block-group is-style-night has-starfield-glow-gradient-background has-background" style="padding-top:var(--wp--preset--spacing--section);padding-right:var(--wp--preset--spacing--gutter);padding-bottom:var(--wp--preset--spacing--section);padding-left:var(--wp--preset--spacing--gutter)"><!-- wp:artisanpack/group {"tagName":"header","style":{"spacing":{"blockGap":"1.25rem"}},"layout":{"type":"constrained","contentSize":"760px"}} -->
 <header class="wp-block-artisanpack-group wp-block-group"><!-- wp:artisanpack/paragraph {"className":"has-text-align-center wp-block-paragraph is-style-eyebrow","style":{"typography":{"textAlign":"center"}}} -->
 <p class="has-text-align-center wp-block-paragraph is-style-eyebrow">ArtisanPack UI</p>
 <!-- /wp:artisanpack/paragraph -->

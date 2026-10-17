@@ -35,11 +35,11 @@
 <!-- /wp:artisanpack/button --></div>
 <!-- /wp:artisanpack/buttons -->
 
-<!-- wp:artisanpack/copy-command {"command":"composer require artisanpack-ui/livewire-ui-components","backgroundColor":"ink"} /--></div>
+<!-- wp:artisanpack/copy-command {"className":"is-style-night","command":"composer require artisanpack-ui/livewire-ui-components","backgroundColor":"ink"} /--></div>
 <!-- /wp:artisanpack/column -->
 
 <!-- wp:artisanpack/column {"verticalAlignment":"center"} -->
-<div class="wp-block-artisanpack-column wp-block-column is-vertically-aligned-center"><!-- wp:artisanpack/terminal {"lines":"$ composer require artisanpack-ui/livewire-ui-components\n# Using version ^2.0 for artisanpack-ui/livewire-ui-components\n# ✓ Installed\n\n$ php artisan artisanpack:install\n✓ Published config \u0026 assets\n✓ Ready to build"} /--></div>
+<div class="wp-block-artisanpack-column wp-block-column is-vertically-aligned-center"><!-- wp:artisanpack/terminal {"className":"is-style-night","lines":"$ composer require artisanpack-ui/livewire-ui-components\n# Using version ^2.0 for artisanpack-ui/livewire-ui-components\n# ✓ Installed\n\n$ php artisan artisanpack:install\n✓ Published config \u0026 assets\n✓ Ready to build"} /--></div>
 <!-- /wp:artisanpack/column --></div>
 <!-- /wp:artisanpack/columns --></section>
 <!-- /wp:artisanpack/group -->
