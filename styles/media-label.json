@@ -1,0 +1,17 @@
+{
+    "$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+    "version": 3,
+    "slug": "media-label",
+    "title": "Media label",
+    "blockTypes": ["artisanpack/paragraph"],
+    "styles": {
+        "color": { "text": "var:preset|color|on-media" },
+        "typography": {
+            "fontFamily": "var:preset|font-family|mono",
+            "fontSize": "0.75rem",
+            "lineHeight": "1.4",
+            "letterSpacing": "0.06em",
+            "textTransform": "uppercase"
+        }
+    }
+}
