@@ -45,6 +45,7 @@ const { values, positionals } = parseArgs({
     allowPositionals: true,
     options: {
         write: { type: 'boolean', default: false },
+        rebuild: { type: 'boolean', default: false },
         out: { type: 'string' },
     },
 });
@@ -135,10 +136,32 @@ let result;
 try {
     const page = await openEditor();
 
-    result = await page.evaluate((input) => {
-        const { parse, serialize, getBlockType } = window.ApSiteEditor.libs.blocks;
+    result = await page.evaluate(({ input, rebuild }) => {
+        const { parse, serialize, getBlockType, createBlock } = window.ApSiteEditor.libs.blocks;
         const blocks = parse(input);
         const problems = [];
+        const migrations = [];
+
+        // Raw comment attributes, in document (pre-)order, to spot blocks a
+        // deprecation silently migrated: parse() reports those as valid
+        // even when attributes were dropped or rewritten.
+        const raw = [...input.matchAll(/<!--\s+wp:([a-z0-9-]+(?:\/[a-z0-9-]+)?)(\s+(\{.*?\}))?\s*\/?-->/g)]
+            .filter((match) => getBlockType(match[1].includes('/') ? match[1] : `core/${match[1]}`))
+            .map((match) => {
+                try {
+                    return match[3] ? JSON.parse(match[3]) : {};
+                } catch {
+                    // parse() silently drops attributes it can't read.
+                    problems.push({ path: match[1], issue: `invalid comment JSON: ${match[3].slice(0, 120)}` });
+
+                    return {};
+                }
+            });
+        let rawIndex = 0;
+        const rawFor = new Map();
+        const canonical = (value) => JSON.stringify(value, (key, inner) => (inner && typeof inner === 'object' && !Array.isArray(inner)
+            ? Object.fromEntries(Object.entries(inner).sort(([a], [b]) => a.localeCompare(b)))
+            : inner));
 
         const walk = (list, trail) => list.forEach((block, index) => {
             const path = `${trail}${trail ? ' > ' : ''}${block.name ?? 'freeform'}[${index}]`;
@@ -151,6 +174,14 @@ try {
                     return args.length ? args.join(' ').replace(/%[so]/g, '').replace(/\s+/g, ' ').trim().slice(0, 600) : String(issue);
                 });
                 problems.push({ path, issue: issues.join(' | ') || 'invalid' });
+            }
+
+            const before = raw[rawIndex++] ?? {};
+            rawFor.set(block, before);
+            const changed = Object.keys(before).filter((key) => canonical(before[key]) !== canonical(block.attributes?.[key]));
+
+            if (changed.length) {
+                migrations.push({ path, keys: changed });
             }
 
             walk(block.innerBlocks ?? [], path);
@@ -170,10 +201,35 @@ try {
             }
         }
 
-        return { problems, serialized: serialize(blocks), count: blocks.length };
-    }, markup);
+        // --rebuild: recreate every block from its comment attributes (they
+        // win over whatever a deprecation migrated) plus the content parse()
+        // read from the HTML, then save it through the block's own save().
+        // Hand-written HTML then never has to match save() exactly.
+        if (rebuild) {
+            const recreate = (block) => createBlock(
+                block.name,
+                { ...block.attributes, ...(rawFor.get(block) ?? {}) },
+                (block.innerBlocks ?? []).map(recreate),
+            );
+            const rebuilt = blocks.map(recreate);
+
+            return {
+                problems: problems.filter((problem) => problem.issue.startsWith('unregistered')),
+                migrations: [],
+                serialized: serialize(rebuilt),
+                count: rebuilt.length,
+                rebuilt: true,
+            };
+        }
+
+        return { problems, migrations, serialized: serialize(blocks), count: blocks.length };
+    }, { input: markup, rebuild: values.rebuild });
 } finally {
     await browser.close();
+}
+
+for (const migration of result.migrations) {
+    console.error(`MIGRATED ${migration.path}\n  a deprecation rewrote: ${migration.keys.join(', ')} (check the serialized markup before keeping it)`);
 }
 
 for (const problem of result.problems) {
@@ -191,8 +247,8 @@ if (values.out && resolve(values.out) === file) {
 }
 
 if (values.write) {
-    if (result.problems.length) {
-        console.error('Not written: fix the invalid blocks first.');
+    if (result.problems.length || result.migrations.length) {
+        console.error('Not written: fix the invalid or migrated blocks first (or pass --rebuild).');
         process.exit(1);
     }
 
