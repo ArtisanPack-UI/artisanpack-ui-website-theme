@@ -506,14 +506,19 @@ body {
     gap: 0.75rem;
 }
 
+/* Each item stays a block, so bold, links or emphasis flow as one line of
+   text; the icon sits in the start padding, centred on the first line. */
 .wp-block-list.is-style-checks > li {
-    display: flex;
-    align-items: center;
-    gap: 0.625rem;
+    position: relative;
+    padding-inline-start: calc(1em + 0.625rem);
 }
 
-.wp-block-list.is-style-checks > li > .ap-inline-icon {
-    flex-shrink: 0;
+.wp-block-list.is-style-checks > li > .ap-inline-icon:first-child {
+    position: absolute;
+    inset-inline-start: 0;
+    /* The icon sets line-height: 1; take the item's so 1lh is its line. */
+    line-height: inherit;
+    top: calc(0.5lh - 0.5em);
 }
 
 /* Pill (styles/pill.json): Tabs builds its tab links at render, so no
