@@ -58,6 +58,14 @@ site. Exits 1 on any invalid block; `--write` refuses until all are valid.
 Hand-write a pattern, then `--write` it: the file ends up exactly as the
 editor would save it, which is what §11 step 3 of the rebuild report asks for.
 
+`--rebuild` recreates every block from its comment attributes, so hand-written
+HTML doesn't have to match `save()`. Use it for new markup, not for bulk edits
+to existing patterns: on a block whose saved HTML has gone stale, the editor can
+read the whole root element as the block's rich-text content and nest it
+(`<p><p>…</p></p>`). The tool refuses a rebuild that changes the pattern's
+visible text. To change attributes in bulk, edit the comment JSON and the
+matching inline `style` together, then validate without `--rebuild`.
+
 ## Requirements
 
 | What | Default | Override |
