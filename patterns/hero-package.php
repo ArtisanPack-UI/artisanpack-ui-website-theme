@@ -10,7 +10,7 @@
 ?>
 <!-- wp:artisanpack/group {"tagName":"section","gradient":"wash-diagonal","align":"full","style":{"spacing":{"padding":{"top":"80px","bottom":"80px","left":"var:preset|spacing|gutter","right":"var:preset|spacing|gutter"}},"border":{"bottom":{"color":"var:preset|color|border-subtle","width":"1px","style":"solid"}}},"layout":{"type":"constrained","contentSize":"1200px"}} -->
 <section class="wp-block-artisanpack-group alignfull wp-block-group has-wash-diagonal-gradient-background has-background" style="border-bottom-color:var(--wp--preset--color--border-subtle);border-bottom-style:solid;border-bottom-width:1px;padding-top:80px;padding-right:var(--wp--preset--spacing--gutter);padding-bottom:80px;padding-left:var(--wp--preset--spacing--gutter)"><!-- wp:artisanpack/columns {"verticalAlignment":"center","style":{"spacing":{"blockGap":{"left":"56px","top":"48px"}}}} -->
-<div class="wp-block-artisanpack-columns wp-block-columns are-vertically-aligned-center"><!-- wp:artisanpack/column {"verticalAlignment":"center","width":"55%","style":{"spacing":{"blockGap":"24px"}},"responsive":{"width":{"mobile":"100%"}}} -->
+<div class="wp-block-artisanpack-columns wp-block-columns are-vertically-aligned-center"><!-- wp:artisanpack/column {"verticalAlignment":"center","width":"55%","style":{"spacing":{"blockGap":"24px"}}} -->
 <div class="wp-block-artisanpack-column wp-block-column is-vertically-aligned-center" style="flex-basis:55%"><!-- wp:artisanpack/paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"13px"},"elements":{"link":{"color":{"text":"var:preset|color|text-muted"},"typography":{"textDecoration":"none"}}}}} -->
 <p class="wp-block-paragraph has-text-muted-color has-text-color has-link-color" style="font-size:13px"><a href="/packages">Packages</a> <span data-icon-set="fas" data-icon-name="chevron-right" style="font-size:0.7em;color:var(--wp--preset--color--text-subtle)" aria-hidden="true" class="ap-inline-icon"><svg aria-hidden="true" viewBox="0 0 24 24"></svg></span> <span style="color:var(--wp--preset--color--text)">Components</span></p>
 <!-- /wp:artisanpack/paragraph -->
@@ -56,7 +56,7 @@
 <!-- /wp:artisanpack/buttons --></div>
 <!-- /wp:artisanpack/column -->
 
-<!-- wp:artisanpack/column {"verticalAlignment":"center","width":"45%","responsive":{"width":{"mobile":"100%"}}} -->
+<!-- wp:artisanpack/column {"verticalAlignment":"center","width":"45%"} -->
 <div class="wp-block-artisanpack-column wp-block-column is-vertically-aligned-center" style="flex-basis:45%"><!-- wp:artisanpack/terminal {"lines":"$ composer require artisanpack-ui/livewire-ui-components\n# Using version ^2.0 for artisanpack-ui/livewire-ui-components\n# ✓ Installed\n\n$ php artisan vendor:publish \u002d\u002dtag=artisanpack-config\n✓ Published config \u0026 assets\n✓ Ready to build"} /--></div>
 <!-- /wp:artisanpack/column --></div>
 <!-- /wp:artisanpack/columns --></section>
