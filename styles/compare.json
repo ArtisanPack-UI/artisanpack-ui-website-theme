@@ -1,0 +1,10 @@
+{
+    "$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+    "version": 3,
+    "slug": "compare",
+    "title": "Compare",
+    "blockTypes": ["artisanpack/table"],
+    "styles": {
+        "typography": { "fontSize": "0.90625rem" }
+    }
+}
