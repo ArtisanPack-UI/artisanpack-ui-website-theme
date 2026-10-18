@@ -11,9 +11,14 @@
  *             `php tools/render.php` printed. Defaults to
  *             https://<app>/_ap-render/<name>.html.
  *   --design  A component exported by the design bundle (`FeaturesBento`),
- *             rendered as `<Component {...props} />`, or a .jsx file whose
- *             code renders into `#root` (see tools/fixtures/). Omit it to
+ *             rendered as `<Component {...props} />`, a .jsx file whose
+ *             code renders into `#root` (see tools/fixtures/), or a
+ *             full-page design (`templates/blog/Blog.dc.html`, relative to
+ *             the design export or absolute), shot as it is. Omit it to
  *             shoot the theme side only.
+ *
+ * The site's cookie-consent banner (`#keystone-privacy-banner-root`) is
+ * hidden on the theme side, so a live page shot isn't covered by it.
  *
  * Output goes to `<keystone>/theme-pattern-report/rebuild/<name>/`:
  * `theme-<w>.png`, `design-<w>.png` and `compare-<w>.png` (design left,
@@ -75,6 +80,17 @@ mkdirSync(outDir, { recursive: true });
  * on the design's own tokens, loaded the way the exploration boards do.
  */
 function designPage(design, props) {
+    if (design.endsWith('.html')) {
+        const file = [resolve(design), join(designPath, design)].find((candidate) => existsSync(candidate));
+
+        if (!file) {
+            console.error(`No design page at ${design}`);
+            process.exit(1);
+        }
+
+        return pathToFileURL(file).href;
+    }
+
     const base = pathToFileURL(designPath + '/').href;
     const code = extname(design) === '.jsx'
         ? readFileSync(resolve(design), 'utf8')
@@ -106,6 +122,7 @@ ${code}
 async function shoot(page, url, width, file) {
     await page.setViewportSize({ width, height: 200 });
     await page.goto(url, { waitUntil: 'networkidle' });
+    await page.addStyleTag({ content: '#keystone-privacy-banner-root{display:none!important}' });
     await page.evaluate(() => document.fonts.ready);
     await page.waitForTimeout(300);
     await page.screenshot({ path: file, fullPage: true });

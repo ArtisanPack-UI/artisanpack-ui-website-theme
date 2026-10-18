@@ -7,7 +7,9 @@
  *     node tools/contrast.mjs <name>... [--modes=dark,light] [--width=1440] [--no-shot]
  *
  *   <name>    One or more pages rendered by `php tools/render.php`, shot at
- *             https://<app>/_ap-render/<name>.html.
+ *             https://<app>/_ap-render/<name>.html, or a full URL (a live
+ *             template, e.g. https://<app>/blog). A URL's Light shot goes to
+ *             `rebuild/<host-less path, slashes as dashes>/`.
  *   --modes   Which variations to scan. `light` applies `styles/light.json`'s
  *             palette to `:root`, the way the Light variation re-points the
  *             preset custom properties.
@@ -271,6 +273,12 @@ async function measure({ png, texts }) {
     });
 }
 
+const isUrl = (name) => /^https?:\/\//.test(name);
+const urlFor = (name) => (isUrl(name) ? name : `${appUrl}/_ap-render/${name}.html`);
+const dirFor = (name) => (isUrl(name)
+    ? 'live-' + (new URL(name).pathname.replace(/^\/+|\/+$/g, '').replace(/\//g, '-') || 'home')
+    : name);
+
 const browser = await browserType.launch({ executablePath: chromium, args: ['--ignore-certificate-errors'] });
 const context = await browser.newContext({ ignoreHTTPSErrors: true, deviceScaleFactor: 1 });
 const page = await context.newPage();
@@ -280,7 +288,8 @@ let failures = 0;
 for (const name of positionals) {
     for (const mode of modes) {
         await page.setViewportSize({ width, height: 900 });
-        await page.goto(`${appUrl}/_ap-render/${name}.html`, { waitUntil: 'networkidle' });
+        await page.goto(urlFor(name), { waitUntil: 'networkidle' });
+        await page.addStyleTag({ content: '#keystone-privacy-banner-root{display:none!important}' });
 
         if (mode === 'light') {
             await page.addStyleTag({ content: lightCss });
@@ -292,7 +301,7 @@ for (const name of positionals) {
         const shot = await page.screenshot({ fullPage: true });
 
         if (mode === 'light' && !values['no-shot']) {
-            const outDir = join(keystone, 'theme-pattern-report/rebuild', name);
+            const outDir = join(keystone, 'theme-pattern-report/rebuild', dirFor(name));
             mkdirSync(outDir, { recursive: true });
             writeFileSync(join(outDir, `theme-light-${width}.png`), shot);
         }
