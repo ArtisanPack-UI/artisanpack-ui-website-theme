@@ -16,10 +16,12 @@
  * Each text node inside `<main>` is checked against what's actually painted
  * around it: the page is screenshotted, and pixels just outside the text's
  * box are sampled, so text on gradients, media placeholders and glows is
- * measured too. The text colour (with its alpha and the element's opacity)
+ * measured too. The samples come from a second screenshot with all text and
+ * icons hidden, so a neighbouring glyph is never mistaken for background. The text colour (with its alpha and the element's opacity)
  * is composited over each sample, and the worst ratio counts. Large text
  * (24px, or 18.66px bold) needs 3:1, everything else 4.5:1. Screen-reader
- * text and `aria-hidden` subtrees are skipped. When the text's own element
+ * text (`.screen-reader-text`, `.sr-only`, any 1px clipped box) and
+ * `aria-hidden` subtrees are skipped. When the text's own element
  * has a border (a badge or chip), samples stay inside its padding box, so
  * a tight line box doesn't measure the text against its own border.
  *
@@ -103,15 +105,33 @@ function collectTexts() {
         }
         seen.add(element);
 
-        if (element.closest('.screen-reader-text, [aria-hidden="true"]')) {
+        if (element.closest('.screen-reader-text, .sr-only, [aria-hidden="true"]')) {
             continue;
         }
 
         const range = document.createRange();
         range.selectNodeContents(node);
-        const rect = range.getBoundingClientRect();
+        const full = range.getBoundingClientRect();
 
-        if (!rect.width || !rect.height) {
+        // Truncated text (an ellipsis chip) extends past what's painted:
+        // measure only the part inside its nearest overflow-clipping box.
+        // Its samples stay inside that box too, or they land on whatever is
+        // painted past a scroller's edge.
+        let rect = full;
+        let overflowClip = null;
+        for (let box = element; box && box !== document.body; box = box.parentElement) {
+            if (getComputedStyle(box).overflowX !== 'visible') {
+                const bounds = box.getBoundingClientRect();
+                const left = Math.max(full.left, bounds.left);
+                const right = Math.min(full.right, bounds.right);
+                rect = { left, top: full.top, width: Math.max(0, right - left), height: full.height };
+                overflowClip = [bounds.left + scrollX, bounds.top + scrollY, bounds.right + scrollX, bounds.bottom + scrollY];
+                break;
+            }
+        }
+
+        // Nothing painted, or a visually hidden 1px box (a clip-hidden label).
+        if (rect.width <= 1 || rect.height <= 1) {
             continue;
         }
 
@@ -127,6 +147,12 @@ function collectTexts() {
                 outer.right + scrollX - borders[1],
                 outer.bottom + scrollY - borders[2],
             ];
+        }
+
+        if (overflowClip) {
+            clip = clip
+                ? [Math.max(clip[0], overflowClip[0]), Math.max(clip[1], overflowClip[1]), Math.min(clip[2], overflowClip[2]), Math.min(clip[3], overflowClip[3])]
+                : overflowClip;
         }
 
         texts.push({
@@ -234,7 +260,15 @@ for (const name of positionals) {
         }
 
         const texts = await page.evaluate(collectTexts);
-        const results = await scratch.evaluate(measure, { png: shot.toString('base64'), texts });
+
+        // Sample backgrounds with every glyph and icon hidden, so a ring
+        // sample that lands on neighbouring text (a descender above, a
+        // chip's `$` prompt) measures what's painted behind it instead.
+        const hideText = await page.addStyleTag({ content: 'main, main * { color: transparent !important; -webkit-text-fill-color: transparent !important; text-shadow: none !important; } main svg { visibility: hidden !important; }' });
+        const backgrounds = await page.screenshot({ fullPage: true });
+        await hideText.evaluate((node) => node.remove());
+
+        const results = await scratch.evaluate(measure, { png: backgrounds.toString('base64'), texts });
         const below = results.filter((result) => !result.pass);
         failures += below.length;
 

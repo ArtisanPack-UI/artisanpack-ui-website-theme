@@ -857,6 +857,63 @@ body {
     text-align: center;
 }
 
+/* ─── 11. Packages ──────────────────────────────────────────────────── */
+
+/*
+ * Linked card: the whole card follows its title link. A Group can't be a
+ * link, so the post title's link is stretched over the card, and the card
+ * shows the link's focus ring.
+ */
+.is-style-linked {
+    position: relative;
+}
+
+.is-style-linked .wp-block-post-title a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+}
+
+.is-style-linked .wp-block-post-title a:focus-visible {
+    outline: none;
+}
+
+.is-style-linked:has(.wp-block-post-title a:focus-visible) {
+    outline: 2px solid var(--wp--preset--color--secondary);
+    outline-offset: 3px;
+}
+
+/*
+ * Tags: each term as a Tag chip. Post Terms prints an unlinked term as bare
+ * text, so the chips need each term in its own element; until then the
+ * row reads as plain "Blade, TALL" (separators are only hidden once terms
+ * are wrapped).
+ */
+.wp-block-post-terms.is-style-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.is-style-tags .wp-block-post-terms__term,
+.is-style-tags > a {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.375rem 0.75rem;
+    border-radius: 5px;
+    background: var(--wp--preset--color--surface-2);
+    color: var(--wp--preset--color--text);
+    font-weight: 500;
+    line-height: 1;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.is-style-tags:has(.wp-block-post-terms__term, > a) .wp-block-post-terms__separator {
+    display: none;
+}
+
 /* ─── Reduced motion ─────────────────────────────────────────────────── */
 
 @media (prefers-reduced-motion: reduce) {
