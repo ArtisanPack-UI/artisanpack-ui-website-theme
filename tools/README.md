@@ -88,7 +88,7 @@ node tools/contrast.mjs https://artisanpack-ui.test/blog   # a live template
 ```
 
 A full URL is scanned as it is (the consent banner is hidden); its Light
-shot goes to `rebuild/live-<path, slashes as dashes>/`.
+shot goes to `rebuild/live-<host, path and query, non-alphanumerics as dashes>/`.
 
 Scans pages rendered by `tools/render.php` for text below WCAG AA (4.5:1,
 or 3:1 for large text), in the default (dark) variation and in Light.

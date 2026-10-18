@@ -9,7 +9,7 @@
  *   <name>    One or more pages rendered by `php tools/render.php`, shot at
  *             https://<app>/_ap-render/<name>.html, or a full URL (a live
  *             template, e.g. https://<app>/blog). A URL's Light shot goes to
- *             `rebuild/<host-less path, slashes as dashes>/`.
+ *             `rebuild/live-<host, path and query, non-alphanumerics as dashes>/`.
  *   --modes   Which variations to scan. `light` applies `styles/light.json`'s
  *             palette to `:root`, the way the Light variation re-points the
  *             preset custom properties.
@@ -284,9 +284,17 @@ async function measure({ png, texts }) {
 
 const isUrl = (name) => /^https?:\/\//.test(name);
 const urlFor = (name) => (isUrl(name) ? name : `${appUrl}/_ap-render/${name}.html`);
-const dirFor = (name) => (isUrl(name)
-    ? 'live-' + (new URL(name).pathname.replace(/^\/+|\/+$/g, '').replace(/\//g, '-') || 'home')
-    : name);
+const dirFor = (name) => {
+    if (!isUrl(name)) {
+        return name;
+    }
+
+    // Host, path and query, so two live URLs never share a folder.
+    const url = new URL(name);
+    const slug = `${url.host}${url.pathname}${url.search}`.replace(/[^A-Za-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+
+    return `live-${slug}`;
+};
 
 const browser = await browserType.launch({ executablePath: chromium, args: ['--ignore-certificate-errors'] });
 const context = await browser.newContext({ ignoreHTTPSErrors: true, deviceScaleFactor: 1 });

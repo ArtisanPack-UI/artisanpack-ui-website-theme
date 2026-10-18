@@ -33,7 +33,7 @@
 import { createRequire } from 'node:module';
 import { existsSync, mkdirSync, mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
 import { homedir, tmpdir } from 'node:os';
-import { dirname, extname, join, resolve } from 'node:path';
+import { dirname, extname, isAbsolute, join, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { parseArgs } from 'node:util';
 
@@ -81,10 +81,11 @@ mkdirSync(outDir, { recursive: true });
  */
 function designPage(design, props) {
     if (design.endsWith('.html')) {
-        const file = [resolve(design), join(designPath, design)].find((candidate) => existsSync(candidate));
+        // Relative paths are relative to the design export, as documented.
+        const file = isAbsolute(design) ? design : join(designPath, design);
 
-        if (!file) {
-            console.error(`No design page at ${design}`);
+        if (!existsSync(file)) {
+            console.error(`No design page at ${file}`);
             process.exit(1);
         }
 
