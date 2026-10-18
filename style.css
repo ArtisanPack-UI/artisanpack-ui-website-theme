@@ -1287,6 +1287,45 @@ body {
 }
 
 /*
+ * Plain tables (no block style): the design's prose tables, with a small
+ * uppercase header, row rules and no vertical borders. Table cells take no
+ * theme.json styles, and the block's default draws a full grid.
+ */
+.wp-block-table:not([class*="is-style-"]) :is(th, td) {
+    padding: 0.8125rem 0.875rem;
+    border: 0;
+    border-bottom: 1px solid var(--wp--preset--color--border-subtle);
+    text-align: left;
+    vertical-align: top;
+}
+
+.wp-block-table:not([class*="is-style-"]) thead th {
+    border-bottom-color: var(--wp--preset--color--border);
+    color: var(--wp--preset--color--text);
+    font-size: 0.71875rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.wp-block-table:not([class*="is-style-"]) td {
+    font-size: 0.9375rem;
+}
+
+.wp-block-table:not([class*="is-style-"]) :is(thead, tfoot) {
+    border: 0;
+}
+
+.wp-block-table:not([class*="is-style-"]) tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.wp-block-table:not([class*="is-style-"]) table {
+    border: 0;
+    margin: 1.5rem 0 1.75rem;
+}
+
+/*
  * Square buttons (styles/share-squares.json) on Social Share Content: the
  * design's 38px bordered squares that fill with the brand gradient on
  * hover. The block's colour attributes style the chip but not its size,
