@@ -184,6 +184,15 @@ function collectTexts() {
                 outer.right + scrollX - borders[1],
                 outer.bottom + scrollY - borders[2],
             ];
+
+            // A pill's rounded corners show what's behind it, so keep the
+            // samples clear of them (a 999px radius is capped at half the
+            // height, as the browser does).
+            const radius = Math.min(parseFloat(style.borderTopLeftRadius) || 0, outer.height / 2);
+            if (radius > 0 && clip[2] - clip[0] > radius * 2) {
+                clip[0] += radius;
+                clip[2] -= radius;
+            }
         }
 
         if (overflowClip) {

@@ -1061,6 +1061,7 @@ body {
     padding: 0.0625rem 0.4375rem;
     border-radius: 999px;
     background: color-mix(in srgb, var(--wp--preset--color--text) 10%, transparent);
+    color: var(--wp--preset--color--text);
     font-family: var(--wp--preset--font-family--mono);
     font-size: 0.6875rem;
     line-height: 1.6;
