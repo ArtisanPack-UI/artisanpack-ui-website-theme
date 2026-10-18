@@ -971,6 +971,210 @@ body {
     z-index: 1;
 }
 
+/* ─── 13. Templates ─────────────────────────────────────────────────── */
+
+/*
+ * Filter rail (styles/filter-rail.json): the Search block's colour, border
+ * and spacing supports reach its form, not the input inside it, so the
+ * design's field (surface, 12px radius, magnifier inset) needs a style.
+ */
+.is-style-filter-rail .wp-block-search__inside-wrapper {
+    position: relative;
+}
+
+.is-style-filter-rail .wp-block-search__inside-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    width: 0.875rem;
+    height: 0.875rem;
+    transform: translateY(-50%);
+    background: var(--wp--preset--color--text-muted);
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M416 208c0 45.9-14.9 88.3-40 122.7l126.6 126.7a32 32 0 0 1-45.3 45.3L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z'/%3E%3C/svg%3E") center / contain no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M416 208c0 45.9-14.9 88.3-40 122.7l126.6 126.7a32 32 0 0 1-45.3 45.3L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z'/%3E%3C/svg%3E") center / contain no-repeat;
+    pointer-events: none;
+}
+
+.is-style-filter-rail .wp-block-search__input {
+    width: 100%;
+    padding: 0.6875rem 0.875rem 0.6875rem 2.5rem;
+    border: 1px solid var(--wp--preset--color--border-subtle);
+    border-radius: 12px;
+    background: var(--wp--preset--color--surface);
+    color: var(--wp--preset--color--text);
+    font: inherit;
+    font-size: 0.875rem;
+}
+
+.is-style-filter-rail .wp-block-search__input::placeholder {
+    color: var(--wp--preset--color--text-muted);
+}
+
+.is-style-filter-rail .wp-block-search__input:focus-visible {
+    outline: none;
+    border-color: var(--wp--preset--color--secondary);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--wp--preset--color--secondary) 22%, transparent);
+}
+
+/*
+ * Filter list (styles/filter-list.json) on Categories with the badge count
+ * (visual-editor #960): each term is a full-width row with a count pill;
+ * the current term sits on Surface with a gradient pill. List items and
+ * the current state print no supports of their own.
+ */
+.wp-block-categories.is-style-filter-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.is-style-filter-list .cat-item > a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.6875rem 0.875rem;
+    border: 1px solid transparent;
+    border-radius: 11px;
+    color: var(--wp--preset--color--text-muted);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.is-style-filter-list .cat-item > a:hover {
+    background: var(--wp--preset--color--surface);
+    color: var(--wp--preset--color--text);
+}
+
+.is-style-filter-list .current-cat > a {
+    border-color: var(--wp--preset--color--border-subtle);
+    background: var(--wp--preset--color--surface);
+    color: var(--wp--preset--color--text);
+}
+
+.is-style-filter-list .wp-block-categories__count {
+    padding: 0.0625rem 0.4375rem;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--wp--preset--color--text) 10%, transparent);
+    font-family: var(--wp--preset--font-family--mono);
+    font-size: 0.6875rem;
+    line-height: 1.6;
+}
+
+.is-style-filter-list .current-cat .wp-block-categories__count {
+    background: var(--wp--preset--gradient--brand-card);
+    color: var(--wp--preset--color--white);
+}
+
+/*
+ * Pager (styles/pager.json) on Query Pagination: square page buttons with
+ * a gradient current page. The numbers and previous/next links take no
+ * colour, border or size supports, so the boxes need a style. Previous
+ * and Next keep their text for screen readers and show a chevron.
+ */
+.wp-block-query-pagination.is-style-pager {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+}
+
+.is-style-pager .wp-block-query-pagination-numbers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+}
+
+.is-style-pager .page-numbers,
+.is-style-pager .wp-block-query-pagination-previous,
+.is-style-pager .wp-block-query-pagination-next {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.625rem;
+    height: 2.625rem;
+    padding: 0 0.75rem;
+    border: 1px solid var(--wp--preset--color--border-subtle);
+    border-radius: 11px;
+    background: var(--wp--preset--color--surface);
+    color: var(--wp--preset--color--text-muted);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.is-style-pager .page-numbers.current {
+    border-color: transparent;
+    background: var(--wp--preset--gradient--brand-card);
+    color: var(--wp--preset--color--white);
+}
+
+.is-style-pager a.page-numbers:hover,
+.is-style-pager .wp-block-query-pagination-previous:hover,
+.is-style-pager .wp-block-query-pagination-next:hover {
+    color: var(--wp--preset--color--text);
+}
+
+.is-style-pager .wp-block-query-pagination-previous,
+.is-style-pager .wp-block-query-pagination-next {
+    position: relative;
+    width: 2.625rem;
+    padding: 0;
+    overflow: hidden;
+    color: transparent;
+    white-space: nowrap;
+}
+
+.is-style-pager .wp-block-query-pagination-previous::after,
+.is-style-pager .wp-block-query-pagination-next::after {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    color: var(--wp--preset--color--text-muted);
+    font-size: 1.125rem;
+    line-height: 1;
+}
+
+.is-style-pager .wp-block-query-pagination-previous::after {
+    content: "‹" / "";
+}
+
+.is-style-pager .wp-block-query-pagination-next::after {
+    content: "›" / "";
+}
+
+/*
+ * Square buttons (styles/share-squares.json) on Social Share Content: the
+ * design's 38px bordered squares that fill with the brand gradient on
+ * hover. The block's colour attributes style the chip but not its size,
+ * border or a gradient hover.
+ */
+.is-style-share-squares .ap-social-share-content__chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.375rem;
+    height: 2.375rem;
+    border: 1px solid var(--wp--preset--color--border-subtle);
+    border-radius: 10px;
+    background: var(--wp--preset--color--surface);
+    color: var(--wp--preset--color--text-muted);
+}
+
+.is-style-share-squares .ap-social-share-content__chip:hover,
+.is-style-share-squares .ap-social-share-content__chip:focus-visible {
+    border-color: transparent;
+    background: var(--wp--preset--gradient--brand-card);
+    color: var(--wp--preset--color--white);
+}
+
 /* ─── Reduced motion ─────────────────────────────────────────────────── */
 
 @media (prefers-reduced-motion: reduce) {

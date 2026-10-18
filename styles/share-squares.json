@@ -1,0 +1,8 @@
+{
+    "$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+    "version": 3,
+    "slug": "share-squares",
+    "title": "Square buttons",
+    "blockTypes": ["artisanpack/social-share-content"],
+    "styles": {}
+}
