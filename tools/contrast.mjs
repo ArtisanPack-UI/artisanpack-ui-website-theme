@@ -7,7 +7,9 @@
  *     node tools/contrast.mjs <name>... [--modes=dark,light] [--width=1440] [--no-shot]
  *
  *   <name>    One or more pages rendered by `php tools/render.php`, shot at
- *             https://<app>/_ap-render/<name>.html.
+ *             https://<app>/_ap-render/<name>.html, or a full URL (a live
+ *             template, e.g. https://<app>/blog). A URL's Light shot goes to
+ *             `rebuild/live-<host, path and query, non-alphanumerics as dashes>/`.
  *   --modes   Which variations to scan. `light` applies `styles/light.json`'s
  *             palette to `:root`, the way the Light variation re-points the
  *             preset custom properties.
@@ -182,6 +184,15 @@ function collectTexts() {
                 outer.right + scrollX - borders[1],
                 outer.bottom + scrollY - borders[2],
             ];
+
+            // A pill's rounded corners show what's behind it, so keep the
+            // samples clear of them (a 999px radius is capped at half the
+            // height, as the browser does).
+            const radius = Math.min(parseFloat(style.borderTopLeftRadius) || 0, outer.height / 2);
+            if (radius > 0 && clip[2] - clip[0] > radius * 2) {
+                clip[0] += radius;
+                clip[2] -= radius;
+            }
         }
 
         if (overflowClip) {
@@ -271,6 +282,20 @@ async function measure({ png, texts }) {
     });
 }
 
+const isUrl = (name) => /^https?:\/\//.test(name);
+const urlFor = (name) => (isUrl(name) ? name : `${appUrl}/_ap-render/${name}.html`);
+const dirFor = (name) => {
+    if (!isUrl(name)) {
+        return name;
+    }
+
+    // Host, path and query, so two live URLs never share a folder.
+    const url = new URL(name);
+    const slug = `${url.host}${url.pathname}${url.search}`.replace(/[^A-Za-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+
+    return `live-${slug}`;
+};
+
 const browser = await browserType.launch({ executablePath: chromium, args: ['--ignore-certificate-errors'] });
 const context = await browser.newContext({ ignoreHTTPSErrors: true, deviceScaleFactor: 1 });
 const page = await context.newPage();
@@ -280,7 +305,8 @@ let failures = 0;
 for (const name of positionals) {
     for (const mode of modes) {
         await page.setViewportSize({ width, height: 900 });
-        await page.goto(`${appUrl}/_ap-render/${name}.html`, { waitUntil: 'networkidle' });
+        await page.goto(urlFor(name), { waitUntil: 'networkidle' });
+        await page.addStyleTag({ content: '#keystone-privacy-banner-root{display:none!important}' });
 
         if (mode === 'light') {
             await page.addStyleTag({ content: lightCss });
@@ -292,7 +318,7 @@ for (const name of positionals) {
         const shot = await page.screenshot({ fullPage: true });
 
         if (mode === 'light' && !values['no-shot']) {
-            const outDir = join(keystone, 'theme-pattern-report/rebuild', name);
+            const outDir = join(keystone, 'theme-pattern-report/rebuild', dirFor(name));
             mkdirSync(outDir, { recursive: true });
             writeFileSync(join(outDir, `theme-light-${width}.png`), shot);
         }

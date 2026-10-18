@@ -7,6 +7,9 @@
  *
  *     node tools/editor.mjs <pattern-slug|path/to/file> [--write] [--out=FILE]
  *
+ * A file can be a theme template or part (`templates/*.html`): its
+ * `core/template-part` references are checked as the Site Editor's fork.
+ *
  * Logs in headlessly, opens the Site Editor, and runs the markup through the
  * editor's registered `@wordpress/blocks` (`window.ApSiteEditor.libs.blocks`):
  * `parse()` flags every block whose saved HTML doesn't match its `save()`
@@ -66,7 +69,12 @@ if (!existsSync(file)) {
 
 const source = readFileSync(file, 'utf8');
 const header = source.match(/^\s*<\?php.*?\?>\s*/s)?.[0] ?? '';
-const markup = source.slice(header.length);
+// Theme templates and parts reference parts as `core/template-part`; the
+// Site Editor loads them as its `artisanpack/template-part` fork (visual-editor
+// `TemplateAdapter`), so validate the fork and write the core name back.
+const templatePart = /<!--(\s*\/?)wp:(?:core\/)?template-part(?=[\s/])/g;
+const markup = source.slice(header.length).replace(templatePart, '<!--$1wp:artisanpack/template-part');
+const toThemeMarkup = (html) => html.replace(/<!--(\s*\/?)wp:artisanpack\/template-part(?=[\s/])/g, '<!--$1wp:template-part');
 
 const dotenv = Object.fromEntries(
     readFileSync(join(keystone, '.env'), 'utf8')
@@ -313,7 +321,7 @@ for (const problem of result.problems) {
     console.error(`INVALID ${problem.path}\n  ${problem.issue}`);
 }
 
-const output = `${result.serialized}\n`;
+const output = `${toThemeMarkup(result.serialized)}\n`;
 
 // `--out` aimed at the input file is a rewrite in place: route it through
 // `--write`, which keeps the PHP header and refuses while any block is

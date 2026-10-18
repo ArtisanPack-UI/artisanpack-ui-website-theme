@@ -37,17 +37,28 @@ and writes `theme-<w>.png`, `design-<w>.png` and a side-by-side
 root.
 
 - `--design` takes a component name exported by `_ds_bundle.js`, rendered
-  with `--props='{"…":…}'`, or a `.jsx` file that renders into `#root`. The
-  bundle's exports are available as `DS`.
-- `--theme=URL` shoots another page; `--widths=1440,768,375` changes widths;
-  `--out-dir` changes the output folder.
+  with `--props='{"…":…}'`, a `.jsx` file that renders into `#root`, or a
+  full-page design, shot as it is: `--design=templates/blog/Blog.dc.html`
+  (relative to the design export, or absolute). The bundle's exports are
+  available as `DS`.
+- `--theme=URL` shoots another page, e.g. a live template
+  (`--theme=https://artisanpack-ui.test/blog`); `--widths=1440,768,375`
+  changes widths; `--out-dir` changes the output folder.
+- The cookie-consent banner (`#keystone-privacy-banner-root`) is hidden, so
+  it doesn't cover a live page.
 
 ## Validate markup in the editor
 
 ```bash
 node tools/editor.mjs element-feature          # report invalid blocks, print saved markup
 node tools/editor.mjs element-feature --write  # replace the pattern body with it
+node tools/editor.mjs templates/archive-post.html   # a template or part
 ```
+
+A template or part is validated as the Site Editor loads it: its
+`core/template-part` references become the editor's `artisanpack/template-part`
+fork (as visual-editor's `TemplateAdapter` does), and the serialized markup
+writes them back as `core/template-part`.
 
 Logs in headlessly (`AP_ADMIN_EMAIL` / `AP_ADMIN_PASSWORD` from the Keystone
 `.env`), opens the Site Editor and runs the markup through the editor's own
@@ -73,7 +84,11 @@ matching inline `style` together, then validate without `--rebuild`.
 ```bash
 node tools/contrast.mjs text-media-split pricing   # one or more rendered pages
 node tools/contrast.mjs pricing --modes=light --no-shot
+node tools/contrast.mjs https://artisanpack-ui.test/blog   # a live template
 ```
+
+A full URL is scanned as it is (the consent banner is hidden); its Light
+shot goes to `rebuild/live-<host, path and query, non-alphanumerics as dashes>/`.
 
 Scans pages rendered by `tools/render.php` for text below WCAG AA (4.5:1,
 or 3:1 for large text), in the default (dark) variation and in Light.
@@ -85,7 +100,8 @@ skips it).
 Each text node in `<main>` is measured against the pixels just outside
 its box on a screenshot, so text on gradients, media placeholders and
 glows counts too. When the text's own element has a border (a badge), the
-samples stay inside its padding box. Screen-reader text and `aria-hidden`
+samples stay inside its padding box, clear of its rounded corners (a pill's corners show what's
+behind it). Screen-reader text and `aria-hidden`
 subtrees are skipped. Failing texts are listed with their ratio, and the
 script exits 1 if there are any.
 
