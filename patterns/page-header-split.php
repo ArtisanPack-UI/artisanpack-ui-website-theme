@@ -38,8 +38,8 @@
 <!-- /wp:artisanpack/column -->
 
 <!-- wp:artisanpack/column {"verticalAlignment":"center","width":"41.67%"} -->
-<div class="wp-block-artisanpack-column wp-block-column is-vertically-aligned-center" style="flex-basis:41.67%"><!-- wp:artisanpack/group {"className":"is-style-boxed","style":{"border":{"width":"3px","radius":"12px","gradient":"neon"},"shadow":"var:preset|shadow|glow-gradient","spacing":{"padding":{"top":"1.75rem","bottom":"1.75rem","left":"1.75rem","right":"1.75rem"},"blockGap":"0.875rem"}},"layout":{"type":"default"}} -->
-<div class="wp-block-artisanpack-group wp-block-group is-style-boxed" style="border-width:3px;border-radius:12px;padding-top:1.75rem;padding-right:1.75rem;padding-bottom:1.75rem;padding-left:1.75rem;box-shadow:var(--wp--preset--shadow--glow-gradient)"><!-- wp:artisanpack/paragraph {"textColor":"text-muted","style":{"typography":{"fontFamily":"var:preset|font-family|mono","fontSize":"0.75rem","letterSpacing":"0.04em"}}} -->
+<div class="wp-block-artisanpack-column wp-block-column is-vertically-aligned-center" style="flex-basis:41.67%"><!-- wp:artisanpack/group {"className":"is-style-boxed","backgroundColor":"surface-2","style":{"border":{"width":"3px","radius":"12px","gradient":"neon"},"shadow":"var:preset|shadow|glow-gradient","spacing":{"padding":{"top":"1.75rem","bottom":"1.75rem","left":"1.75rem","right":"1.75rem"},"blockGap":"0.875rem"}},"layout":{"type":"default"}} -->
+<div class="wp-block-artisanpack-group wp-block-group is-style-boxed has-surface-2-background-color has-background" style="border-width:3px;border-radius:12px;padding-top:1.75rem;padding-right:1.75rem;padding-bottom:1.75rem;padding-left:1.75rem;box-shadow:var(--wp--preset--shadow--glow-gradient)"><!-- wp:artisanpack/paragraph {"textColor":"text-muted","style":{"typography":{"fontFamily":"var:preset|font-family|mono","fontSize":"0.75rem","letterSpacing":"0.04em"}}} -->
 <p class="wp-block-paragraph has-text-muted-color has-text-color" style="font-family:var(--wp--preset--font-family--mono);font-size:0.75rem;letter-spacing:0.04em">TRUSTED BY MAKERS</p>
 <!-- /wp:artisanpack/paragraph -->
 
