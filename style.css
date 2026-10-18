@@ -1073,16 +1073,14 @@ body {
 }
 
 /*
- * Pager (styles/pager.json) on Query Pagination: square page buttons with
+ * Pager (styles/pager.json) on Query Pagination (Justification: center): square page buttons with
  * a gradient current page. The numbers and previous/next links take no
  * colour, border or size supports, so the boxes need a style. Previous
  * and Next keep their text for screen readers and show a chevron.
  */
+/* Centred by the block's own Justification (flex layout); the gap is the
+   design's 10px between every button. */
 .wp-block-query-pagination.is-style-pager {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
     gap: 0.625rem;
 }
 
