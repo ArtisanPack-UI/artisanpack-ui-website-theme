@@ -20,7 +20,9 @@ drains the collected support CSS, and wraps it in the `<head>` of the live
 the current global styles, variations, `style.css` and enqueued assets. Writes
 `public/_ap-render/<name>.html` and prints its URL.
 
-`post-*` and query blocks render empty, because there's no post in scope.
+Query blocks are expanded as `<x-ve-blocks>` expands them, so a query over
+published records renders real cards. Top-level `post-*` blocks still render
+empty, because there's no host post in scope.
 
 ## Screenshot against the design
 

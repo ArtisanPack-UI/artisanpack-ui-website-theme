@@ -20,8 +20,10 @@
  * blocks collect while rendering (responsive rules, states, shadows,
  * gradient borders) is drained with `flushSupportAssets()`.
  *
- * Limits: `renderMarkup()` has no post in scope, so `post-*` and query
- * blocks render empty. Templates that need an entity are out of scope here.
+ * Query blocks are expanded the way `<x-ve-blocks>` expands them, so a
+ * query over published records (packages, posts) renders real cards.
+ * There is still no host post, so top-level `post-*` blocks render empty:
+ * templates that need an entity are out of scope here.
  *
  * The Keystone root defaults to three levels up (themes/<slug>/tools) and can
  * be overridden with the KEYSTONE_PATH environment variable.
@@ -29,6 +31,11 @@
 
 declare(strict_types=1);
 
+use ArtisanPackUI\VisualEditor\Resources\PatternInliner;
+use ArtisanPackUI\VisualEditor\Resources\QueryInliner;
+use ArtisanPackUI\VisualEditor\Resources\TemplatePartInliner;
+use ArtisanPackUI\VisualEditor\Support\BlockMarkupHydrator;
+use ArtisanPackUI\VisualEditor\Support\BlockShape;
 use ArtisanPackUI\VisualEditorRendererBlade\BlockRenderer;
 use Illuminate\Contracts\Console\Kernel;
 
@@ -96,8 +103,17 @@ $app->make(Kernel::class)->bootstrap();
  */
 $markup = (string) preg_replace('/^\s*<\?php.*?\?>\s*/s', '', (string) file_get_contents($file));
 
+/*
+ * `renderMarkup()` stops after parts and patterns; queries only expand in
+ * `<x-ve-blocks>`. Run the same steps in the same order, then render.
+ */
+$tree = app(BlockMarkupHydrator::class)->hydrate($markup);
+$tree = app(TemplatePartInliner::class)->inline($tree);
+$tree = BlockShape::normalizeTree(app(PatternInliner::class)->inline($tree));
+$tree = app(QueryInliner::class)->inline($tree);
+
 $renderer = app(BlockRenderer::class);
-$html = $renderer->renderMarkup($markup);
+$html = $renderer->render($tree);
 $assets = $renderer->flushSupportAssets();
 
 $headUrl = $options['head-url'] ?? rtrim((string) config('app.url'), '/').'/packages';
