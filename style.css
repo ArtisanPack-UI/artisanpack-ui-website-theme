@@ -445,6 +445,14 @@ body {
 }
 /* night:end */
 
+/* A Night Cover sits on ink, so a "Use featured image" card on a post with
+   no image (Blog 8e) keeps its scrim, badge and title on a dark ground in
+   Light. The Cover has no background-colour support of its own, and its
+   image covers this ground whenever there is one. */
+.wp-block-cover.is-style-night {
+    background-color: var(--wp--preset--color--ink);
+}
+
 /* ─── 7. Forms block ─────────────────────────────────────────────────── */
 
 /* The Forms block renders the forms package's daisyUI controls, which take
