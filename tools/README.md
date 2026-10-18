@@ -100,7 +100,8 @@ skips it).
 Each text node in `<main>` is measured against the pixels just outside
 its box on a screenshot, so text on gradients, media placeholders and
 glows counts too. When the text's own element has a border (a badge), the
-samples stay inside its padding box. Screen-reader text and `aria-hidden`
+samples stay inside its padding box, clear of its rounded corners (a pill's corners show what's
+behind it). Screen-reader text and `aria-hidden`
 subtrees are skipped. Failing texts are listed with their ratio, and the
 script exits 1 if there are any.
 
