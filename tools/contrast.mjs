@@ -20,8 +20,12 @@
  * icons hidden, so a neighbouring glyph is never mistaken for background. The text colour (with its alpha and the element's opacity)
  * is composited over each sample, and the worst ratio counts. Large text
  * (24px, or 18.66px bold) needs 3:1, everything else 4.5:1. Screen-reader
- * text (`.screen-reader-text`, `.sr-only`, any 1px clipped box) and
- * `aria-hidden` subtrees are skipped. When the text's own element
+ * text (`.screen-reader-text`, `.sr-only`, any 1px clipped box),
+ * `aria-hidden` subtrees and the Forms block's editor-only "Select a form"
+ * placeholder are skipped. Gradient text (`background-clip: text`) is
+ * measured with each gradient stop as its colour, and the worst stop
+ * counts; its gradient is dropped from the background screenshot. When
+ * the text's own element
  * has a border or paints its own background (a badge or chip), samples
  * stay inside its padding box, so a tight line box doesn't measure the
  * text against its own border, or a chip against what's around it.
@@ -106,7 +110,7 @@ function collectTexts() {
         }
         seen.add(element);
 
-        if (element.closest('.screen-reader-text, .sr-only, [aria-hidden="true"]')) {
+        if (element.closest('.screen-reader-text, .sr-only, [aria-hidden="true"], .wp-block-artisanpack-form--placeholder')) {
             continue;
         }
 
@@ -137,10 +141,27 @@ function collectTexts() {
         }
 
         const style = getComputedStyle(element);
+
+        // Gradient text paints its glyphs with a clipped gradient, on the
+        // element or an ancestor, and its own colour is transparent.
+        let gradientText = null;
+        for (let box = element; box && box !== document.body; box = box.parentElement) {
+            const boxStyle = getComputedStyle(box);
+            if ([boxStyle.backgroundClip, boxStyle.webkitBackgroundClip].includes('text') && boxStyle.backgroundImage !== 'none') {
+                gradientText = box;
+                break;
+            }
+        }
+        const stops = gradientText
+            ? (getComputedStyle(gradientText).backgroundImage.match(/(?:rgba?|hsla?|color|oklch|oklab|lch|lab)\([^()]*\)/g) ?? []).map(toRgba)
+            : [];
+        gradientText?.setAttribute('data-ap-gradient-text', '');
+
         const borders = ['Top', 'Right', 'Bottom', 'Left'].map((side) => parseFloat(style[`border${side}Width`]) || 0);
         // A chip painting its own ground (a gradient term badge) is read
         // against that ground, not whatever sits around it.
-        const ownBackground = style.backgroundImage !== 'none' || toRgba(style.backgroundColor)[3] > 0;
+        const ownBackground = gradientText !== element
+            && (style.backgroundImage !== 'none' || toRgba(style.backgroundColor)[3] > 0);
         let clip = null;
 
         if (borders.some(Boolean) || ownBackground) {
@@ -161,7 +182,8 @@ function collectTexts() {
 
         texts.push({
             text: node.textContent.trim().slice(0, 40),
-            color: toRgba(style.color),
+            colors: stops.length ? stops : [toRgba(style.color)],
+            gradient: stops.length > 0,
             opacity: Number(style.opacity),
             size: parseFloat(style.fontSize),
             weight: Number(style.fontWeight) || 400,
@@ -215,7 +237,6 @@ async function measure({ png, texts }) {
             points.push([left - pad, y], [left + w + pad, y]);
         }
 
-        const alpha = (text.color[3] / 255) * text.opacity;
         let worst = Infinity;
 
         for (let [x, y] of points) {
@@ -227,13 +248,16 @@ async function measure({ png, texts }) {
                 continue;
             }
             const ground = [...context.getImageData(Math.round(x), Math.round(y), 1, 1).data];
-            const ink = [0, 1, 2].map((k) => text.color[k] * alpha + ground[k] * (1 - alpha));
-            worst = Math.min(worst, ratio(ink, ground));
+            for (const color of text.colors) {
+                const alpha = (color[3] / 255) * text.opacity;
+                const ink = [0, 1, 2].map((k) => color[k] * alpha + ground[k] * (1 - alpha));
+                worst = Math.min(worst, ratio(ink, ground));
+            }
         }
 
         const large = text.size >= 24 || (text.size >= 18.66 && text.weight >= 700);
 
-        return { text: text.text, ratio: worst, large, pass: worst >= (large ? 3 : 4.5) };
+        return { text: text.text, ratio: worst, large, gradient: text.gradient, pass: worst >= (large ? 3 : 4.5) };
     });
 }
 
@@ -268,7 +292,8 @@ for (const name of positionals) {
         // Sample backgrounds with every glyph and icon hidden, so a ring
         // sample that lands on neighbouring text (a descender above, a
         // chip's `$` prompt) measures what's painted behind it instead.
-        const hideText = await page.addStyleTag({ content: 'main, main * { color: transparent !important; -webkit-text-fill-color: transparent !important; text-shadow: none !important; } main svg { visibility: hidden !important; }' });
+        // Gradient text's clipped gradient is its glyphs, so it goes too.
+        const hideText = await page.addStyleTag({ content: 'main, main * { color: transparent !important; -webkit-text-fill-color: transparent !important; text-shadow: none !important; } main svg { visibility: hidden !important; } [data-ap-gradient-text] { background: none !important; }' });
         const backgrounds = await page.screenshot({ fullPage: true });
         await hideText.evaluate((node) => node.remove());
 
@@ -278,7 +303,7 @@ for (const name of positionals) {
 
         console.log(`${name} [${mode}] ${results.length} texts, ${below.length} below AA`);
         for (const result of below) {
-            console.log(`  ${result.ratio.toFixed(2)}:1 ${result.large ? '(large) ' : ''}"${result.text}"`);
+            console.log(`  ${result.ratio.toFixed(2)}:1 ${result.large ? '(large) ' : ''}${result.gradient ? '(gradient) ' : ''}"${result.text}"`);
         }
     }
 }
