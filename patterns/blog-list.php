@@ -37,7 +37,15 @@
 <div class="wp-block-artisanpack-group wp-block-group ap-grow-0 ap-shrink-0"><!-- wp:artisanpack/post-date {"format":"M j","textColor":"text-muted","fontFamily":"mono","style":{"typography":{"fontSize":"0.8125rem"}},"metadata":{"bindings":{"datetime":{"source":"core/post-data","args":{"field":"date"}}}}} /--></div>
 <!-- /wp:artisanpack/group --></div>
 <!-- /wp:artisanpack/group -->
-<!-- /wp:artisanpack/post-template --></div>
+<!-- /wp:artisanpack/post-template -->
+
+<!-- wp:artisanpack/query-pagination {"style":{"spacing":{"margin":{"top":"2.5rem"}}}} -->
+<!-- wp:artisanpack/query-pagination-previous /-->
+
+<!-- wp:artisanpack/query-pagination-numbers /-->
+
+<!-- wp:artisanpack/query-pagination-next /-->
+<!-- /wp:artisanpack/query-pagination --></div>
 <!-- /wp:artisanpack/query --></div>
 <!-- /wp:artisanpack/group --></section>
 <!-- /wp:artisanpack/group -->
