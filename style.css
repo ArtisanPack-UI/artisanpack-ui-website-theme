@@ -877,18 +877,20 @@ body {
     position: relative;
 }
 
-.is-style-linked .wp-block-post-title a::after {
+.is-style-linked .wp-block-post-title a::after,
+.is-style-linked .wp-block-heading a::after {
     content: "";
     position: absolute;
     inset: 0;
     border-radius: inherit;
 }
 
-.is-style-linked .wp-block-post-title a:focus-visible {
+.is-style-linked .wp-block-post-title a:focus-visible,
+.is-style-linked .wp-block-heading a:focus-visible {
     outline: none;
 }
 
-.is-style-linked:has(.wp-block-post-title a:focus-visible) {
+.is-style-linked:has(.wp-block-post-title a:focus-visible, .wp-block-heading a:focus-visible) {
     outline: 2px solid var(--wp--preset--color--secondary);
     outline-offset: 3px;
 }
