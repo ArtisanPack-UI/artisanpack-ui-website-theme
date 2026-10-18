@@ -28,7 +28,7 @@
 <div class="wp-block-artisanpack-grid-item ap-grid-item ap-grid-item-layout-normal ap-grid-item-span-1-base-columns ap-grid-item-span-1-base-row is-style-boxed has-border-color has-primary-border-color"><!-- wp:artisanpack/group {"style":{"spacing":{"blockGap":"0.875rem"}},"layout":{"type":"default"}} -->
 <div class="wp-block-artisanpack-group wp-block-group"><!-- wp:artisanpack/icon {"iconRef":{"set":"fas","name":"rocket"},"size":22,"iconColor":"#FFFFFF","isDecorative":true,"gradient":"brand","className":"is-style-tile"} /-->
 
-<!-- wp:artisanpack/heading {"level":3,"className":"wp-block-heading","fontSize":"card-title","style":{"typography":{"lineHeight":"1.65"}}} -->
+<!-- wp:artisanpack/heading {"level":3,"fontSize":"card-title","style":{"typography":{"lineHeight":"1.65"}}} -->
 <h3 class="wp-block-heading has-card-title-font-size" style="line-height:1.65">Ship faster</h3>
 <!-- /wp:artisanpack/heading -->
 
@@ -42,7 +42,7 @@
 <div class="wp-block-artisanpack-grid-item ap-grid-item ap-grid-item-layout-normal ap-grid-item-span-1-base-columns ap-grid-item-span-1-base-row is-style-boxed has-border-color has-secondary-border-color"><!-- wp:artisanpack/group {"style":{"spacing":{"blockGap":"0.875rem"}},"layout":{"type":"default"}} -->
 <div class="wp-block-artisanpack-group wp-block-group"><!-- wp:artisanpack/icon {"iconRef":{"set":"fas","name":"palette"},"size":22,"backgroundColor":"secondary-tint","iconColor":"#00E5FF","isDecorative":true,"className":"is-style-tile"} /-->
 
-<!-- wp:artisanpack/heading {"level":3,"className":"wp-block-heading","fontSize":"card-title","style":{"typography":{"lineHeight":"1.65"}}} -->
+<!-- wp:artisanpack/heading {"level":3,"fontSize":"card-title","style":{"typography":{"lineHeight":"1.65"}}} -->
 <h3 class="wp-block-heading has-card-title-font-size" style="line-height:1.65">Theme in one line</h3>
 <!-- /wp:artisanpack/heading -->
 
@@ -56,7 +56,7 @@
 <div class="wp-block-artisanpack-grid-item ap-grid-item ap-grid-item-layout-normal ap-grid-item-span-1-base-columns ap-grid-item-span-1-base-row is-style-boxed has-border-color has-accent-border-color"><!-- wp:artisanpack/group {"style":{"spacing":{"blockGap":"0.875rem"}},"layout":{"type":"default"}} -->
 <div class="wp-block-artisanpack-group wp-block-group"><!-- wp:artisanpack/icon {"iconRef":{"set":"fas","name":"universal-access"},"size":22,"backgroundColor":"accent-tint","iconColor":"#E040FB","isDecorative":true,"className":"is-style-tile"} /-->
 
-<!-- wp:artisanpack/heading {"level":3,"className":"wp-block-heading","fontSize":"card-title","style":{"typography":{"lineHeight":"1.65"}}} -->
+<!-- wp:artisanpack/heading {"level":3,"fontSize":"card-title","style":{"typography":{"lineHeight":"1.65"}}} -->
 <h3 class="wp-block-heading has-card-title-font-size" style="line-height:1.65">Accessible</h3>
 <!-- /wp:artisanpack/heading -->
 
@@ -70,7 +70,7 @@
 <div class="wp-block-artisanpack-grid-item ap-grid-item ap-grid-item-layout-normal ap-grid-item-span-1-base-columns ap-grid-item-span-1-base-row is-style-boxed has-border-color has-primary-border-color"><!-- wp:artisanpack/group {"style":{"spacing":{"blockGap":"0.875rem"}},"layout":{"type":"default"}} -->
 <div class="wp-block-artisanpack-group wp-block-group"><!-- wp:artisanpack/icon {"iconRef":{"set":"fas","name":"bolt"},"size":22,"backgroundColor":"primary-tint","iconColor":"#2962FF","isDecorative":true,"className":"is-style-tile"} /-->
 
-<!-- wp:artisanpack/heading {"level":3,"className":"wp-block-heading","fontSize":"card-title","style":{"typography":{"lineHeight":"1.65"}}} -->
+<!-- wp:artisanpack/heading {"level":3,"fontSize":"card-title","style":{"typography":{"lineHeight":"1.65"}}} -->
 <h3 class="wp-block-heading has-card-title-font-size" style="line-height:1.65">Zero runtime</h3>
 <!-- /wp:artisanpack/heading -->
 
@@ -84,7 +84,7 @@
 <div class="wp-block-artisanpack-grid-item ap-grid-item ap-grid-item-layout-normal ap-grid-item-span-1-base-columns ap-grid-item-span-1-base-row is-style-boxed has-border-color has-secondary-border-color"><!-- wp:artisanpack/group {"style":{"spacing":{"blockGap":"0.875rem"}},"layout":{"type":"default"}} -->
 <div class="wp-block-artisanpack-group wp-block-group"><!-- wp:artisanpack/icon {"iconRef":{"set":"fas","name":"cube"},"size":22,"backgroundColor":"secondary-tint","iconColor":"#00E5FF","isDecorative":true,"className":"is-style-tile"} /-->
 
-<!-- wp:artisanpack/heading {"level":3,"className":"wp-block-heading","fontSize":"card-title","style":{"typography":{"lineHeight":"1.65"}}} -->
+<!-- wp:artisanpack/heading {"level":3,"fontSize":"card-title","style":{"typography":{"lineHeight":"1.65"}}} -->
 <h3 class="wp-block-heading has-card-title-font-size" style="line-height:1.65">200+ components</h3>
 <!-- /wp:artisanpack/heading -->
 
@@ -98,7 +98,7 @@
 <div class="wp-block-artisanpack-grid-item ap-grid-item ap-grid-item-layout-normal ap-grid-item-span-1-base-columns ap-grid-item-span-1-base-row is-style-boxed has-border-color has-accent-border-color"><!-- wp:artisanpack/group {"style":{"spacing":{"blockGap":"0.875rem"}},"layout":{"type":"default"}} -->
 <div class="wp-block-artisanpack-group wp-block-group"><!-- wp:artisanpack/icon {"iconRef":{"set":"fas","name":"code"},"size":22,"backgroundColor":"accent-tint","iconColor":"#E040FB","isDecorative":true,"className":"is-style-tile"} /-->
 
-<!-- wp:artisanpack/heading {"level":3,"className":"wp-block-heading","fontSize":"card-title","style":{"typography":{"lineHeight":"1.65"}}} -->
+<!-- wp:artisanpack/heading {"level":3,"fontSize":"card-title","style":{"typography":{"lineHeight":"1.65"}}} -->
 <h3 class="wp-block-heading has-card-title-font-size" style="line-height:1.65">Copy-paste friendly</h3>
 <!-- /wp:artisanpack/heading -->
 

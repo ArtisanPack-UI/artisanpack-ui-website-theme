@@ -1205,6 +1205,43 @@ body {
 }
 
 /*
+ * Versions (styles/versions.json) on Table: the requirements table, with
+ * a primary header and footer row and alternating Surface / Surface 2
+ * rows. Table cells take no colour or class, and the native Stripes style
+ * only tints rows.
+ */
+.wp-block-table.is-style-versions table {
+    border: 1px solid var(--wp--preset--color--border);
+    border-radius: 12px;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    font-size: 0.90625rem;
+}
+
+.is-style-versions th,
+.is-style-versions td {
+    padding: 0.875rem 1.125rem;
+    border: 0;
+}
+
+.is-style-versions thead th,
+.is-style-versions tfoot td {
+    background: color-mix(in srgb, var(--wp--preset--color--primary) 90%, #000000);
+    color: var(--wp--preset--color--white);
+    font-size: 0.8125rem;
+    font-weight: 600;
+}
+
+.is-style-versions tbody tr:nth-child(odd) td {
+    background: var(--wp--preset--color--surface);
+}
+
+.is-style-versions tbody tr:nth-child(even) td {
+    background: var(--wp--preset--color--surface-2);
+}
+
+/*
  * Square buttons (styles/share-squares.json) on Social Share Content: the
  * design's 38px bordered squares that fill with the brand gradient on
  * hover. The block's colour attributes style the chip but not its size,
