@@ -1260,6 +1260,18 @@ body {
 }
 
 /*
+ * Tilt left / right (styles/tilt-*.json) on Group: the newsletter hero's
+ * stacked cheat-sheet mockup. No block exposes a transform.
+ */
+.wp-block-group.is-style-tilt-left {
+    transform: rotate(-6deg);
+}
+
+.wp-block-group.is-style-tilt-right {
+    transform: rotate(4deg);
+}
+
+/*
  * Square buttons (styles/share-squares.json) on Social Share Content: the
  * design's 38px bordered squares that fill with the brand gradient on
  * hover. The block's colour attributes style the chip but not its size,
