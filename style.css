@@ -1242,6 +1242,15 @@ body {
 }
 
 /*
+ * Full width (styles/full-width.json) on Copy Command: the get-started
+ * command list's chips fill their column. The block has no width control,
+ * and its default is the shrink-wrapped chip.
+ */
+.wp-block-artisanpack-copy-command.is-style-full-width {
+    width: 100%;
+}
+
+/*
  * Square buttons (styles/share-squares.json) on Social Share Content: the
  * design's 38px bordered squares that fill with the brand gradient on
  * hover. The block's colour attributes style the chip but not its size,
