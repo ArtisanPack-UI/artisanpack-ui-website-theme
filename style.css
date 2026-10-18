@@ -1223,6 +1223,11 @@ body {
 .is-style-versions td {
     padding: 0.875rem 1.125rem;
     border: 0;
+    text-align: left;
+}
+
+.is-style-versions .has-text-align-center {
+    text-align: center;
 }
 
 .is-style-versions thead th,
