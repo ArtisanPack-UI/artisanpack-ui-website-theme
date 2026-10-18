@@ -48,9 +48,9 @@
 <!-- /wp:artisanpack/query --></div>
 <!-- /wp:artisanpack/column -->
 
-<!-- wp:artisanpack/column -->
-<div class="wp-block-artisanpack-column wp-block-column"><!-- wp:artisanpack/query {"queryId":"120","query":{"perPage":2,"postType":"post","orderBy":"date","order":"desc","inherit":false,"offset":1}} -->
-<div class="wp-block-artisanpack-query"><!-- wp:artisanpack/post-template {"style":{"spacing":{"blockGap":"1.5rem"}}} -->
+<!-- wp:artisanpack/column {"layout":{"type":"grid","columnCount":1}} -->
+<div class="wp-block-artisanpack-column wp-block-column"><!-- wp:artisanpack/query {"queryId":"120","query":{"perPage":2,"postType":"post","orderBy":"date","order":"desc","inherit":false,"offset":1},"layout":{"type":"grid","columnCount":1}} -->
+<div class="wp-block-artisanpack-query"><!-- wp:artisanpack/post-template {"layout":"grid","columns":1,"style":{"spacing":{"blockGap":"1.5rem"}}} -->
 <!-- wp:artisanpack/group {"artisanpackFlex":{"container":{"enabled":{"base":true},"direction":{"base":"row"},"wrap":{"base":"nowrap"},"alignItems":{"base":"stretch"}}},"borderColor":"border-subtle","backgroundColor":"surface","className":"is-style-linked","style":{"border":{"width":"1px","style":"solid","radius":"12px"},"spacing":{"padding":{"top":"0","right":"0","bottom":"0","left":"0"},"blockGap":"0"},"dimensions":{"minHeight":"100%"}},"artisanpackEffects":{"overflowX":"hidden","overflowY":"hidden"}} -->
 <div class="wp-block-artisanpack-group wp-block-group ap-flex ap-flex-row ap-flex-nowrap ap-items-stretch is-style-linked has-border-color has-border-subtle-border-color has-surface-background-color has-background" style="border-style:solid;border-width:1px;border-radius:12px;min-height:100%;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0"><!-- wp:artisanpack/group {"artisanpackFlex":{"item":{"basis":{"base":"130px"},"grow":{"base":0},"shrink":{"base":0}}},"style":{"dimensions":{"minHeight":"100%"}}} -->
 <div class="wp-block-artisanpack-group wp-block-group ap-grow-0 ap-shrink-0 ap-basis-[130px]" style="min-height:100%"><!-- wp:artisanpack/post-featured-image {"height":"100%","style":{"dimensions":{"minHeight":"100%"}}} /--></div>
