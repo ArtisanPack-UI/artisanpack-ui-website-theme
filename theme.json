@@ -279,6 +279,22 @@
             }
         },
         "blocks": {
+            "artisanpack/post-content": {
+                "elements": {
+                    "h2": {
+                        "typography": { "fontSize": "2.25rem", "fontWeight": "600" },
+                        "spacing": { "margin": { "top": "3rem", "bottom": "1rem" } }
+                    },
+                    "h3": {
+                        "typography": { "fontSize": "1.75rem", "fontWeight": "600" },
+                        "spacing": { "margin": { "top": "2rem", "bottom": "0.75rem" } }
+                    },
+                    "h4": {
+                        "typography": { "fontSize": "1rem", "fontWeight": "700" },
+                        "spacing": { "margin": { "top": "1.5rem", "bottom": "0.5rem" } }
+                    }
+                }
+            },
             "artisanpack/quote": {
                 "spacing": { "margin": { "left": "0", "right": "0" } },
                 "typography": {
