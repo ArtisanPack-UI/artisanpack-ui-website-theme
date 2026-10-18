@@ -1129,7 +1129,7 @@ body {
     width: 2.625rem;
     padding: 0;
     overflow: hidden;
-    color: transparent;
+    font-size: 0;
     white-space: nowrap;
 }
 
@@ -1150,6 +1150,111 @@ body {
 
 .is-style-pager .wp-block-query-pagination-next::after {
     content: "›" / "";
+}
+
+/*
+ * Chips (styles/chips.json) on Categories with the badge count: the
+ * packages archive's centred row of pill filters. The current term takes
+ * the brand gradient and its count a translucent white pill.
+ */
+.wp-block-categories.is-style-chips {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.625rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.is-style-chips .cat-item > a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5625rem;
+    padding: 0.5625rem 1rem;
+    border: 1px solid var(--wp--preset--color--border-subtle);
+    border-radius: 999px;
+    background: var(--wp--preset--color--surface);
+    color: var(--wp--preset--color--text-muted);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.is-style-chips .cat-item > a:hover {
+    color: var(--wp--preset--color--text);
+}
+
+.is-style-chips .current-cat > a {
+    border-color: transparent;
+    background: var(--wp--preset--gradient--brand-card);
+    color: var(--wp--preset--color--white);
+}
+
+.is-style-chips .wp-block-categories__count {
+    padding: 0.0625rem 0.4375rem;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--wp--preset--color--text) 10%, transparent);
+    color: var(--wp--preset--color--text);
+    font-family: var(--wp--preset--font-family--mono);
+    font-size: 0.6875rem;
+    line-height: 1.6;
+}
+
+.is-style-chips .current-cat .wp-block-categories__count {
+    background: rgb(11 17 32 / 35%);
+    color: var(--wp--preset--color--white);
+}
+
+/*
+ * Versions (styles/versions.json) on Table: the requirements table, with
+ * a primary header and footer row and alternating Surface / Surface 2
+ * rows. Table cells take no colour or class, and the native Stripes style
+ * only tints rows.
+ */
+.wp-block-table.is-style-versions table {
+    border: 1px solid var(--wp--preset--color--border);
+    border-radius: 12px;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    font-size: 0.90625rem;
+}
+
+.is-style-versions th,
+.is-style-versions td {
+    padding: 0.875rem 1.125rem;
+    border: 0;
+    text-align: left;
+}
+
+.is-style-versions .has-text-align-center {
+    text-align: center;
+}
+
+.is-style-versions thead th,
+.is-style-versions tfoot td {
+    background: color-mix(in srgb, var(--wp--preset--color--primary) 90%, #000000);
+    color: var(--wp--preset--color--white);
+    font-size: 0.8125rem;
+    font-weight: 600;
+}
+
+.is-style-versions tbody tr:nth-child(odd) td {
+    background: var(--wp--preset--color--surface);
+}
+
+.is-style-versions tbody tr:nth-child(even) td {
+    background: var(--wp--preset--color--surface-2);
+}
+
+/*
+ * Full width (styles/full-width.json) on Copy Command: the get-started
+ * command list's chips fill their column. The block has no width control,
+ * and its default is the shrink-wrapped chip.
+ */
+.wp-block-artisanpack-copy-command.is-style-full-width {
+    width: 100%;
 }
 
 /*
