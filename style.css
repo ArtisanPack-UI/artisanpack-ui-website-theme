@@ -986,6 +986,15 @@ body {
  * and spacing supports reach its form, not the input inside it, so the
  * design's field (surface, 12px radius, magnifier inset) needs a style.
  */
+.is-style-filter-rail .wp-block-search__label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--wp--preset--color--text-muted);
+    font-size: 0.875rem;
+    font-weight: 400;
+    text-align: center;
+}
+
 .is-style-filter-rail .wp-block-search__inside-wrapper {
     position: relative;
 }
