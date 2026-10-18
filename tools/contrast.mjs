@@ -23,8 +23,8 @@
  * text (`.screen-reader-text`, `.sr-only`, any 1px clipped box),
  * `aria-hidden` subtrees and the Forms block's editor-only "Select a form"
  * placeholder are skipped. Gradient text (`background-clip: text`) is
- * measured with each gradient stop as its colour, and the worst stop
- * counts; its gradient is dropped from the background screenshot. When
+ * measured with each gradient stop, and eight blends between each pair
+ * of stops, as its colour, and the worst one counts; its gradient is dropped from the background screenshot. When
  * the text's own element
  * has a border or paints its own background (a badge or chip), samples
  * stay inside its padding box, so a tight line box doesn't measure the
@@ -155,6 +155,16 @@ function collectTexts() {
         const stops = gradientText
             ? (getComputedStyle(gradientText).backgroundImage.match(/(?:rgba?|hsla?|color|oklch|oklab|lch|lab)\([^()]*\)/g) ?? []).map(toRgba)
             : [];
+        // Between two stops the gradient passes through blends that can sit
+        // closer to the ground than either stop, so sample eight steps
+        // along each pair too (sRGB, as legacy-syntax gradients interpolate).
+        const gradientColors = stops.flatMap((stop, index) => {
+            const next = stops[index + 1];
+            if (!next) {
+                return [stop];
+            }
+            return Array.from({ length: 8 }, (_, step) => stop.map((channel, k) => channel + ((next[k] - channel) * step) / 8));
+        });
         gradientText?.setAttribute('data-ap-gradient-text', '');
 
         const borders = ['Top', 'Right', 'Bottom', 'Left'].map((side) => parseFloat(style[`border${side}Width`]) || 0);
@@ -182,7 +192,7 @@ function collectTexts() {
 
         texts.push({
             text: node.textContent.trim().slice(0, 40),
-            colors: stops.length ? stops : [toRgba(style.color)],
+            colors: stops.length ? gradientColors : [toRgba(style.color)],
             gradient: stops.length > 0,
             opacity: Number(style.opacity),
             size: parseFloat(style.fontSize),
