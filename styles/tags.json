@@ -1,0 +1,11 @@
+{
+    "$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+    "version": 3,
+    "slug": "tags",
+    "title": "Tags",
+    "blockTypes": ["artisanpack/post-terms"],
+    "styles": {
+        "typography": { "fontSize": "0.875rem" },
+        "color": { "text": "var:preset|color|text-muted" }
+    }
+}
