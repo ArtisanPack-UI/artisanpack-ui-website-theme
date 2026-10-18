@@ -29,7 +29,7 @@
 <div class="wp-block-artisanpack-group wp-block-group ap-flex ap-flex-col ap-items-stretch has-border-color has-border-subtle-border-color has-surface-background-color has-background" style="border-style:solid;border-width:1px;border-radius:12px;min-height:100%;padding-top:1.75rem;padding-right:1.75rem;padding-bottom:1.75rem;padding-left:1.75rem;box-shadow:var(--wp--preset--shadow--sm)"><!-- wp:artisanpack/icon {"iconRef":{"set":"fas","name":"bolt"},"size":20,"iconColor":"#FFFFFF","isDecorative":true,"gradient":"brand","className":"is-style-tile","style":{"border":{"radius":"12px"},"spacing":{"padding":"0.875rem"}}} /-->
 
 <!-- wp:artisanpack/paragraph {"textColor":"text-link","style":{"typography":{"fontFamily":"var:preset|font-family|mono","fontSize":"0.75rem","letterSpacing":"0.02em","lineHeight":"1.5"}}} -->
-<p class="wp-block-paragraph has-text-link-color has-text-color" style="font-family:var(--wp--preset--font-family--mono);font-size:0.75rem;letter-spacing:0.02em;line-height:1.5">v1.0.3 · Laravel + Livewire</p>
+<p class="wp-block-paragraph has-text-link-color has-text-color" style="font-family:var(--wp--preset--font-family--mono);font-size:0.75rem;letter-spacing:0.02em;line-height:1.5">Laravel + Livewire</p>
 <!-- /wp:artisanpack/paragraph -->
 
 <!-- wp:artisanpack/heading {"level":3,"style":{"typography":{"fontSize":"1.1875rem","fontWeight":"700","letterSpacing":"-0.01em","lineHeight":"1.3"}}} -->
@@ -49,7 +49,7 @@
 <div class="wp-block-artisanpack-group wp-block-group ap-flex ap-flex-col ap-items-stretch has-border-color has-border-subtle-border-color has-surface-background-color has-background" style="border-style:solid;border-width:1px;border-radius:12px;min-height:100%;padding-top:1.75rem;padding-right:1.75rem;padding-bottom:1.75rem;padding-left:1.75rem;box-shadow:var(--wp--preset--shadow--sm)"><!-- wp:artisanpack/icon {"iconRef":{"set":"fab","name":"react"},"size":22,"backgroundColor":"secondary-tint","iconColor":"#00E5FF","isDecorative":true,"className":"is-style-tile","style":{"border":{"radius":"12px"},"spacing":{"padding":"0.8125rem"}}} /-->
 
 <!-- wp:artisanpack/paragraph {"textColor":"text-link","style":{"typography":{"fontFamily":"var:preset|font-family|mono","fontSize":"0.75rem","letterSpacing":"0.02em","lineHeight":"1.5"}}} -->
-<p class="wp-block-paragraph has-text-link-color has-text-color" style="font-family:var(--wp--preset--font-family--mono);font-size:0.75rem;letter-spacing:0.02em;line-height:1.5">v1.0.1 · React + Inertia</p>
+<p class="wp-block-paragraph has-text-link-color has-text-color" style="font-family:var(--wp--preset--font-family--mono);font-size:0.75rem;letter-spacing:0.02em;line-height:1.5">React + Inertia</p>
 <!-- /wp:artisanpack/paragraph -->
 
 <!-- wp:artisanpack/heading {"level":3,"style":{"typography":{"fontSize":"1.1875rem","fontWeight":"700","letterSpacing":"-0.01em","lineHeight":"1.3"}}} -->
@@ -69,7 +69,7 @@
 <div class="wp-block-artisanpack-group wp-block-group ap-flex ap-flex-col ap-items-stretch has-border-color has-border-subtle-border-color has-surface-background-color has-background" style="border-style:solid;border-width:1px;border-radius:12px;min-height:100%;padding-top:1.75rem;padding-right:1.75rem;padding-bottom:1.75rem;padding-left:1.75rem;box-shadow:var(--wp--preset--shadow--sm)"><!-- wp:artisanpack/icon {"iconRef":{"set":"fab","name":"vuejs"},"size":22,"backgroundColor":"accent-tint","iconColor":"#E040FB","isDecorative":true,"className":"is-style-tile","style":{"border":{"radius":"12px"},"spacing":{"padding":"0.8125rem"}}} /-->
 
 <!-- wp:artisanpack/paragraph {"textColor":"text-link","style":{"typography":{"fontFamily":"var:preset|font-family|mono","fontSize":"0.75rem","letterSpacing":"0.02em","lineHeight":"1.5"}}} -->
-<p class="wp-block-paragraph has-text-link-color has-text-color" style="font-family:var(--wp--preset--font-family--mono);font-size:0.75rem;letter-spacing:0.02em;line-height:1.5">v1.0.1 · Vue + Inertia</p>
+<p class="wp-block-paragraph has-text-link-color has-text-color" style="font-family:var(--wp--preset--font-family--mono);font-size:0.75rem;letter-spacing:0.02em;line-height:1.5">Vue + Inertia</p>
 <!-- /wp:artisanpack/paragraph -->
 
 <!-- wp:artisanpack/heading {"level":3,"style":{"typography":{"fontSize":"1.1875rem","fontWeight":"700","letterSpacing":"-0.01em","lineHeight":"1.3"}}} -->

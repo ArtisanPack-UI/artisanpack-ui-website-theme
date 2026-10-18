@@ -20,7 +20,7 @@
 
 <!-- wp:artisanpack/group {"layout":{"type":"constrained","contentSize":"620px"}} -->
 <div class="wp-block-artisanpack-group wp-block-group"><!-- wp:artisanpack/paragraph {"textColor":"text-muted","style":{"typography":{"textAlign":"center","fontSize":"1.125rem","lineHeight":"1.65"}}} -->
-<p class="has-text-align-center wp-block-paragraph has-text-muted-color has-text-color" style="font-size:1.125rem;line-height:1.65">An open-source ecosystem of 34 Laravel packages, built to solve the problems its creator kept running into — with accessibility baked into every line of code.</p>
+<p class="has-text-align-center wp-block-paragraph has-text-muted-color has-text-color" style="font-size:1.125rem;line-height:1.65">An open-source ecosystem of Laravel packages, built to solve the problems its creator kept running into — with accessibility baked into every line of code.</p>
 <!-- /wp:artisanpack/paragraph --></div>
 <!-- /wp:artisanpack/group --></header>
 <!-- /wp:artisanpack/group -->

@@ -22,7 +22,7 @@
 <!-- /wp:artisanpack/heading -->
 
 <!-- wp:artisanpack/paragraph {"className":"is-style-lead","style":{"spacing":{"margin":{"top":"1.625rem"}}}} -->
-<p class="wp-block-paragraph is-style-lead" style="margin-top:1.625rem">ArtisanPack UI is an open-source ecosystem of 34 Laravel packages — with component libraries for Livewire, React and Vue — designed to help you ship quality applications without rebuilding the basics.</p>
+<p class="wp-block-paragraph is-style-lead" style="margin-top:1.625rem">ArtisanPack UI is an open-source ecosystem of Laravel packages — with component libraries for Livewire, React and Vue — designed to help you ship quality applications without rebuilding the basics.</p>
 <!-- /wp:artisanpack/paragraph --></header>
 <!-- /wp:artisanpack/group -->
 
@@ -331,7 +331,7 @@
 <div class="wp-block-artisanpack-group wp-block-group ap-flex ap-flex-row ap-flex-nowrap ap-items-start"><!-- wp:artisanpack/icon {"iconRef":{"set":"fas","name":"check"},"size":12,"backgroundColor":"primary-tint","iconColor":"#2962FF","isDecorative":true,"className":"is-style-tile","style":{"border":{"radius":"7px"},"spacing":{"padding":"0.375rem","margin":{"top":"0.125rem"}}}} /-->
 
 <!-- wp:artisanpack/paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.9375rem","lineHeight":"1.6"}}} -->
-<p class="wp-block-paragraph has-text-muted-color has-text-color" style="font-size:0.9375rem;line-height:1.6"><mark style="background-color:rgba(0,0,0,0);color:var(--wp--preset--color--text)" class="has-inline-color has-text-color"><strong>34 packages</strong></mark> spanning UI, CMS, forms, analytics, SEO, security and developer tools</p>
+<p class="wp-block-paragraph has-text-muted-color has-text-color" style="font-size:0.9375rem;line-height:1.6"><mark style="background-color:rgba(0,0,0,0);color:var(--wp--preset--color--text)" class="has-inline-color has-text-color"><strong>38 packages</strong></mark> spanning UI, CMS, forms, analytics, SEO, security and developer tools</p>
 <!-- /wp:artisanpack/paragraph --></div>
 <!-- /wp:artisanpack/group -->
 
@@ -378,7 +378,7 @@
 <!-- /wp:artisanpack/paragraph -->
 
 <!-- wp:artisanpack/paragraph {"textColor":"on-neon","style":{"typography":{"fontFamily":"var:preset|font-family|mono","fontSize":"0.625rem","lineHeight":"1.3"}}} -->
-<p class="wp-block-paragraph has-on-neon-color has-text-color" style="font-family:var(--wp--preset--font-family--mono);font-size:0.625rem;line-height:1.3">34 packages</p>
+<p class="wp-block-paragraph has-on-neon-color has-text-color" style="font-family:var(--wp--preset--font-family--mono);font-size:0.625rem;line-height:1.3">38 packages</p>
 <!-- /wp:artisanpack/paragraph --></div>
 <!-- /wp:artisanpack/group -->
 
@@ -484,7 +484,7 @@
 <!-- /wp:artisanpack/heading -->
 
 <!-- wp:artisanpack/paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.90625rem","lineHeight":"1.6"}}} -->
-<p class="wp-block-paragraph has-text-muted-color has-text-color" style="font-size:0.90625rem;line-height:1.6">Install the packages you need. Start with components or the full starter kit.</p>
+<p class="wp-block-paragraph has-text-muted-color has-text-color" style="font-size:0.90625rem;line-height:1.6">Install the packages you need, then run each one's installer and build its assets: <code>php artisan livewire-ui-components:install</code>, then <code>npm run dev</code>.</p>
 <!-- /wp:artisanpack/paragraph -->
 
 <!-- wp:artisanpack/copy-command {"command":"composer require artisanpack-ui/livewire-ui-components","backgroundColor":"ink","className":"is-style-night is-style-full-width","style":{"spacing":{"margin":{"top":"auto"}}}} /--></div>
@@ -509,7 +509,7 @@
 <p class="wp-block-paragraph has-text-muted-color has-text-color" style="font-size:0.90625rem;line-height:1.6">Start using components in your Blade templates immediately.</p>
 <!-- /wp:artisanpack/paragraph -->
 
-<!-- wp:artisanpack/copy-command {"command":"\u003cx-artisanpack::button\u003eSave\u003c/x-artisanpack::button\u003e","prefix":"","backgroundColor":"ink","className":"is-style-night is-style-full-width","style":{"spacing":{"margin":{"top":"auto"}}}} /--></div>
+<!-- wp:artisanpack/copy-command {"command":"\u003cx-artisanpack-button\u003eSave\u003c/x-artisanpack-button\u003e","prefix":"","backgroundColor":"ink","className":"is-style-night is-style-full-width","style":{"spacing":{"margin":{"top":"auto"}}}} /--></div>
 <!-- /wp:artisanpack/group --></div>
 <!-- /wp:artisanpack/grid-item --></div>
 <!-- /wp:artisanpack/grid -->
@@ -542,7 +542,7 @@
 <div class="wp-block-artisanpack-group wp-block-group ap-flex ap-flex-col ap-items-stretch has-border-color has-border-subtle-border-color has-surface-background-color has-background" style="border-style:solid;border-width:1px;border-radius:12px;min-height:100%;padding-top:1.75rem;padding-right:1.75rem;padding-bottom:1.75rem;padding-left:1.75rem;box-shadow:var(--wp--preset--shadow--sm)"><!-- wp:artisanpack/icon {"iconRef":{"set":"fas","name":"bolt"},"size":20,"iconColor":"#FFFFFF","isDecorative":true,"gradient":"brand","className":"is-style-tile","style":{"border":{"radius":"12px"},"spacing":{"padding":"0.875rem"}}} /-->
 
 <!-- wp:artisanpack/paragraph {"textColor":"text-link","style":{"typography":{"fontFamily":"var:preset|font-family|mono","fontSize":"0.75rem","letterSpacing":"0.02em","lineHeight":"1.5"}}} -->
-<p class="wp-block-paragraph has-text-link-color has-text-color" style="font-family:var(--wp--preset--font-family--mono);font-size:0.75rem;letter-spacing:0.02em;line-height:1.5">v1.0.3 · Laravel + Livewire</p>
+<p class="wp-block-paragraph has-text-link-color has-text-color" style="font-family:var(--wp--preset--font-family--mono);font-size:0.75rem;letter-spacing:0.02em;line-height:1.5">Laravel + Livewire</p>
 <!-- /wp:artisanpack/paragraph -->
 
 <!-- wp:artisanpack/heading {"level":3,"style":{"typography":{"fontSize":"1.1875rem","fontWeight":"700","letterSpacing":"-0.01em","lineHeight":"1.3"}}} -->
@@ -562,7 +562,7 @@
 <div class="wp-block-artisanpack-group wp-block-group ap-flex ap-flex-col ap-items-stretch has-border-color has-border-subtle-border-color has-surface-background-color has-background" style="border-style:solid;border-width:1px;border-radius:12px;min-height:100%;padding-top:1.75rem;padding-right:1.75rem;padding-bottom:1.75rem;padding-left:1.75rem;box-shadow:var(--wp--preset--shadow--sm)"><!-- wp:artisanpack/icon {"iconRef":{"set":"fab","name":"react"},"size":22,"backgroundColor":"secondary-tint","iconColor":"#00E5FF","isDecorative":true,"className":"is-style-tile","style":{"border":{"radius":"12px"},"spacing":{"padding":"0.8125rem"}}} /-->
 
 <!-- wp:artisanpack/paragraph {"textColor":"text-link","style":{"typography":{"fontFamily":"var:preset|font-family|mono","fontSize":"0.75rem","letterSpacing":"0.02em","lineHeight":"1.5"}}} -->
-<p class="wp-block-paragraph has-text-link-color has-text-color" style="font-family:var(--wp--preset--font-family--mono);font-size:0.75rem;letter-spacing:0.02em;line-height:1.5">v1.0.1 · React + Inertia</p>
+<p class="wp-block-paragraph has-text-link-color has-text-color" style="font-family:var(--wp--preset--font-family--mono);font-size:0.75rem;letter-spacing:0.02em;line-height:1.5">React + Inertia</p>
 <!-- /wp:artisanpack/paragraph -->
 
 <!-- wp:artisanpack/heading {"level":3,"style":{"typography":{"fontSize":"1.1875rem","fontWeight":"700","letterSpacing":"-0.01em","lineHeight":"1.3"}}} -->
@@ -582,7 +582,7 @@
 <div class="wp-block-artisanpack-group wp-block-group ap-flex ap-flex-col ap-items-stretch has-border-color has-border-subtle-border-color has-surface-background-color has-background" style="border-style:solid;border-width:1px;border-radius:12px;min-height:100%;padding-top:1.75rem;padding-right:1.75rem;padding-bottom:1.75rem;padding-left:1.75rem;box-shadow:var(--wp--preset--shadow--sm)"><!-- wp:artisanpack/icon {"iconRef":{"set":"fab","name":"vuejs"},"size":22,"backgroundColor":"accent-tint","iconColor":"#E040FB","isDecorative":true,"className":"is-style-tile","style":{"border":{"radius":"12px"},"spacing":{"padding":"0.8125rem"}}} /-->
 
 <!-- wp:artisanpack/paragraph {"textColor":"text-link","style":{"typography":{"fontFamily":"var:preset|font-family|mono","fontSize":"0.75rem","letterSpacing":"0.02em","lineHeight":"1.5"}}} -->
-<p class="wp-block-paragraph has-text-link-color has-text-color" style="font-family:var(--wp--preset--font-family--mono);font-size:0.75rem;letter-spacing:0.02em;line-height:1.5">v1.0.1 · Vue + Inertia</p>
+<p class="wp-block-paragraph has-text-link-color has-text-color" style="font-family:var(--wp--preset--font-family--mono);font-size:0.75rem;letter-spacing:0.02em;line-height:1.5">Vue + Inertia</p>
 <!-- /wp:artisanpack/paragraph -->
 
 <!-- wp:artisanpack/heading {"level":3,"style":{"typography":{"fontSize":"1.1875rem","fontWeight":"700","letterSpacing":"-0.01em","lineHeight":"1.3"}}} -->
@@ -623,7 +623,7 @@
 <div class="wp-block-artisanpack-grid-item ap-grid-item ap-grid-item-layout-normal ap-grid-item-span-1-base-columns ap-grid-item-span-1-base-row"><!-- wp:artisanpack/group {"style":{"spacing":{"blockGap":"0.625rem"}},"layout":{"type":"default"}} -->
 <div class="wp-block-artisanpack-group wp-block-group"><!-- wp:artisanpack/group {"artisanpackFlex":{"container":{"enabled":{"base":true},"direction":{"base":"row"},"justifyContent":{"base":"center"}}}} -->
 <div class="wp-block-artisanpack-group wp-block-group ap-flex ap-flex-row ap-justify-center"><!-- wp:artisanpack/paragraph {"gradient":"neon","style":{"typography":{"fontFamily":"var:preset|font-family|display","fontSize":"2.75rem","fontWeight":"800","letterSpacing":"-0.03em","lineHeight":"1"},"spacing":{"padding":{"top":"0","right":"0","bottom":"0","left":"0"}}},"artisanpackEffects":{"textClip":true}} -->
-<p class="wp-block-paragraph has-neon-gradient-background has-background" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;font-family:var(--wp--preset--font-family--display);font-size:2.75rem;font-weight:800;letter-spacing:-0.03em;line-height:1">34</p>
+<p class="wp-block-paragraph has-neon-gradient-background has-background" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;font-family:var(--wp--preset--font-family--display);font-size:2.75rem;font-weight:800;letter-spacing:-0.03em;line-height:1">38</p>
 <!-- /wp:artisanpack/paragraph --></div>
 <!-- /wp:artisanpack/group -->
 
