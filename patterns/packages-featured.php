@@ -32,7 +32,9 @@
 
 <!-- wp:artisanpack/post-title {"level":3,"isLink":true,"style":{"typography":{"fontSize":"1.75rem","fontWeight":"700","lineHeight":"1.3"},"elements":{"link":{"color":{"text":"var:preset|color|text"}}}}} /-->
 
-<!-- wp:artisanpack/post-excerpt {"textColor":"text-muted","style":{"typography":{"fontSize":"1rem","lineHeight":"1.6"},"dimensions":{"maxWidth":"420px"}}} /-->
+<!-- wp:artisanpack/group {"layout":{"type":"constrained","contentSize":"420px","justifyContent":"left"}} -->
+<div class="wp-block-artisanpack-group wp-block-group"><!-- wp:artisanpack/post-excerpt {"textColor":"text-muted","style":{"typography":{"fontSize":"1rem","lineHeight":"1.6"}}} /--></div>
+<!-- /wp:artisanpack/group -->
 
 <!-- wp:artisanpack/copy-command {"backgroundColor":"ink","className":"is-style-night","bindings":{"command":{"source":"package","args":{"key":"install_command"}}}} /-->
 

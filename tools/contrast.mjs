@@ -22,8 +22,9 @@
  * (24px, or 18.66px bold) needs 3:1, everything else 4.5:1. Screen-reader
  * text (`.screen-reader-text`, `.sr-only`, any 1px clipped box) and
  * `aria-hidden` subtrees are skipped. When the text's own element
- * has a border (a badge or chip), samples stay inside its padding box, so
- * a tight line box doesn't measure the text against its own border.
+ * has a border or paints its own background (a badge or chip), samples
+ * stay inside its padding box, so a tight line box doesn't measure the
+ * text against its own border, or a chip against what's around it.
  *
  * The Light screenshot goes to `<keystone>/theme-pattern-report/rebuild/<name>/`.
  * Exits 1 when any text is below AA.
@@ -137,9 +138,12 @@ function collectTexts() {
 
         const style = getComputedStyle(element);
         const borders = ['Top', 'Right', 'Bottom', 'Left'].map((side) => parseFloat(style[`border${side}Width`]) || 0);
+        // A chip painting its own ground (a gradient term badge) is read
+        // against that ground, not whatever sits around it.
+        const ownBackground = style.backgroundImage !== 'none' || toRgba(style.backgroundColor)[3] > 0;
         let clip = null;
 
-        if (borders.some(Boolean)) {
+        if (borders.some(Boolean) || ownBackground) {
             const outer = element.getBoundingClientRect();
             clip = [
                 outer.left + scrollX + borders[3],
