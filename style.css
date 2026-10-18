@@ -877,6 +877,12 @@ body {
     position: relative;
 }
 
+/* The whole card is the link (and shows the focus ring), so a static
+   heading's link drops the underline, as a post title's does. */
+.is-style-linked .wp-block-heading a {
+    text-decoration: none;
+}
+
 .is-style-linked .wp-block-post-title a::after,
 .is-style-linked .wp-block-heading a::after {
     content: "";
