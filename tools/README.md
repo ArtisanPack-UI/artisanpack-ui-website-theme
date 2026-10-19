@@ -85,6 +85,7 @@ matching inline `style` together, then validate without `--rebuild`.
 node tools/contrast.mjs text-media-split pricing   # one or more rendered pages
 node tools/contrast.mjs pricing --modes=light --no-shot
 node tools/contrast.mjs https://artisanpack-ui.test/blog   # a live template
+node tools/contrast.mjs https://artisanpack-ui.test/blog --scope=body   # header and footer too
 ```
 
 A full URL is scanned as it is (the consent banner is hidden); its Light
@@ -105,7 +106,12 @@ behind it). Screen-reader text and `aria-hidden`
 subtrees are skipped. Failing texts are listed with their ratio, and the
 script exits 1 if there are any.
 
-Options: `--modes=dark,light` (default both), `--width=1440`, `--no-shot`.
+Only `<main>` is scanned unless `--scope=body` is given, which scans the
+whole page, so a live page's header and footer parts are measured too. An
+open menu overlay is hidden while closed and isn't measured.
+
+Options: `--modes=dark,light` (default both), `--width=1440`,
+`--scope=main|body` (default `main`), `--no-shot`.
 
 ## Night token block
 

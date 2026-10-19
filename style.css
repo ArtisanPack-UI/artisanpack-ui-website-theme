@@ -30,6 +30,8 @@
  *  10. The FAQ variation's accordion toggle chip, click-target padding
  *      and open-panel border (the renderer draws these itself), and the
  *      FAQ Search block's field.
+ *  14. Header and footer: the header's backdrop blur, the active
+ *      navigation link, the skip link and the social tiles' hover.
  *
  * Font Awesome is enqueued from Theme.php. Editor-only overrides live in
  * editor.css.
@@ -71,12 +73,14 @@ body {
     border: 0;
 }
 
-.screen-reader-text:focus {
+.screen-reader-text:focus,
+.screen-reader-text:focus-within {
     position: static;
     width: auto;
     height: auto;
     margin: 0;
     clip: auto;
+    clip-path: none;
     white-space: normal;
 }
 
@@ -151,6 +155,12 @@ body {
 .wp-block-artisanpack-icon.is-style-tile {
     display: flex;
     width: fit-content;
+}
+
+/* A linked tile: the link is a block-level line box (the body's line
+ * height), which made the tile taller than wide. */
+.wp-block-artisanpack-icon.is-style-tile > a {
+    display: flex;
 }
 
 /* ─── 4. Gradient on one word ────────────────────────────────────────── */
@@ -406,6 +416,7 @@ body {
     --wp--preset--color--section: #1F2937;
     --wp--preset--color--surface: #1F2937;
     --wp--preset--color--surface-2: #111827;
+    --wp--preset--color--glass: rgba(11, 17, 32, 0.84);
     --wp--preset--color--text: #FFFFFF;
     --wp--preset--color--text-muted: #9CA3AF;
     --wp--preset--color--text-subtle: #6B7280;
@@ -1348,6 +1359,68 @@ body {
     border-color: transparent;
     background: var(--wp--preset--gradient--brand-card);
     color: var(--wp--preset--color--white);
+}
+
+/* ─── 14. Header and footer ─────────────────────────────────────────── */
+
+/* The design's glass header: no block exposes `backdrop-filter`. The
+ * colour, border, stickiness (on the template part) and z-index are all
+ * native. The blur sits on a layer behind the content: on the header
+ * itself, `backdrop-filter` would make it the containing block of the
+ * fixed menu overlay and trap the overlay inside the 76px bar. */
+.wp-block-template-part--header > .wp-block-group {
+    position: relative;
+}
+
+.wp-block-template-part--header > .wp-block-group::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    -webkit-backdrop-filter: saturate(160%) blur(14px);
+    backdrop-filter: saturate(160%) blur(14px);
+}
+
+/* The active link is secondary. The renderer marks it (`current-menu-item`,
+ * visual-editor #975), but Navigation has no colour for a current item. */
+.wp-block-navigation .current-menu-item > .wp-block-navigation-item__content {
+    color: var(--wp--preset--color--secondary);
+}
+
+/* The skip link is a paragraph whose link takes focus, so §1's
+ * `:focus-within` reveals it; here it floats over the header instead of
+ * pushing the row down. */
+.wp-block-template-part--header .screen-reader-text:focus-within {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    z-index: 100;
+    margin: 0;
+    padding: 0.625rem 1rem;
+    border-radius: 8px;
+    background: var(--wp--preset--color--surface);
+    box-shadow: var(--wp--preset--shadow--md);
+}
+
+/* The sticky header covers the top 77px, so an in-page jump (the skip
+ * link, `#newsletter`) stops below it. */
+html {
+    scroll-padding-top: 5rem;
+}
+
+/* The menu toggle buttons take the theme's focus ring instead of the
+ * browser's default. */
+.wp-block-navigation__responsive-container-open:focus-visible,
+.wp-block-navigation__responsive-container-close:focus-visible {
+    outline: 2px solid var(--wp--preset--color--secondary);
+    outline-offset: 2px;
+}
+
+/* Social tiles turn secondary on hover, as drawn: Icon has no hover colour,
+ * and its `iconColor` is an inline style on the glyph, hence `!important`. */
+.wp-block-template-part--footer .wp-block-artisanpack-icon.is-style-tile a:is(:hover, :focus-visible) .wp-block-artisanpack-icon__ref {
+    color: var(--wp--preset--color--secondary) !important;
 }
 
 /* ─── Reduced motion ─────────────────────────────────────────────────── */
