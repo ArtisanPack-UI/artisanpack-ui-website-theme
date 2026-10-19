@@ -35,6 +35,7 @@
                 { "slug": "surface",        "name": "Surface",        "color": "#1F2937" },
                 { "slug": "surface-2",      "name": "Surface 2",      "color": "#111827" },
                 { "slug": "ink",            "name": "Ink",            "color": "#0B1120" },
+                { "slug": "glass",          "name": "Glass",          "color": "rgba(11, 17, 32, 0.72)" },
                 { "slug": "text",           "name": "Text",           "color": "#FFFFFF" },
                 { "slug": "text-muted",     "name": "Text Muted",     "color": "#9CA3AF" },
                 { "slug": "text-subtle",    "name": "Text Subtle",    "color": "#6B7280" },
@@ -441,8 +442,9 @@
             "primary":           "Primary Menu",
             "footer-packages":   "Footer — Packages",
             "footer-resources":  "Footer — Resources",
-            "footer-legal":      "Footer — Legal",
-            "social":            "Social Links"
+            "footer-community":  "Footer — Community",
+            "footer-company":    "Footer — Company",
+            "footer-legal":      "Footer — Legal"
         }
     },
 

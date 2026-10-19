@@ -24,6 +24,7 @@
                 { "slug": "surface",        "name": "Surface",        "color": "#FFFFFF" },
                 { "slug": "surface-2",      "name": "Surface 2",      "color": "#F9FAFB" },
                 { "slug": "ink",            "name": "Ink",            "color": "#0B1120" },
+                { "slug": "glass",          "name": "Glass",          "color": "rgba(11, 17, 32, 0.88)" },
                 { "slug": "text",           "name": "Text",           "color": "#000000" },
                 { "slug": "text-muted",     "name": "Text Muted",     "color": "#4B5563" },
                 { "slug": "text-subtle",    "name": "Text Subtle",    "color": "#9CA3AF" },

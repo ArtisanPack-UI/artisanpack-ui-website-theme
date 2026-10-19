@@ -4,7 +4,7 @@
  *
  * Usage:
  *
- *     node tools/contrast.mjs <name>... [--modes=dark,light] [--width=1440] [--no-shot]
+ *     node tools/contrast.mjs <name>... [--modes=dark,light] [--width=1440] [--scope=main|body] [--no-shot]
  *
  *   <name>    One or more pages rendered by `php tools/render.php`, shot at
  *             https://<app>/_ap-render/<name>.html, or a full URL (a live
@@ -13,9 +13,11 @@
  *   --modes   Which variations to scan. `light` applies `styles/light.json`'s
  *             palette to `:root`, the way the Light variation re-points the
  *             preset custom properties.
+ *   --scope   `main` (default) scans only the page's `<main>`; `body` scans
+ *             the whole page, so a live page's header and footer count too.
  *   --no-shot Skip writing `theme-light-<width>.png`.
  *
- * Each text node inside `<main>` is checked against what's actually painted
+ * Each text node inside `<main>` (or the whole `<body>` with `--scope=body`) is checked against what's actually painted
  * around it: the page is screenshotted, and pixels just outside the text's
  * box are sampled, so text on gradients, media placeholders and glows is
  * measured too. The samples come from a second screenshot with all text and
@@ -59,12 +61,18 @@ const { values, positionals } = parseArgs({
     options: {
         modes: { type: 'string', default: 'dark,light' },
         width: { type: 'string', default: '1440' },
+        scope: { type: 'string', default: 'main' },
         'no-shot': { type: 'boolean', default: false },
     },
 });
 
 if (!positionals.length) {
-    console.error('Usage: node tools/contrast.mjs <name>... [--modes=dark,light] [--width=1440] [--no-shot]');
+    console.error('Usage: node tools/contrast.mjs <name>... [--modes=dark,light] [--width=1440] [--scope=main|body] [--no-shot]');
+    process.exit(1);
+}
+
+if (!['main', 'body'].includes(values.scope)) {
+    console.error('--scope must be `main` or `body`.');
     process.exit(1);
 }
 
@@ -83,11 +91,11 @@ const lightCss = ':root{' + light.settings.color.palette
     .join(';') + '}';
 
 /**
- * Collect every visible text node in `<main>`: its text, resolved colour as
+ * Collect every visible text node in `<main>` (or `<body>`, per `scope`): its text, resolved colour as
  * RGBA (a 1×1 canvas resolves `color-mix()` and friends), opacity, size,
  * weight and page-space box. Runs in the page.
  */
-function collectTexts() {
+function collectTexts(scope) {
     const canvas = document.createElement('canvas');
     canvas.width = canvas.height = 1;
     const context = canvas.getContext('2d', { willReadFrequently: true });
@@ -101,7 +109,7 @@ function collectTexts() {
 
     const texts = [];
     const seen = new Set();
-    const walker = document.createTreeWalker(document.querySelector('main') ?? document.body, NodeFilter.SHOW_TEXT);
+    const walker = document.createTreeWalker((scope === 'body' ? null : document.querySelector('main')) ?? document.body, NodeFilter.SHOW_TEXT);
 
     while (walker.nextNode()) {
         const node = walker.currentNode;
@@ -323,13 +331,13 @@ for (const name of positionals) {
             writeFileSync(join(outDir, `theme-light-${width}.png`), shot);
         }
 
-        const texts = await page.evaluate(collectTexts);
+        const texts = await page.evaluate(collectTexts, values.scope);
 
         // Sample backgrounds with every glyph and icon hidden, so a ring
         // sample that lands on neighbouring text (a descender above, a
         // chip's `$` prompt) measures what's painted behind it instead.
         // Gradient text's clipped gradient is its glyphs, so it goes too.
-        const hideText = await page.addStyleTag({ content: 'main, main * { color: transparent !important; -webkit-text-fill-color: transparent !important; text-shadow: none !important; } main svg { visibility: hidden !important; } [data-ap-gradient-text] { background: none !important; }' });
+        const hideText = await page.addStyleTag({ content: `${values.scope}, ${values.scope} * { color: transparent !important; -webkit-text-fill-color: transparent !important; text-shadow: none !important; } ${values.scope} svg { visibility: hidden !important; } [data-ap-gradient-text] { background: none !important; }` });
         const backgrounds = await page.screenshot({ fullPage: true });
         await hideText.evaluate((node) => node.remove());
 
