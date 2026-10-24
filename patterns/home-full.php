@@ -6,13 +6,13 @@
  * Categories: featured, full-page
  * Post Types: page
  * Synced: no
- * Description: The full homepage: split hero with install command, pain points, differentiators, featured packages, ecosystem hub diagram, quick start, starter kits, stats band and newsletter signup.
+ * Description: The full homepage: terminal hero with install command, pain points, differentiators, featured packages, ecosystem hub diagram, quick start, starter kits, stats band and newsletter signup.
  */
 ?>
-<!-- wp:artisanpack/group {"tagName":"section","gradient":"wash-corners","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|section","bottom":"var:preset|spacing|section","left":"var:preset|spacing|gutter","right":"var:preset|spacing|gutter"}}},"layout":{"type":"constrained","contentSize":"1200px"}} -->
-<section class="wp-block-artisanpack-group alignfull wp-block-group has-wash-corners-gradient-background has-background" style="padding-top:var(--wp--preset--spacing--section);padding-right:var(--wp--preset--spacing--gutter);padding-bottom:var(--wp--preset--spacing--section);padding-left:var(--wp--preset--spacing--gutter)"><!-- wp:artisanpack/columns {"verticalAlignment":"center","style":{"spacing":{"blockGap":{"left":"4rem","top":"3rem"}}}} -->
-<div class="wp-block-artisanpack-columns wp-block-columns are-vertically-aligned-center"><!-- wp:artisanpack/column {"verticalAlignment":"center","width":"52.5%","style":{"spacing":{"blockGap":"1.75rem"}}} -->
-<div class="wp-block-artisanpack-column wp-block-column is-vertically-aligned-center" style="flex-basis:52.5%"><!-- wp:artisanpack/group {"tagName":"header","style":{"spacing":{"blockGap":"1.25rem"}},"layout":{"type":"default"}} -->
+<!-- wp:artisanpack/group {"tagName":"section","gradient":"wash-diagonal","align":"full","className":"is-style-night","style":{"spacing":{"padding":{"top":"5rem","bottom":"5rem","left":"var:preset|spacing|gutter","right":"var:preset|spacing|gutter"}},"border":{"bottom":{"color":"var:preset|color|border-subtle","width":"1px","style":"solid"}}},"layout":{"type":"constrained","contentSize":"1200px"}} -->
+<section class="wp-block-artisanpack-group alignfull wp-block-group is-style-night has-wash-diagonal-gradient-background has-background" style="border-bottom-color:var(--wp--preset--color--border-subtle);border-bottom-style:solid;border-bottom-width:1px;padding-top:5rem;padding-right:var(--wp--preset--spacing--gutter);padding-bottom:5rem;padding-left:var(--wp--preset--spacing--gutter)"><!-- wp:artisanpack/columns {"verticalAlignment":"center","style":{"spacing":{"blockGap":{"left":"3.5rem","top":"3rem"}}}} -->
+<div class="wp-block-artisanpack-columns wp-block-columns are-vertically-aligned-center"><!-- wp:artisanpack/column {"verticalAlignment":"center","width":"55%","style":{"spacing":{"blockGap":"1.5rem"}}} -->
+<div class="wp-block-artisanpack-column wp-block-column is-vertically-aligned-center" style="flex-basis:55%"><!-- wp:artisanpack/group {"tagName":"header","style":{"spacing":{"blockGap":"1.25rem"}},"layout":{"type":"default"}} -->
 <header class="wp-block-artisanpack-group wp-block-group"><!-- wp:artisanpack/paragraph {"className":"is-style-eyebrow"} -->
 <p class="wp-block-paragraph is-style-eyebrow">ArtisanPack UI</p>
 <!-- /wp:artisanpack/paragraph -->
@@ -21,44 +21,42 @@
 <h1 class="wp-block-heading has-h-2-font-size">Build amazing Laravel apps faster</h1>
 <!-- /wp:artisanpack/heading -->
 
-<!-- wp:artisanpack/paragraph {"className":"is-style-lead","style":{"spacing":{"margin":{"top":"1.625rem"}}}} -->
-<p class="wp-block-paragraph is-style-lead" style="margin-top:1.625rem">ArtisanPack UI is an open-source ecosystem of Laravel packages — with component libraries for Livewire, React and Vue — designed to help you ship quality applications without rebuilding the basics.</p>
-<!-- /wp:artisanpack/paragraph --></header>
+<!-- wp:artisanpack/group {"layout":{"type":"constrained","contentSize":"560px","justifyContent":"left"}} -->
+<div class="wp-block-artisanpack-group wp-block-group"><!-- wp:artisanpack/paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"1.125rem","lineHeight":"1.65"}}} -->
+<p class="wp-block-paragraph has-text-muted-color has-text-color" style="font-size:1.125rem;line-height:1.65">An open-source ecosystem of Laravel packages, with accessible component libraries for Livewire, React and Vue — so you can ship quality applications on the stack you love without rebuilding the basics.</p>
+<!-- /wp:artisanpack/paragraph --></div>
+<!-- /wp:artisanpack/group --></header>
 <!-- /wp:artisanpack/group -->
 
-<!-- wp:artisanpack/buttons {"style":{"spacing":{"blockGap":"0.875rem"}}} -->
-<div class="wp-block-artisanpack-buttons wp-block-buttons"><!-- wp:artisanpack/button {"fontSize":"button-lg","style":{"spacing":{"padding":{"top":"0.9375rem","bottom":"0.9375rem","left":"1.5rem","right":"1.5rem"}}}} -->
-<div class="wp-block-artisanpack-button wp-block-button"><a class="wp-block-button__link has-button-lg-font-size has-custom-font-size wp-element-button" href="https://docs.artisanpackui.dev" style="padding-top:0.9375rem;padding-right:1.5rem;padding-bottom:0.9375rem;padding-left:1.5rem">Get Started <span class="ap-inline-icon" data-icon-set="fas" data-icon-name="arrow-right" aria-hidden="true"><svg aria-hidden="true" viewBox="0 0 24 24"></svg></span></a></div>
-<!-- /wp:artisanpack/button -->
+<!-- wp:artisanpack/group {"artisanpackFlex":{"container":{"enabled":{"base":true},"direction":{"base":"row"},"wrap":{"base":"wrap"},"alignItems":{"base":"center"}}},"style":{"spacing":{"blockGap":"0.625rem"}}} -->
+<div class="wp-block-artisanpack-group wp-block-group ap-flex ap-flex-row ap-flex-wrap ap-items-center"><!-- wp:artisanpack/paragraph {"className":"is-style-badge"} -->
+<p class="wp-block-paragraph is-style-badge">Livewire</p>
+<!-- /wp:artisanpack/paragraph -->
 
-<!-- wp:artisanpack/button {"className":"is-style-hollow","fontSize":"button-lg","style":{"spacing":{"padding":{"top":"0.9375rem","bottom":"0.9375rem","left":"1.5rem","right":"1.5rem"}}}} -->
-<div class="wp-block-artisanpack-button wp-block-button is-style-hollow"><a class="wp-block-button__link has-button-lg-font-size has-custom-font-size wp-element-button" href="https://github.com/ArtisanPack-UI" style="padding-top:0.9375rem;padding-right:1.5rem;padding-bottom:0.9375rem;padding-left:1.5rem"><span class="ap-inline-icon" data-icon-set="fab" data-icon-name="github" aria-hidden="true"><svg aria-hidden="true" viewBox="0 0 24 24"></svg></span> View on GitHub</a></div>
-<!-- /wp:artisanpack/button --></div>
-<!-- /wp:artisanpack/buttons -->
+<!-- wp:artisanpack/paragraph {"className":"is-style-badge"} -->
+<p class="wp-block-paragraph is-style-badge">React</p>
+<!-- /wp:artisanpack/paragraph -->
 
-<!-- wp:artisanpack/copy-command {"command":"composer require artisanpack-ui/core","backgroundColor":"ink","className":"is-style-night"} /--></div>
-<!-- /wp:artisanpack/column -->
-
-<!-- wp:artisanpack/column {"verticalAlignment":"center","width":"47.5%"} -->
-<div class="wp-block-artisanpack-column wp-block-column is-vertically-aligned-center" style="flex-basis:47.5%"><!-- wp:artisanpack/group {"backgroundColor":"base","style":{"border":{"width":"3px","radius":"12px","gradient":"neon"},"shadow":"var:preset|shadow|glow-gradient","spacing":{"blockGap":"0","padding":{"top":"0","right":"0","bottom":"0","left":"0"}}},"layout":{"type":"default"}} -->
-<div class="wp-block-artisanpack-group wp-block-group has-base-background-color has-background" style="border-width:3px;border-radius:12px;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;box-shadow:var(--wp--preset--shadow--glow-gradient)"><!-- wp:artisanpack/group {"style":{"border":{"radius":"9px"},"spacing":{"blockGap":"0"}},"layout":{"type":"default"},"artisanpackEffects":{"overflowX":"hidden","overflowY":"hidden"}} -->
-<div class="wp-block-artisanpack-group wp-block-group" style="border-radius:9px"><!-- wp:artisanpack/group {"artisanpackFlex":{"container":{"enabled":{"base":true},"direction":{"base":"row"},"wrap":{"base":"nowrap"},"alignItems":{"base":"center"}}},"backgroundColor":"surface-2","style":{"dimensions":{"minHeight":"2.5rem"},"spacing":{"padding":{"top":"0","bottom":"0","left":"0.875rem","right":"0.875rem"},"blockGap":"0.4375rem"},"border":{"bottom":{"color":"var:preset|color|border","width":"1px","style":"solid"}}}} -->
-<div class="wp-block-artisanpack-group wp-block-group ap-flex ap-flex-row ap-flex-nowrap ap-items-center has-surface-2-background-color has-background" style="border-bottom-color:var(--wp--preset--color--border);border-bottom-style:solid;border-bottom-width:1px;min-height:2.5rem;padding-top:0;padding-right:0.875rem;padding-bottom:0;padding-left:0.875rem"><!-- wp:artisanpack/icon {"iconRef":{"set":"fas","name":"circle"},"size":11,"iconColor":"#FF5F57","isDecorative":true} /-->
-
-<!-- wp:artisanpack/icon {"iconRef":{"set":"fas","name":"circle"},"size":11,"iconColor":"#FEBC2E","isDecorative":true} /-->
-
-<!-- wp:artisanpack/icon {"iconRef":{"set":"fas","name":"circle"},"size":11,"iconColor":"#28C840","isDecorative":true} /-->
-
-<!-- wp:artisanpack/paragraph {"backgroundColor":"base","textColor":"text-muted","style":{"typography":{"fontFamily":"var:preset|font-family|mono","fontSize":"0.75rem","lineHeight":"1.4"},"spacing":{"padding":{"top":"0.3125rem","bottom":"0.3125rem","left":"0.75rem","right":"0.75rem"},"margin":{"left":"0.5rem"}},"border":{"radius":"6px"},"layout":{"selfStretch":"fill"}}} -->
-<p class="wp-block-paragraph has-text-muted-color has-base-background-color has-text-color has-background" style="border-radius:6px;margin-left:0.5rem;padding-top:0.3125rem;padding-right:0.75rem;padding-bottom:0.3125rem;padding-left:0.75rem;font-family:var(--wp--preset--font-family--mono);font-size:0.75rem;line-height:1.4">artisanpack.ui</p>
+<!-- wp:artisanpack/paragraph {"className":"is-style-badge"} -->
+<p class="wp-block-paragraph is-style-badge">Vue</p>
 <!-- /wp:artisanpack/paragraph --></div>
 <!-- /wp:artisanpack/group -->
 
-<!-- wp:artisanpack/cover {"customGradient":"linear-gradient(135deg, color-mix(in srgb, var(\u002d\u002dwp\u002d\u002dpreset\u002d\u002dcolor\u002d\u002dprimary) 40%, transparent), color-mix(in srgb, var(\u002d\u002dwp\u002d\u002dpreset\u002d\u002dcolor\u002d\u002daccent) 45%, transparent)), var(\u002d\u002dwp\u002d\u002dpreset\u002d\u002dcolor\u002d\u002dsurface-2)","style":{"dimensions":{"aspectRatio":"16/11"}}} -->
-<div class="wp-block-cover"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-100 has-background-dim has-background-gradient" style="background:linear-gradient(135deg, color-mix(in srgb, var(--wp--preset--color--primary) 40%, transparent), color-mix(in srgb, var(--wp--preset--color--accent) 45%, transparent)), var(--wp--preset--color--surface-2)"></span><div class="wp-block-cover__inner-container"></div></div>
-<!-- /wp:artisanpack/cover --></div>
-<!-- /wp:artisanpack/group --></div>
-<!-- /wp:artisanpack/group --></div>
+<!-- wp:artisanpack/copy-command {"command":"composer require artisanpack-ui/core","backgroundColor":"ink","className":"is-style-night","style":{"spacing":{"margin":{"top":"1.625rem"}}}} /-->
+
+<!-- wp:artisanpack/buttons {"style":{"spacing":{"blockGap":"0.75rem","margin":{"top":"1.625rem"}}}} -->
+<div class="wp-block-artisanpack-buttons wp-block-buttons" style="margin-top:1.625rem"><!-- wp:artisanpack/button {"style":{"spacing":{"padding":{"top":"0.8125rem","bottom":"0.8125rem","left":"1.125rem","right":"1.125rem"}}}} -->
+<div class="wp-block-artisanpack-button wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://docs.artisanpackui.dev" style="padding-top:0.8125rem;padding-right:1.125rem;padding-bottom:0.8125rem;padding-left:1.125rem">Get Started <span class="ap-inline-icon" data-icon-set="fas" data-icon-name="arrow-right" aria-hidden="true"><svg aria-hidden="true" viewBox="0 0 24 24"></svg></span></a></div>
+<!-- /wp:artisanpack/button -->
+
+<!-- wp:artisanpack/button {"className":"is-style-hollow","style":{"spacing":{"padding":{"top":"0.8125rem","bottom":"0.8125rem","left":"1.125rem","right":"1.125rem"}}}} -->
+<div class="wp-block-artisanpack-button wp-block-button is-style-hollow"><a class="wp-block-button__link wp-element-button" href="https://github.com/ArtisanPack-UI" style="padding-top:0.8125rem;padding-right:1.125rem;padding-bottom:0.8125rem;padding-left:1.125rem"><span class="ap-inline-icon" data-icon-set="fab" data-icon-name="github" aria-hidden="true"><svg aria-hidden="true" viewBox="0 0 24 24"></svg></span> View on GitHub</a></div>
+<!-- /wp:artisanpack/button --></div>
+<!-- /wp:artisanpack/buttons --></div>
+<!-- /wp:artisanpack/column -->
+
+<!-- wp:artisanpack/column {"verticalAlignment":"center","width":"45%"} -->
+<div class="wp-block-artisanpack-column wp-block-column is-vertically-aligned-center" style="flex-basis:45%"><!-- wp:artisanpack/terminal {"className":"is-style-night","lines":"$ composer require artisanpack-ui/core\n# ✓ Installed\n\n# Livewire\n$ composer require artisanpack-ui/livewire-ui-components\n\n# React or Vue, with Inertia\n$ npm install @artisanpack-ui/react\n$ npm install @artisanpack-ui/vue\n\n✓ Ready to build"} /--></div>
 <!-- /wp:artisanpack/column --></div>
 <!-- /wp:artisanpack/columns --></section>
 <!-- /wp:artisanpack/group -->
@@ -78,7 +76,7 @@
 <!-- /wp:artisanpack/heading -->
 
 <!-- wp:artisanpack/paragraph {"textColor":"text-muted","fontSize":"body-sm"} -->
-<p class="wp-block-paragraph has-text-muted-color has-text-color has-body-sm-font-size">Every new project means recreating buttons, forms, modals and tables from scratch. ArtisanPack UI gives you 80+ production-ready components so you can focus on what makes your project unique.</p>
+<p class="wp-block-paragraph has-text-muted-color has-text-color has-body-sm-font-size">Every new project means recreating buttons, forms, modals and tables from scratch. ArtisanPack UI gives you 80+ production-ready components for Livewire, React and Vue so you can focus on what makes your project unique.</p>
 <!-- /wp:artisanpack/paragraph --></div>
 <!-- /wp:artisanpack/group --></div>
 <!-- /wp:artisanpack/grid-item -->
@@ -188,117 +186,105 @@
 <!-- /wp:artisanpack/heading -->
 
 <!-- wp:artisanpack/paragraph {"className":"is-style-lead","style":{"spacing":{"margin":{"top":"1.625rem"}},"typography":{"textAlign":"center"}}} -->
-<p class="has-text-align-center wp-block-paragraph is-style-lead" style="margin-top:1.625rem">From accessible components to a full CMS, each ArtisanPack UI package solves a real problem — and they all work better together.</p>
+<p class="has-text-align-center wp-block-paragraph is-style-lead" style="margin-top:1.625rem">From component libraries for Livewire, React and Vue to a full CMS, each ArtisanPack UI package solves a real problem — and they all work better together.</p>
 <!-- /wp:artisanpack/paragraph --></header>
 <!-- /wp:artisanpack/group -->
 
 <!-- wp:artisanpack/grid {"numColumns":3,"style":{"spacing":{"blockGap":"1.375rem"}}} -->
 <div class="wp-block-artisanpack-grid ap-grid ap-grid-has-3-base-columns ap-grid-layout-fixed"><!-- wp:artisanpack/grid-item -->
-<div class="wp-block-artisanpack-grid-item ap-grid-item ap-grid-item-layout-normal ap-grid-item-span-1-base-columns ap-grid-item-span-1-base-row"><!-- wp:artisanpack/group {"artisanpackFlex":{"container":{"enabled":{"base":true},"direction":{"base":"column"},"alignItems":{"base":"stretch"}}},"borderColor":"border-subtle","backgroundColor":"surface","className":"is-style-linked","style":{"border":{"width":"1px","style":"solid","radius":"12px"},"shadow":"var:preset|shadow|sm","spacing":{"padding":{"top":"1.75rem","right":"1.75rem","bottom":"1.75rem","left":"1.75rem"},"blockGap":"0.875rem"},"dimensions":{"minHeight":"100%"}}} -->
-<div class="wp-block-artisanpack-group wp-block-group ap-flex ap-flex-col ap-items-stretch is-style-linked has-border-color has-border-subtle-border-color has-surface-background-color has-background" style="border-style:solid;border-width:1px;border-radius:12px;min-height:100%;padding-top:1.75rem;padding-right:1.75rem;padding-bottom:1.75rem;padding-left:1.75rem;box-shadow:var(--wp--preset--shadow--sm)"><!-- wp:artisanpack/icon {"iconRef":{"set":"fas","name":"cubes"},"size":20,"iconColor":"#FFFFFF","isDecorative":true,"gradient":"brand","className":"is-style-tile","style":{"border":{"radius":"12px"},"spacing":{"padding":"0.875rem"}}} /-->
+<div class="wp-block-artisanpack-grid-item ap-grid-item ap-grid-item-layout-normal ap-grid-item-span-1-base-columns ap-grid-item-span-1-base-row"><!-- wp:artisanpack/single-content {"postId":21,"postType":"package"} -->
+<div class="wp-block-artisanpack-single-content ap-single-content"><!-- wp:artisanpack/group {"artisanpackFlex":{"container":{"enabled":{"base":true},"direction":{"base":"column"},"alignItems":{"base":"stretch"}}},"borderColor":"border-subtle","backgroundColor":"surface","className":"is-style-linked","style":{"border":{"width":"1px","style":"solid","radius":"12px"},"shadow":"var:preset|shadow|sm","spacing":{"padding":{"top":"1.75rem","right":"1.75rem","bottom":"1.75rem","left":"1.75rem"},"blockGap":"0.875rem"},"dimensions":{"minHeight":"100%"}}} -->
+<div class="wp-block-artisanpack-group wp-block-group ap-flex ap-flex-col ap-items-stretch is-style-linked has-border-color has-border-subtle-border-color has-surface-background-color has-background" style="border-style:solid;border-width:1px;border-radius:12px;min-height:100%;padding-top:1.75rem;padding-right:1.75rem;padding-bottom:1.75rem;padding-left:1.75rem;box-shadow:var(--wp--preset--shadow--sm)"><!-- wp:artisanpack/icon {"iconRef":{"set":"fas","name":"cube"},"size":20,"iconColor":"#FFFFFF","isDecorative":true,"gradient":"brand","className":"is-style-tile","style":{"border":{"radius":"12px"},"spacing":{"padding":"0.875rem"}},"bindings":{"iconRef":{"source":"custom_field","args":{"key":"icon"}}}} /-->
 
 <!-- wp:artisanpack/paragraph {"textColor":"text-link","style":{"typography":{"fontFamily":"var:preset|font-family|mono","fontSize":"0.75rem","letterSpacing":"0.02em","lineHeight":"1.5"}}} -->
-<p class="wp-block-paragraph has-text-link-color has-text-color" style="font-family:var(--wp--preset--font-family--mono);font-size:0.75rem;letter-spacing:0.02em;line-height:1.5">80+ accessible components</p>
+<p class="wp-block-paragraph has-text-link-color has-text-color" style="font-family:var(--wp--preset--font-family--mono);font-size:0.75rem;letter-spacing:0.02em;line-height:1.5">Livewire + Blade</p>
 <!-- /wp:artisanpack/paragraph -->
 
-<!-- wp:artisanpack/heading {"level":3,"style":{"typography":{"fontSize":"1.1875rem","fontWeight":"700","letterSpacing":"-0.01em","lineHeight":"1.3"},"elements":{"link":{"color":{"text":"var:preset|color|text"}}}}} -->
-<h3 class="wp-block-heading has-link-color" style="font-size:1.1875rem;font-weight:700;letter-spacing:-0.01em;line-height:1.3"><a href="/packages/livewire-ui-components">Livewire UI Components</a></h3>
-<!-- /wp:artisanpack/heading -->
+<!-- wp:artisanpack/post-title {"level":3,"isLink":true,"style":{"typography":{"fontSize":"1.1875rem","fontWeight":"700","letterSpacing":"-0.01em","lineHeight":"1.3"},"elements":{"link":{"color":{"text":"var:preset|color|text"}}}}} /-->
 
-<!-- wp:artisanpack/paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.90625rem","lineHeight":"1.6"}}} -->
-<p class="wp-block-paragraph has-text-muted-color has-text-color" style="font-size:0.90625rem;line-height:1.6">Pre-built, accessible, Livewire-ready components for forms, navigation, data display, dashboards and more. Glass design system included.</p>
-<!-- /wp:artisanpack/paragraph --></div>
+<!-- wp:artisanpack/post-excerpt {"textColor":"text-muted","style":{"typography":{"fontSize":"0.90625rem","lineHeight":"1.6"}}} /--></div>
 <!-- /wp:artisanpack/group --></div>
+<!-- /wp:artisanpack/single-content --></div>
 <!-- /wp:artisanpack/grid-item -->
 
 <!-- wp:artisanpack/grid-item -->
-<div class="wp-block-artisanpack-grid-item ap-grid-item ap-grid-item-layout-normal ap-grid-item-span-1-base-columns ap-grid-item-span-1-base-row"><!-- wp:artisanpack/group {"artisanpackFlex":{"container":{"enabled":{"base":true},"direction":{"base":"column"},"alignItems":{"base":"stretch"}}},"borderColor":"border-subtle","backgroundColor":"surface","className":"is-style-linked","style":{"border":{"width":"1px","style":"solid","radius":"12px"},"shadow":"var:preset|shadow|sm","spacing":{"padding":{"top":"1.75rem","right":"1.75rem","bottom":"1.75rem","left":"1.75rem"},"blockGap":"0.875rem"},"dimensions":{"minHeight":"100%"}}} -->
-<div class="wp-block-artisanpack-group wp-block-group ap-flex ap-flex-col ap-items-stretch is-style-linked has-border-color has-border-subtle-border-color has-surface-background-color has-background" style="border-style:solid;border-width:1px;border-radius:12px;min-height:100%;padding-top:1.75rem;padding-right:1.75rem;padding-bottom:1.75rem;padding-left:1.75rem;box-shadow:var(--wp--preset--shadow--sm)"><!-- wp:artisanpack/icon {"iconRef":{"set":"fas","name":"pen-ruler"},"size":20,"backgroundColor":"secondary-tint","iconColor":"#00E5FF","isDecorative":true,"className":"is-style-tile","style":{"border":{"radius":"12px"},"spacing":{"padding":"0.875rem"}}} /-->
+<div class="wp-block-artisanpack-grid-item ap-grid-item ap-grid-item-layout-normal ap-grid-item-span-1-base-columns ap-grid-item-span-1-base-row"><!-- wp:artisanpack/single-content {"postId":27,"postType":"package"} -->
+<div class="wp-block-artisanpack-single-content ap-single-content"><!-- wp:artisanpack/group {"artisanpackFlex":{"container":{"enabled":{"base":true},"direction":{"base":"column"},"alignItems":{"base":"stretch"}}},"borderColor":"border-subtle","backgroundColor":"surface","className":"is-style-linked","style":{"border":{"width":"1px","style":"solid","radius":"12px"},"shadow":"var:preset|shadow|sm","spacing":{"padding":{"top":"1.75rem","right":"1.75rem","bottom":"1.75rem","left":"1.75rem"},"blockGap":"0.875rem"},"dimensions":{"minHeight":"100%"}}} -->
+<div class="wp-block-artisanpack-group wp-block-group ap-flex ap-flex-col ap-items-stretch is-style-linked has-border-color has-border-subtle-border-color has-surface-background-color has-background" style="border-style:solid;border-width:1px;border-radius:12px;min-height:100%;padding-top:1.75rem;padding-right:1.75rem;padding-bottom:1.75rem;padding-left:1.75rem;box-shadow:var(--wp--preset--shadow--sm)"><!-- wp:artisanpack/icon {"iconRef":{"set":"fas","name":"cube"},"size":20,"backgroundColor":"secondary-tint","iconColor":"#00E5FF","isDecorative":true,"className":"is-style-tile","style":{"border":{"radius":"12px"},"spacing":{"padding":"0.875rem"}},"bindings":{"iconRef":{"source":"custom_field","args":{"key":"icon"}}}} /-->
+
+<!-- wp:artisanpack/paragraph {"textColor":"text-link","style":{"typography":{"fontFamily":"var:preset|font-family|mono","fontSize":"0.75rem","letterSpacing":"0.02em","lineHeight":"1.5"}}} -->
+<p class="wp-block-paragraph has-text-link-color has-text-color" style="font-family:var(--wp--preset--font-family--mono);font-size:0.75rem;letter-spacing:0.02em;line-height:1.5">React + Inertia</p>
+<!-- /wp:artisanpack/paragraph -->
+
+<!-- wp:artisanpack/post-title {"level":3,"isLink":true,"style":{"typography":{"fontSize":"1.1875rem","fontWeight":"700","letterSpacing":"-0.01em","lineHeight":"1.3"},"elements":{"link":{"color":{"text":"var:preset|color|text"}}}}} /-->
+
+<!-- wp:artisanpack/post-excerpt {"textColor":"text-muted","style":{"typography":{"fontSize":"0.90625rem","lineHeight":"1.6"}}} /--></div>
+<!-- /wp:artisanpack/group --></div>
+<!-- /wp:artisanpack/single-content --></div>
+<!-- /wp:artisanpack/grid-item -->
+
+<!-- wp:artisanpack/grid-item -->
+<div class="wp-block-artisanpack-grid-item ap-grid-item ap-grid-item-layout-normal ap-grid-item-span-1-base-columns ap-grid-item-span-1-base-row"><!-- wp:artisanpack/single-content {"postId":37,"postType":"package"} -->
+<div class="wp-block-artisanpack-single-content ap-single-content"><!-- wp:artisanpack/group {"artisanpackFlex":{"container":{"enabled":{"base":true},"direction":{"base":"column"},"alignItems":{"base":"stretch"}}},"borderColor":"border-subtle","backgroundColor":"surface","className":"is-style-linked","style":{"border":{"width":"1px","style":"solid","radius":"12px"},"shadow":"var:preset|shadow|sm","spacing":{"padding":{"top":"1.75rem","right":"1.75rem","bottom":"1.75rem","left":"1.75rem"},"blockGap":"0.875rem"},"dimensions":{"minHeight":"100%"}}} -->
+<div class="wp-block-artisanpack-group wp-block-group ap-flex ap-flex-col ap-items-stretch is-style-linked has-border-color has-border-subtle-border-color has-surface-background-color has-background" style="border-style:solid;border-width:1px;border-radius:12px;min-height:100%;padding-top:1.75rem;padding-right:1.75rem;padding-bottom:1.75rem;padding-left:1.75rem;box-shadow:var(--wp--preset--shadow--sm)"><!-- wp:artisanpack/icon {"iconRef":{"set":"fas","name":"cube"},"size":20,"backgroundColor":"accent-tint","iconColor":"#E040FB","isDecorative":true,"className":"is-style-tile","style":{"border":{"radius":"12px"},"spacing":{"padding":"0.875rem"}},"bindings":{"iconRef":{"source":"custom_field","args":{"key":"icon"}}}} /-->
+
+<!-- wp:artisanpack/paragraph {"textColor":"text-link","style":{"typography":{"fontFamily":"var:preset|font-family|mono","fontSize":"0.75rem","letterSpacing":"0.02em","lineHeight":"1.5"}}} -->
+<p class="wp-block-paragraph has-text-link-color has-text-color" style="font-family:var(--wp--preset--font-family--mono);font-size:0.75rem;letter-spacing:0.02em;line-height:1.5">Vue + Inertia</p>
+<!-- /wp:artisanpack/paragraph -->
+
+<!-- wp:artisanpack/post-title {"level":3,"isLink":true,"style":{"typography":{"fontSize":"1.1875rem","fontWeight":"700","letterSpacing":"-0.01em","lineHeight":"1.3"},"elements":{"link":{"color":{"text":"var:preset|color|text"}}}}} /-->
+
+<!-- wp:artisanpack/post-excerpt {"textColor":"text-muted","style":{"typography":{"fontSize":"0.90625rem","lineHeight":"1.6"}}} /--></div>
+<!-- /wp:artisanpack/group --></div>
+<!-- /wp:artisanpack/single-content --></div>
+<!-- /wp:artisanpack/grid-item -->
+
+<!-- wp:artisanpack/grid-item -->
+<div class="wp-block-artisanpack-grid-item ap-grid-item ap-grid-item-layout-normal ap-grid-item-span-1-base-columns ap-grid-item-span-1-base-row"><!-- wp:artisanpack/single-content {"postId":6,"postType":"package"} -->
+<div class="wp-block-artisanpack-single-content ap-single-content"><!-- wp:artisanpack/group {"artisanpackFlex":{"container":{"enabled":{"base":true},"direction":{"base":"column"},"alignItems":{"base":"stretch"}}},"borderColor":"border-subtle","backgroundColor":"surface","className":"is-style-linked","style":{"border":{"width":"1px","style":"solid","radius":"12px"},"shadow":"var:preset|shadow|sm","spacing":{"padding":{"top":"1.75rem","right":"1.75rem","bottom":"1.75rem","left":"1.75rem"},"blockGap":"0.875rem"},"dimensions":{"minHeight":"100%"}}} -->
+<div class="wp-block-artisanpack-group wp-block-group ap-flex ap-flex-col ap-items-stretch is-style-linked has-border-color has-border-subtle-border-color has-surface-background-color has-background" style="border-style:solid;border-width:1px;border-radius:12px;min-height:100%;padding-top:1.75rem;padding-right:1.75rem;padding-bottom:1.75rem;padding-left:1.75rem;box-shadow:var(--wp--preset--shadow--sm)"><!-- wp:artisanpack/icon {"iconRef":{"set":"fas","name":"cube"},"size":20,"backgroundColor":"primary-tint","iconColor":"#2962FF","isDecorative":true,"className":"is-style-tile","style":{"border":{"radius":"12px"},"spacing":{"padding":"0.875rem"}},"bindings":{"iconRef":{"source":"custom_field","args":{"key":"icon"}}}} /-->
 
 <!-- wp:artisanpack/paragraph {"textColor":"text-link","style":{"typography":{"fontFamily":"var:preset|font-family|mono","fontSize":"0.75rem","letterSpacing":"0.02em","lineHeight":"1.5"}}} -->
 <p class="wp-block-paragraph has-text-link-color has-text-color" style="font-family:var(--wp--preset--font-family--mono);font-size:0.75rem;letter-spacing:0.02em;line-height:1.5">CMS backend in minutes</p>
 <!-- /wp:artisanpack/paragraph -->
 
-<!-- wp:artisanpack/heading {"level":3,"style":{"typography":{"fontSize":"1.1875rem","fontWeight":"700","letterSpacing":"-0.01em","lineHeight":"1.3"},"elements":{"link":{"color":{"text":"var:preset|color|text"}}}}} -->
-<h3 class="wp-block-heading has-link-color" style="font-size:1.1875rem;font-weight:700;letter-spacing:-0.01em;line-height:1.3"><a href="/packages/cms-framework">CMS Framework</a></h3>
-<!-- /wp:artisanpack/heading -->
+<!-- wp:artisanpack/post-title {"level":3,"isLink":true,"style":{"typography":{"fontSize":"1.1875rem","fontWeight":"700","letterSpacing":"-0.01em","lineHeight":"1.3"},"elements":{"link":{"color":{"text":"var:preset|color|text"}}}}} /-->
 
-<!-- wp:artisanpack/paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.90625rem","lineHeight":"1.6"}}} -->
-<p class="wp-block-paragraph has-text-muted-color has-text-color" style="font-size:0.90625rem;line-height:1.6">Scaffolds users, roles, permissions, settings and admin dashboard. Everything you need to build custom content management systems.</p>
-<!-- /wp:artisanpack/paragraph --></div>
+<!-- wp:artisanpack/post-excerpt {"textColor":"text-muted","style":{"typography":{"fontSize":"0.90625rem","lineHeight":"1.6"}}} /--></div>
 <!-- /wp:artisanpack/group --></div>
+<!-- /wp:artisanpack/single-content --></div>
 <!-- /wp:artisanpack/grid-item -->
 
 <!-- wp:artisanpack/grid-item -->
-<div class="wp-block-artisanpack-grid-item ap-grid-item ap-grid-item-layout-normal ap-grid-item-span-1-base-columns ap-grid-item-span-1-base-row"><!-- wp:artisanpack/group {"artisanpackFlex":{"container":{"enabled":{"base":true},"direction":{"base":"column"},"alignItems":{"base":"stretch"}}},"borderColor":"border-subtle","backgroundColor":"surface","className":"is-style-linked","style":{"border":{"width":"1px","style":"solid","radius":"12px"},"shadow":"var:preset|shadow|sm","spacing":{"padding":{"top":"1.75rem","right":"1.75rem","bottom":"1.75rem","left":"1.75rem"},"blockGap":"0.875rem"},"dimensions":{"minHeight":"100%"}}} -->
-<div class="wp-block-artisanpack-group wp-block-group ap-flex ap-flex-col ap-items-stretch is-style-linked has-border-color has-border-subtle-border-color has-surface-background-color has-background" style="border-style:solid;border-width:1px;border-radius:12px;min-height:100%;padding-top:1.75rem;padding-right:1.75rem;padding-bottom:1.75rem;padding-left:1.75rem;box-shadow:var(--wp--preset--shadow--sm)"><!-- wp:artisanpack/icon {"iconRef":{"set":"fas","name":"table-cells-large"},"size":20,"backgroundColor":"accent-tint","iconColor":"#E040FB","isDecorative":true,"className":"is-style-tile","style":{"border":{"radius":"12px"},"spacing":{"padding":"0.875rem"}}} /-->
+<div class="wp-block-artisanpack-grid-item ap-grid-item ap-grid-item-layout-normal ap-grid-item-span-1-base-columns ap-grid-item-span-1-base-row"><!-- wp:artisanpack/single-content {"postId":36,"postType":"package"} -->
+<div class="wp-block-artisanpack-single-content ap-single-content"><!-- wp:artisanpack/group {"artisanpackFlex":{"container":{"enabled":{"base":true},"direction":{"base":"column"},"alignItems":{"base":"stretch"}}},"borderColor":"border-subtle","backgroundColor":"surface","className":"is-style-linked","style":{"border":{"width":"1px","style":"solid","radius":"12px"},"shadow":"var:preset|shadow|sm","spacing":{"padding":{"top":"1.75rem","right":"1.75rem","bottom":"1.75rem","left":"1.75rem"},"blockGap":"0.875rem"},"dimensions":{"minHeight":"100%"}}} -->
+<div class="wp-block-artisanpack-group wp-block-group ap-flex ap-flex-col ap-items-stretch is-style-linked has-border-color has-border-subtle-border-color has-surface-background-color has-background" style="border-style:solid;border-width:1px;border-radius:12px;min-height:100%;padding-top:1.75rem;padding-right:1.75rem;padding-bottom:1.75rem;padding-left:1.75rem;box-shadow:var(--wp--preset--shadow--sm)"><!-- wp:artisanpack/icon {"iconRef":{"set":"fas","name":"cube"},"size":20,"backgroundColor":"secondary-tint","iconColor":"#00E5FF","isDecorative":true,"className":"is-style-tile","style":{"border":{"radius":"12px"},"spacing":{"padding":"0.875rem"}},"bindings":{"iconRef":{"source":"custom_field","args":{"key":"icon"}}}} /-->
 
 <!-- wp:artisanpack/paragraph {"textColor":"text-link","style":{"typography":{"fontFamily":"var:preset|font-family|mono","fontSize":"0.75rem","letterSpacing":"0.02em","lineHeight":"1.5"}}} -->
 <p class="wp-block-paragraph has-text-link-color has-text-color" style="font-family:var(--wp--preset--font-family--mono);font-size:0.75rem;letter-spacing:0.02em;line-height:1.5">Block-based content editing</p>
 <!-- /wp:artisanpack/paragraph -->
 
-<!-- wp:artisanpack/heading {"level":3,"style":{"typography":{"fontSize":"1.1875rem","fontWeight":"700","letterSpacing":"-0.01em","lineHeight":"1.3"},"elements":{"link":{"color":{"text":"var:preset|color|text"}}}}} -->
-<h3 class="wp-block-heading has-link-color" style="font-size:1.1875rem;font-weight:700;letter-spacing:-0.01em;line-height:1.3"><a href="/packages/visual-editor">Visual Editor</a></h3>
-<!-- /wp:artisanpack/heading -->
+<!-- wp:artisanpack/post-title {"level":3,"isLink":true,"style":{"typography":{"fontSize":"1.1875rem","fontWeight":"700","letterSpacing":"-0.01em","lineHeight":"1.3"},"elements":{"link":{"color":{"text":"var:preset|color|text"}}}}} /-->
 
-<!-- wp:artisanpack/paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.90625rem","lineHeight":"1.6"}}} -->
-<p class="wp-block-paragraph has-text-muted-color has-text-color" style="font-size:0.90625rem;line-height:1.6">Intuitive drag-and-drop editor for rich content creation. Integrates seamlessly with Media Library for images and files.</p>
-<!-- /wp:artisanpack/paragraph --></div>
+<!-- wp:artisanpack/post-excerpt {"textColor":"text-muted","style":{"typography":{"fontSize":"0.90625rem","lineHeight":"1.6"}}} /--></div>
 <!-- /wp:artisanpack/group --></div>
+<!-- /wp:artisanpack/single-content --></div>
 <!-- /wp:artisanpack/grid-item -->
 
 <!-- wp:artisanpack/grid-item -->
-<div class="wp-block-artisanpack-grid-item ap-grid-item ap-grid-item-layout-normal ap-grid-item-span-1-base-columns ap-grid-item-span-1-base-row"><!-- wp:artisanpack/group {"artisanpackFlex":{"container":{"enabled":{"base":true},"direction":{"base":"column"},"alignItems":{"base":"stretch"}}},"borderColor":"border-subtle","backgroundColor":"surface","className":"is-style-linked","style":{"border":{"width":"1px","style":"solid","radius":"12px"},"shadow":"var:preset|shadow|sm","spacing":{"padding":{"top":"1.75rem","right":"1.75rem","bottom":"1.75rem","left":"1.75rem"},"blockGap":"0.875rem"},"dimensions":{"minHeight":"100%"}}} -->
-<div class="wp-block-artisanpack-group wp-block-group ap-flex ap-flex-col ap-items-stretch is-style-linked has-border-color has-border-subtle-border-color has-surface-background-color has-background" style="border-style:solid;border-width:1px;border-radius:12px;min-height:100%;padding-top:1.75rem;padding-right:1.75rem;padding-bottom:1.75rem;padding-left:1.75rem;box-shadow:var(--wp--preset--shadow--sm)"><!-- wp:artisanpack/icon {"iconRef":{"set":"fas","name":"photo-film"},"size":20,"backgroundColor":"primary-tint","iconColor":"#2962FF","isDecorative":true,"className":"is-style-tile","style":{"border":{"radius":"12px"},"spacing":{"padding":"0.875rem"}}} /-->
-
-<!-- wp:artisanpack/paragraph {"textColor":"text-link","style":{"typography":{"fontFamily":"var:preset|font-family|mono","fontSize":"0.75rem","letterSpacing":"0.02em","lineHeight":"1.5"}}} -->
-<p class="wp-block-paragraph has-text-link-color has-text-color" style="font-family:var(--wp--preset--font-family--mono);font-size:0.75rem;letter-spacing:0.02em;line-height:1.5">Media management, simplified</p>
-<!-- /wp:artisanpack/paragraph -->
-
-<!-- wp:artisanpack/heading {"level":3,"style":{"typography":{"fontSize":"1.1875rem","fontWeight":"700","letterSpacing":"-0.01em","lineHeight":"1.3"},"elements":{"link":{"color":{"text":"var:preset|color|text"}}}}} -->
-<h3 class="wp-block-heading has-link-color" style="font-size:1.1875rem;font-weight:700;letter-spacing:-0.01em;line-height:1.3"><a href="/packages/media-library">Media Library</a></h3>
-<!-- /wp:artisanpack/heading -->
-
-<!-- wp:artisanpack/paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.90625rem","lineHeight":"1.6"}}} -->
-<p class="wp-block-paragraph has-text-muted-color has-text-color" style="font-size:0.90625rem;line-height:1.6">Full-featured file uploads, organization, and model associations. Streaming uploads, table export and dashboard statistics included.</p>
-<!-- /wp:artisanpack/paragraph --></div>
-<!-- /wp:artisanpack/group --></div>
-<!-- /wp:artisanpack/grid-item -->
-
-<!-- wp:artisanpack/grid-item -->
-<div class="wp-block-artisanpack-grid-item ap-grid-item ap-grid-item-layout-normal ap-grid-item-span-1-base-columns ap-grid-item-span-1-base-row"><!-- wp:artisanpack/group {"artisanpackFlex":{"container":{"enabled":{"base":true},"direction":{"base":"column"},"alignItems":{"base":"stretch"}}},"borderColor":"border-subtle","backgroundColor":"surface","className":"is-style-linked","style":{"border":{"width":"1px","style":"solid","radius":"12px"},"shadow":"var:preset|shadow|sm","spacing":{"padding":{"top":"1.75rem","right":"1.75rem","bottom":"1.75rem","left":"1.75rem"},"blockGap":"0.875rem"},"dimensions":{"minHeight":"100%"}}} -->
-<div class="wp-block-artisanpack-group wp-block-group ap-flex ap-flex-col ap-items-stretch is-style-linked has-border-color has-border-subtle-border-color has-surface-background-color has-background" style="border-style:solid;border-width:1px;border-radius:12px;min-height:100%;padding-top:1.75rem;padding-right:1.75rem;padding-bottom:1.75rem;padding-left:1.75rem;box-shadow:var(--wp--preset--shadow--sm)"><!-- wp:artisanpack/icon {"iconRef":{"set":"fas","name":"list-check"},"size":20,"backgroundColor":"secondary-tint","iconColor":"#00E5FF","isDecorative":true,"className":"is-style-tile","style":{"border":{"radius":"12px"},"spacing":{"padding":"0.875rem"}}} /-->
+<div class="wp-block-artisanpack-grid-item ap-grid-item ap-grid-item-layout-normal ap-grid-item-span-1-base-columns ap-grid-item-span-1-base-row"><!-- wp:artisanpack/single-content {"postId":12,"postType":"package"} -->
+<div class="wp-block-artisanpack-single-content ap-single-content"><!-- wp:artisanpack/group {"artisanpackFlex":{"container":{"enabled":{"base":true},"direction":{"base":"column"},"alignItems":{"base":"stretch"}}},"borderColor":"border-subtle","backgroundColor":"surface","className":"is-style-linked","style":{"border":{"width":"1px","style":"solid","radius":"12px"},"shadow":"var:preset|shadow|sm","spacing":{"padding":{"top":"1.75rem","right":"1.75rem","bottom":"1.75rem","left":"1.75rem"},"blockGap":"0.875rem"},"dimensions":{"minHeight":"100%"}}} -->
+<div class="wp-block-artisanpack-group wp-block-group ap-flex ap-flex-col ap-items-stretch is-style-linked has-border-color has-border-subtle-border-color has-surface-background-color has-background" style="border-style:solid;border-width:1px;border-radius:12px;min-height:100%;padding-top:1.75rem;padding-right:1.75rem;padding-bottom:1.75rem;padding-left:1.75rem;box-shadow:var(--wp--preset--shadow--sm)"><!-- wp:artisanpack/icon {"iconRef":{"set":"fas","name":"cube"},"size":20,"backgroundColor":"accent-tint","iconColor":"#E040FB","isDecorative":true,"className":"is-style-tile","style":{"border":{"radius":"12px"},"spacing":{"padding":"0.875rem"}},"bindings":{"iconRef":{"source":"custom_field","args":{"key":"icon"}}}} /-->
 
 <!-- wp:artisanpack/paragraph {"textColor":"text-link","style":{"typography":{"fontFamily":"var:preset|font-family|mono","fontSize":"0.75rem","letterSpacing":"0.02em","lineHeight":"1.5"}}} -->
 <p class="wp-block-paragraph has-text-link-color has-text-color" style="font-family:var(--wp--preset--font-family--mono);font-size:0.75rem;letter-spacing:0.02em;line-height:1.5">Drag-and-drop form builder</p>
 <!-- /wp:artisanpack/paragraph -->
 
-<!-- wp:artisanpack/heading {"level":3,"style":{"typography":{"fontSize":"1.1875rem","fontWeight":"700","letterSpacing":"-0.01em","lineHeight":"1.3"},"elements":{"link":{"color":{"text":"var:preset|color|text"}}}}} -->
-<h3 class="wp-block-heading has-link-color" style="font-size:1.1875rem;font-weight:700;letter-spacing:-0.01em;line-height:1.3"><a href="/packages/forms">Forms</a></h3>
-<!-- /wp:artisanpack/heading -->
+<!-- wp:artisanpack/post-title {"level":3,"isLink":true,"style":{"typography":{"fontSize":"1.1875rem","fontWeight":"700","letterSpacing":"-0.01em","lineHeight":"1.3"},"elements":{"link":{"color":{"text":"var:preset|color|text"}}}}} /-->
 
-<!-- wp:artisanpack/paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.90625rem","lineHeight":"1.6"}}} -->
-<p class="wp-block-paragraph has-text-muted-color has-text-color" style="font-size:0.90625rem;line-height:1.6">Visual form builder with 20+ field types, conditional logic, multi-step forms, spam protection and webhook integrations.</p>
-<!-- /wp:artisanpack/paragraph --></div>
+<!-- wp:artisanpack/post-excerpt {"textColor":"text-muted","style":{"typography":{"fontSize":"0.90625rem","lineHeight":"1.6"}}} /--></div>
 <!-- /wp:artisanpack/group --></div>
-<!-- /wp:artisanpack/grid-item -->
-
-<!-- wp:artisanpack/grid-item -->
-<div class="wp-block-artisanpack-grid-item ap-grid-item ap-grid-item-layout-normal ap-grid-item-span-1-base-columns ap-grid-item-span-1-base-row"><!-- wp:artisanpack/group {"artisanpackFlex":{"container":{"enabled":{"base":true},"direction":{"base":"column"},"alignItems":{"base":"stretch"}}},"borderColor":"border-subtle","backgroundColor":"surface","className":"is-style-linked","style":{"border":{"width":"1px","style":"solid","radius":"12px"},"shadow":"var:preset|shadow|sm","spacing":{"padding":{"top":"1.75rem","right":"1.75rem","bottom":"1.75rem","left":"1.75rem"},"blockGap":"0.875rem"},"dimensions":{"minHeight":"100%"}}} -->
-<div class="wp-block-artisanpack-group wp-block-group ap-flex ap-flex-col ap-items-stretch is-style-linked has-border-color has-border-subtle-border-color has-surface-background-color has-background" style="border-style:solid;border-width:1px;border-radius:12px;min-height:100%;padding-top:1.75rem;padding-right:1.75rem;padding-bottom:1.75rem;padding-left:1.75rem;box-shadow:var(--wp--preset--shadow--sm)"><!-- wp:artisanpack/icon {"iconRef":{"set":"fab","name":"react"},"size":20,"iconColor":"#FFFFFF","isDecorative":true,"gradient":"brand","className":"is-style-tile","style":{"border":{"radius":"12px"},"spacing":{"padding":"0.875rem"}}} /-->
-
-<!-- wp:artisanpack/paragraph {"textColor":"text-link","style":{"typography":{"fontFamily":"var:preset|font-family|mono","fontSize":"0.75rem","letterSpacing":"0.02em","lineHeight":"1.5"}}} -->
-<p class="wp-block-paragraph has-text-link-color has-text-color" style="font-family:var(--wp--preset--font-family--mono);font-size:0.75rem;letter-spacing:0.02em;line-height:1.5">80+ TypeScript components each</p>
-<!-- /wp:artisanpack/paragraph -->
-
-<!-- wp:artisanpack/heading {"level":3,"style":{"typography":{"fontSize":"1.1875rem","fontWeight":"700","letterSpacing":"-0.01em","lineHeight":"1.3"},"elements":{"link":{"color":{"text":"var:preset|color|text"}}}}} -->
-<h3 class="wp-block-heading has-link-color" style="font-size:1.1875rem;font-weight:700;letter-spacing:-0.01em;line-height:1.3"><a href="/packages/react">React &amp; Vue Libraries</a></h3>
-<!-- /wp:artisanpack/heading -->
-
-<!-- wp:artisanpack/paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.90625rem","lineHeight":"1.6"}}} -->
-<p class="wp-block-paragraph has-text-muted-color has-text-color" style="font-size:0.90625rem;line-height:1.6">Full TypeScript component libraries for React and Vue, styled with DaisyUI and Tailwind, with Inertia.js adapters for seamless Laravel integration.</p>
-<!-- /wp:artisanpack/paragraph --></div>
-<!-- /wp:artisanpack/group --></div>
+<!-- /wp:artisanpack/single-content --></div>
 <!-- /wp:artisanpack/grid-item --></div>
 <!-- /wp:artisanpack/grid -->
 
@@ -506,7 +492,7 @@
 <!-- /wp:artisanpack/heading -->
 
 <!-- wp:artisanpack/paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.90625rem","lineHeight":"1.6"}}} -->
-<p class="wp-block-paragraph has-text-muted-color has-text-color" style="font-size:0.90625rem;line-height:1.6">Start using components in your Blade templates immediately.</p>
+<p class="wp-block-paragraph has-text-muted-color has-text-color" style="font-size:0.90625rem;line-height:1.6">Start using components right away — in your Blade views, or your React and Vue pages.</p>
 <!-- /wp:artisanpack/paragraph -->
 
 <!-- wp:artisanpack/copy-command {"command":"\u003cx-artisanpack-button\u003eSave\u003c/x-artisanpack-button\u003e","prefix":"","backgroundColor":"ink","className":"is-style-night is-style-full-width","style":{"spacing":{"margin":{"top":"auto"}}}} /--></div>
