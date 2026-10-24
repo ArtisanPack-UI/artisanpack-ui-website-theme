@@ -1441,3 +1441,19 @@ html {
         transform: none;
     }
 }
+
+/*
+ * Tablet: a grid that drops to two columns there (visual-editor's default
+ * collapse of three or more columns, or an explicit Tablet count of two)
+ * stretches an odd last item across both columns instead of leaving a gap
+ * beside it. Only grids whose items all span one column, so a bento's wide
+ * tile isn't miscounted.
+ */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .ap-grid:is(
+        .ap-grid-has-2-tablet-columns,
+        :not(.ap-grid-has-1-base-columns, .ap-grid-has-2-base-columns):not([class*="-sm-columns"], [class*="-md-columns"], [class*="-lg-columns"], [class*="-xl-columns"], [class*="-2xl-columns"], [class*="-tablet-columns"])
+    ):not(:has(> .ap-grid-item:not(.ap-grid-item-span-1-base-columns), > .ap-grid-item[class*="-tablet-columns"]:not(.ap-grid-item-span-1-tablet-columns))) > .ap-grid-item:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+    }
+}
