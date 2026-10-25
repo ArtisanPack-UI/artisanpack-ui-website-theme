@@ -11,7 +11,7 @@
 <!-- wp:artisanpack/group {"tagName":"section","backgroundColor":"base","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|section","bottom":"var:preset|spacing|section","left":"var:preset|spacing|gutter","right":"var:preset|spacing|gutter"},"blockGap":"var:preset|spacing|title-gap"}},"layout":{"type":"constrained","contentSize":"1200px"}} -->
 <section class="wp-block-artisanpack-group alignfull wp-block-group has-base-background-color has-background" style="padding-top:var(--wp--preset--spacing--section);padding-right:var(--wp--preset--spacing--gutter);padding-bottom:var(--wp--preset--spacing--section);padding-left:var(--wp--preset--spacing--gutter)"><!-- wp:artisanpack/columns {"style":{"spacing":{"blockGap":{"left":"3.5rem","top":"2.5rem"}}}} -->
 <div class="wp-block-artisanpack-columns wp-block-columns"><!-- wp:artisanpack/column {"width":"36%"} -->
-<div class="wp-block-artisanpack-column wp-block-column" style="flex-basis:36%"><!-- wp:artisanpack/group {"style":{"position":{"value":"sticky","offsets":{"top":{"value":1.5,"unit":"rem"}}}},"layout":{"type":"default"}} -->
+<div class="wp-block-artisanpack-column wp-block-column" style="flex-basis:36%"><!-- wp:artisanpack/group {"style":{"position":{"value":"sticky","offsets":{"top":{"value":6.3125,"unit":"rem"}}}},"layout":{"type":"default"}} -->
 <div class="wp-block-artisanpack-group wp-block-group"><!-- wp:artisanpack/group {"tagName":"header","style":{"spacing":{"blockGap":"1.25rem"}},"layout":{"type":"default"}} -->
 <header class="wp-block-artisanpack-group wp-block-group"><!-- wp:artisanpack/paragraph {"className":"is-style-eyebrow"} -->
 <p class="wp-block-paragraph is-style-eyebrow">Why ArtisanPack</p>

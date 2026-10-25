@@ -1404,9 +1404,64 @@ body {
 }
 
 /* The sticky header covers the top 77px, so an in-page jump (the skip
- * link, `#newsletter`) stops below it. */
+ * link, `#newsletter`) stops below it. Sticky sections clear it the same
+ * way: their `top` offset is 6.3125rem, the header plus a 1.5rem gap. */
 html {
     scroll-padding-top: 5rem;
+}
+
+/* Post meta rail (single-post). It comes before the post content in the
+ * markup, so where the columns stack (the renderer's 767px cut-off) it sits
+ * above the post, and keyboard and screen-reader order match what's on
+ * screen. Where the columns sit side by side it moves to the right and
+ * scrolls on its own once the table of contents makes it taller than the
+ * viewport below the header. */
+@media (min-width: 768px) {
+    .wp-block-columns > .is-post-meta-rail {
+        order: 1;
+    }
+
+    .is-post-meta-rail > aside {
+        max-height: calc(100vh - 7.8125rem);
+        overflow-y: auto;
+    }
+}
+
+/* Table of contents in the post meta rail: the rail's link list, not the
+ * block's default bulleted, underlined one. */
+.is-post-meta-rail .ap-toc__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.is-post-meta-rail .ap-toc__list .ap-toc__list {
+    margin-top: 0.5rem;
+    padding-inline-start: 0.75rem;
+    border-left: 1px solid var(--wp--preset--color--border-subtle);
+}
+
+.is-post-meta-rail .ap-toc__item {
+    font-size: 0.84375rem;
+    line-height: 1.4;
+}
+
+.is-post-meta-rail .ap-toc__link {
+    color: var(--wp--preset--color--text-muted);
+    text-decoration: none;
+}
+
+.is-post-meta-rail .ap-toc__link:is(:hover, :focus-visible) {
+    color: var(--wp--preset--color--text-link);
+}
+
+/* A post with no headings drops the whole "On this page" section rather
+ * than showing the block's empty-state message. */
+.is-post-meta-rail .wp-block-group:has(> .ap-toc .ap-toc__placeholder) {
+    display: none;
 }
 
 /* The menu toggle buttons take the theme's focus ring instead of the
