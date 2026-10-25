@@ -236,53 +236,63 @@
 <!-- /wp:artisanpack/group -->
 
 <!-- wp:artisanpack/group {"style":{"spacing":{"blockGap":"0.875rem"}},"layout":{"type":"default"}} -->
-<div class="wp-block-artisanpack-group wp-block-group"><!-- wp:artisanpack/group {"artisanpackFlex":{"container":{"enabled":{"base":true},"direction":{"base":"row"},"wrap":{"base":"nowrap"},"alignItems":{"base":"flex-start"}}},"borderColor":"border-subtle","backgroundColor":"surface","className":"is-style-linked","style":{"border":{"width":"1px","style":"solid","radius":"12px"},"spacing":{"padding":{"top":"1.25rem","right":"1.25rem","bottom":"1.25rem","left":"1.25rem"},"blockGap":"1rem"},"shadow":"var:preset|shadow|sm"}} -->
-<div class="wp-block-artisanpack-group wp-block-group ap-flex ap-flex-row ap-flex-nowrap ap-items-start is-style-linked has-border-color has-border-subtle-border-color has-surface-background-color has-background" style="border-style:solid;border-width:1px;border-radius:12px;padding-top:1.25rem;padding-right:1.25rem;padding-bottom:1.25rem;padding-left:1.25rem;box-shadow:var(--wp--preset--shadow--sm)"><!-- wp:artisanpack/icon {"iconRef":{"set":"fas","name":"book"},"size":16,"iconColor":"#FFFFFF","isDecorative":true,"gradient":"brand","className":"is-style-tile","style":{"spacing":{"padding":{"top":"0.75rem","bottom":"0.75rem","left":"0.75rem","right":"0.75rem"}},"border":{"radius":"10px"}}} /-->
+<div class="wp-block-artisanpack-group wp-block-group"><!-- wp:artisanpack/group {"artisanpackFlex":{"container":{"enabled":{"base":true},"direction":{"base":"row"},"wrap":{"base":"nowrap"},"alignItems":{"base":"flex-start"}}},"borderColor":"border-subtle","backgroundColor":"surface","style":{"border":{"width":"1px","style":"solid","radius":"12px"},"spacing":{"padding":{"top":"1.25rem","right":"1.25rem","bottom":"1.25rem","left":"1.25rem"},"blockGap":"1rem"},"shadow":"var:preset|shadow|sm"}} -->
+<div class="wp-block-artisanpack-group wp-block-group ap-flex ap-flex-row ap-flex-nowrap ap-items-start has-border-color has-border-subtle-border-color has-surface-background-color has-background" style="border-style:solid;border-width:1px;border-radius:12px;padding-top:1.25rem;padding-right:1.25rem;padding-bottom:1.25rem;padding-left:1.25rem;box-shadow:var(--wp--preset--shadow--sm)"><!-- wp:artisanpack/icon {"iconRef":{"set":"fas","name":"book"},"size":16,"iconColor":"#FFFFFF","isDecorative":true,"gradient":"brand","className":"is-style-tile","style":{"spacing":{"padding":{"top":"0.75rem","bottom":"0.75rem","left":"0.75rem","right":"0.75rem"}},"border":{"radius":"10px"}}} /-->
 
 <!-- wp:artisanpack/group {"artisanpackFlex":{"item":{"grow":{"base":1},"shrink":{"base":1}}},"style":{"spacing":{"blockGap":"0.25rem"}},"layout":{"type":"default"}} -->
-<div class="wp-block-artisanpack-group wp-block-group ap-grow-1 ap-shrink-1"><!-- wp:artisanpack/heading {"level":3,"style":{"typography":{"fontSize":"1rem","fontWeight":"700","letterSpacing":"-0.01em","lineHeight":"1.3"},"elements":{"link":{"color":{"text":"var:preset|color|text"}}}}} -->
-<h3 class="wp-block-heading has-link-color" style="font-size:1rem;font-weight:700;letter-spacing:-0.01em;line-height:1.3"><a href="https://docs.artisanpackui.dev">Documentation</a></h3>
+<div class="wp-block-artisanpack-group wp-block-group ap-grow-1 ap-shrink-1"><!-- wp:artisanpack/heading {"level":3,"style":{"typography":{"fontSize":"1rem","fontWeight":"700","letterSpacing":"-0.01em","lineHeight":"1.3"}}} -->
+<h3 class="wp-block-heading" style="font-size:1rem;font-weight:700;letter-spacing:-0.01em;line-height:1.3">Documentation</h3>
 <!-- /wp:artisanpack/heading -->
-
-<!-- wp:artisanpack/paragraph {"textColor":"text-link","fontFamily":"mono","style":{"typography":{"fontSize":"0.75rem","fontWeight":"500"}}} -->
-<p class="wp-block-paragraph has-text-link-color has-text-color has-mono-font-family" style="font-size:0.75rem;font-weight:500">docs.artisanpackui.dev</p>
-<!-- /wp:artisanpack/paragraph -->
 
 <!-- wp:artisanpack/paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.875rem","lineHeight":"1.55"}}} -->
 <p class="wp-block-paragraph has-text-muted-color has-text-color" style="font-size:0.875rem;line-height:1.55">Installation guides, API references and examples for every package.</p>
-<!-- /wp:artisanpack/paragraph --></div>
+<!-- /wp:artisanpack/paragraph -->
+
+<!-- wp:artisanpack/buttons {"style":{"spacing":{"blockGap":"0.625rem","margin":{"top":"0.625rem"}}}} -->
+<div class="wp-block-artisanpack-buttons wp-block-buttons" style="margin-top:0.625rem"><!-- wp:artisanpack/button {"className":"is-style-hollow","style":{"typography":{"fontSize":"0.8125rem"},"spacing":{"padding":{"top":"0.4375rem","right":"0.875rem","bottom":"0.4375rem","left":"0.875rem"}}}} -->
+<div class="wp-block-artisanpack-button wp-block-button is-style-hollow"><a class="wp-block-button__link has-custom-font-size wp-element-button" href="https://docs.artisanpackui.dev" style="padding-top:0.4375rem;padding-right:0.875rem;padding-bottom:0.4375rem;padding-left:0.875rem;font-size:0.8125rem">Open the docs <span class="ap-inline-icon" data-icon-set="fas" data-icon-name="arrow-right" aria-hidden="true"><svg aria-hidden="true" viewBox="0 0 24 24"></svg></span></a></div>
+<!-- /wp:artisanpack/button --></div>
+<!-- /wp:artisanpack/buttons --></div>
 <!-- /wp:artisanpack/group --></div>
 <!-- /wp:artisanpack/group -->
 
-<!-- wp:artisanpack/group {"artisanpackFlex":{"container":{"enabled":{"base":true},"direction":{"base":"row"},"wrap":{"base":"nowrap"},"alignItems":{"base":"flex-start"}}},"borderColor":"border-subtle","backgroundColor":"surface","className":"is-style-linked","style":{"border":{"width":"1px","style":"solid","radius":"12px"},"spacing":{"padding":{"top":"1.25rem","right":"1.25rem","bottom":"1.25rem","left":"1.25rem"},"blockGap":"1rem"},"shadow":"var:preset|shadow|sm"}} -->
-<div class="wp-block-artisanpack-group wp-block-group ap-flex ap-flex-row ap-flex-nowrap ap-items-start is-style-linked has-border-color has-border-subtle-border-color has-surface-background-color has-background" style="border-style:solid;border-width:1px;border-radius:12px;padding-top:1.25rem;padding-right:1.25rem;padding-bottom:1.25rem;padding-left:1.25rem;box-shadow:var(--wp--preset--shadow--sm)"><!-- wp:artisanpack/icon {"iconRef":{"set":"fas","name":"circle-question"},"size":16,"backgroundColor":"secondary-tint","iconColor":"#00E5FF","isDecorative":true,"className":"is-style-tile","style":{"spacing":{"padding":{"top":"0.75rem","bottom":"0.75rem","left":"0.75rem","right":"0.75rem"}},"border":{"radius":"10px"}}} /-->
+<!-- wp:artisanpack/group {"artisanpackFlex":{"container":{"enabled":{"base":true},"direction":{"base":"row"},"wrap":{"base":"nowrap"},"alignItems":{"base":"flex-start"}}},"borderColor":"border-subtle","backgroundColor":"surface","style":{"border":{"width":"1px","style":"solid","radius":"12px"},"spacing":{"padding":{"top":"1.25rem","right":"1.25rem","bottom":"1.25rem","left":"1.25rem"},"blockGap":"1rem"},"shadow":"var:preset|shadow|sm"}} -->
+<div class="wp-block-artisanpack-group wp-block-group ap-flex ap-flex-row ap-flex-nowrap ap-items-start has-border-color has-border-subtle-border-color has-surface-background-color has-background" style="border-style:solid;border-width:1px;border-radius:12px;padding-top:1.25rem;padding-right:1.25rem;padding-bottom:1.25rem;padding-left:1.25rem;box-shadow:var(--wp--preset--shadow--sm)"><!-- wp:artisanpack/icon {"iconRef":{"set":"fas","name":"circle-question"},"size":16,"backgroundColor":"secondary-tint","iconColor":"#00E5FF","isDecorative":true,"className":"is-style-tile","style":{"spacing":{"padding":{"top":"0.75rem","bottom":"0.75rem","left":"0.75rem","right":"0.75rem"}},"border":{"radius":"10px"}}} /-->
 
 <!-- wp:artisanpack/group {"artisanpackFlex":{"item":{"grow":{"base":1},"shrink":{"base":1}}},"style":{"spacing":{"blockGap":"0.25rem"}},"layout":{"type":"default"}} -->
-<div class="wp-block-artisanpack-group wp-block-group ap-grow-1 ap-shrink-1"><!-- wp:artisanpack/heading {"level":3,"style":{"typography":{"fontSize":"1rem","fontWeight":"700","letterSpacing":"-0.01em","lineHeight":"1.3"},"elements":{"link":{"color":{"text":"var:preset|color|text"}}}}} -->
-<h3 class="wp-block-heading has-link-color" style="font-size:1rem;font-weight:700;letter-spacing:-0.01em;line-height:1.3"><a href="/newsletter#faq">FAQ</a></h3>
+<div class="wp-block-artisanpack-group wp-block-group ap-grow-1 ap-shrink-1"><!-- wp:artisanpack/heading {"level":3,"style":{"typography":{"fontSize":"1rem","fontWeight":"700","letterSpacing":"-0.01em","lineHeight":"1.3"}}} -->
+<h3 class="wp-block-heading" style="font-size:1rem;font-weight:700;letter-spacing:-0.01em;line-height:1.3">FAQ</h3>
 <!-- /wp:artisanpack/heading -->
 
 <!-- wp:artisanpack/paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.875rem","lineHeight":"1.55"}}} -->
 <p class="wp-block-paragraph has-text-muted-color has-text-color" style="font-size:0.875rem;line-height:1.55">Common questions and answers.</p>
-<!-- /wp:artisanpack/paragraph --></div>
+<!-- /wp:artisanpack/paragraph -->
+
+<!-- wp:artisanpack/buttons {"style":{"spacing":{"blockGap":"0.625rem","margin":{"top":"0.625rem"}}}} -->
+<div class="wp-block-artisanpack-buttons wp-block-buttons" style="margin-top:0.625rem"><!-- wp:artisanpack/button {"className":"is-style-hollow","style":{"typography":{"fontSize":"0.8125rem"},"spacing":{"padding":{"top":"0.4375rem","right":"0.875rem","bottom":"0.4375rem","left":"0.875rem"}}}} -->
+<div class="wp-block-artisanpack-button wp-block-button is-style-hollow"><a class="wp-block-button__link has-custom-font-size wp-element-button" href="/newsletter#faq" style="padding-top:0.4375rem;padding-right:0.875rem;padding-bottom:0.4375rem;padding-left:0.875rem;font-size:0.8125rem">Read the FAQ <span class="ap-inline-icon" data-icon-set="fas" data-icon-name="arrow-right" aria-hidden="true"><svg aria-hidden="true" viewBox="0 0 24 24"></svg></span></a></div>
+<!-- /wp:artisanpack/button --></div>
+<!-- /wp:artisanpack/buttons --></div>
 <!-- /wp:artisanpack/group --></div>
 <!-- /wp:artisanpack/group -->
 
-<!-- wp:artisanpack/group {"artisanpackFlex":{"container":{"enabled":{"base":true},"direction":{"base":"row"},"wrap":{"base":"nowrap"},"alignItems":{"base":"flex-start"}}},"borderColor":"border-subtle","backgroundColor":"surface","className":"is-style-linked","style":{"border":{"width":"1px","style":"solid","radius":"12px"},"spacing":{"padding":{"top":"1.25rem","right":"1.25rem","bottom":"1.25rem","left":"1.25rem"},"blockGap":"1rem"},"shadow":"var:preset|shadow|sm"}} -->
-<div class="wp-block-artisanpack-group wp-block-group ap-flex ap-flex-row ap-flex-nowrap ap-items-start is-style-linked has-border-color has-border-subtle-border-color has-surface-background-color has-background" style="border-style:solid;border-width:1px;border-radius:12px;padding-top:1.25rem;padding-right:1.25rem;padding-bottom:1.25rem;padding-left:1.25rem;box-shadow:var(--wp--preset--shadow--sm)"><!-- wp:artisanpack/icon {"iconRef":{"set":"fas","name":"clock-rotate-left"},"size":16,"backgroundColor":"accent-tint","iconColor":"#E040FB","isDecorative":true,"className":"is-style-tile","style":{"spacing":{"padding":{"top":"0.75rem","bottom":"0.75rem","left":"0.75rem","right":"0.75rem"}},"border":{"radius":"10px"}}} /-->
+<!-- wp:artisanpack/group {"artisanpackFlex":{"container":{"enabled":{"base":true},"direction":{"base":"row"},"wrap":{"base":"nowrap"},"alignItems":{"base":"flex-start"}}},"borderColor":"border-subtle","backgroundColor":"surface","style":{"border":{"width":"1px","style":"solid","radius":"12px"},"spacing":{"padding":{"top":"1.25rem","right":"1.25rem","bottom":"1.25rem","left":"1.25rem"},"blockGap":"1rem"},"shadow":"var:preset|shadow|sm"}} -->
+<div class="wp-block-artisanpack-group wp-block-group ap-flex ap-flex-row ap-flex-nowrap ap-items-start has-border-color has-border-subtle-border-color has-surface-background-color has-background" style="border-style:solid;border-width:1px;border-radius:12px;padding-top:1.25rem;padding-right:1.25rem;padding-bottom:1.25rem;padding-left:1.25rem;box-shadow:var(--wp--preset--shadow--sm)"><!-- wp:artisanpack/icon {"iconRef":{"set":"fas","name":"clock-rotate-left"},"size":16,"backgroundColor":"accent-tint","iconColor":"#E040FB","isDecorative":true,"className":"is-style-tile","style":{"spacing":{"padding":{"top":"0.75rem","bottom":"0.75rem","left":"0.75rem","right":"0.75rem"}},"border":{"radius":"10px"}}} /-->
 
 <!-- wp:artisanpack/group {"artisanpackFlex":{"item":{"grow":{"base":1},"shrink":{"base":1}}},"style":{"spacing":{"blockGap":"0.25rem"}},"layout":{"type":"default"}} -->
-<div class="wp-block-artisanpack-group wp-block-group ap-grow-1 ap-shrink-1"><!-- wp:artisanpack/heading {"level":3,"style":{"typography":{"fontSize":"1rem","fontWeight":"700","letterSpacing":"-0.01em","lineHeight":"1.3"},"elements":{"link":{"color":{"text":"var:preset|color|text"}}}}} -->
-<h3 class="wp-block-heading has-link-color" style="font-size:1rem;font-weight:700;letter-spacing:-0.01em;line-height:1.3"><a href="https://docs.artisanpackui.dev/package-changelogs">Changelogs</a></h3>
+<div class="wp-block-artisanpack-group wp-block-group ap-grow-1 ap-shrink-1"><!-- wp:artisanpack/heading {"level":3,"style":{"typography":{"fontSize":"1rem","fontWeight":"700","letterSpacing":"-0.01em","lineHeight":"1.3"}}} -->
+<h3 class="wp-block-heading" style="font-size:1rem;font-weight:700;letter-spacing:-0.01em;line-height:1.3">Changelogs</h3>
 <!-- /wp:artisanpack/heading -->
-
-<!-- wp:artisanpack/paragraph {"textColor":"text-link","fontFamily":"mono","style":{"typography":{"fontSize":"0.75rem","fontWeight":"500"}}} -->
-<p class="wp-block-paragraph has-text-link-color has-text-color has-mono-font-family" style="font-size:0.75rem;font-weight:500">docs.artisanpackui.dev/package-changelogs</p>
-<!-- /wp:artisanpack/paragraph -->
 
 <!-- wp:artisanpack/paragraph {"textColor":"text-muted","style":{"typography":{"fontSize":"0.875rem","lineHeight":"1.55"}}} -->
 <p class="wp-block-paragraph has-text-muted-color has-text-color" style="font-size:0.875rem;line-height:1.55">What's changed in recent releases.</p>
-<!-- /wp:artisanpack/paragraph --></div>
+<!-- /wp:artisanpack/paragraph -->
+
+<!-- wp:artisanpack/buttons {"style":{"spacing":{"blockGap":"0.625rem","margin":{"top":"0.625rem"}}}} -->
+<div class="wp-block-artisanpack-buttons wp-block-buttons" style="margin-top:0.625rem"><!-- wp:artisanpack/button {"className":"is-style-hollow","style":{"typography":{"fontSize":"0.8125rem"},"spacing":{"padding":{"top":"0.4375rem","right":"0.875rem","bottom":"0.4375rem","left":"0.875rem"}}}} -->
+<div class="wp-block-artisanpack-button wp-block-button is-style-hollow"><a class="wp-block-button__link has-custom-font-size wp-element-button" href="https://docs.artisanpackui.dev/package-changelogs" style="padding-top:0.4375rem;padding-right:0.875rem;padding-bottom:0.4375rem;padding-left:0.875rem;font-size:0.8125rem">View changelogs <span class="ap-inline-icon" data-icon-set="fas" data-icon-name="arrow-right" aria-hidden="true"><svg aria-hidden="true" viewBox="0 0 24 24"></svg></span></a></div>
+<!-- /wp:artisanpack/button --></div>
+<!-- /wp:artisanpack/buttons --></div>
 <!-- /wp:artisanpack/group --></div>
 <!-- /wp:artisanpack/group --></div>
 <!-- /wp:artisanpack/group --></div>
