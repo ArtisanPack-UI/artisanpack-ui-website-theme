@@ -5,6 +5,8 @@
  *
  * Extends cms-framework's Theme base class to hook into per-request behavior:
  *   - Enqueue Font Awesome 7 Pro on the front-end AND the editor canvas.
+ *   - Hide the post meta rail's table of contents on hosts whose
+ *     visual-editor can't limit it to the post's headings.
  *   - Enqueue the theme's mobile-menu drawer script on the front-end.
  *   - Register the four custom image sizes the design brief documents.
  *
@@ -22,6 +24,7 @@ namespace Themes\ArtisanpackUi;
 
 use ArtisanPackUI\CMSFramework\Modules\SiteEditor\Resolution\PatternResolver;
 use ArtisanPackUI\CMSFramework\Modules\Themes\Contracts\Theme as BaseTheme;
+use Composer\InstalledVersions;
 
 final class Theme extends BaseTheme
 {
@@ -35,17 +38,57 @@ final class Theme extends BaseTheme
     private const FA_SRC = 'vendor/fontawesome/css/all.min.css';
 
     /**
+     * First visual-editor release whose Table of Contents block honors
+     * `source: post-content`, which the single-post meta rail relies on.
+     */
+    private const TOC_SOURCE_MIN_VISUAL_EDITOR = '1.18.0';
+
+    /**
      * Enqueue on the public front-end.
+     *
+     * On an older visual-editor, the TOC fallback stylesheet hides the post
+     * meta rail's "On this page" section rather than let it list the
+     * template's and footer's headings.
      */
     public function frontendStyles(): array
     {
-        return [
+        $styles = [
             [
                 'handle' => self::FA_HANDLE,
                 'src' => self::FA_SRC,
                 'ver' => '7.3.1',
             ],
         ];
+
+        if (! self::visualEditorSupportsTocSource()) {
+            $styles[] = [
+                'handle' => 'artisanpack-ui-toc-fallback',
+                'src' => 'css/toc-fallback.css',
+                'ver' => '1.0.0',
+            ];
+        }
+
+        return $styles;
+    }
+
+    /**
+     * Whether the installed visual-editor honors the TOC block's `source`
+     * attribute. A branch install (`dev-…`) has no comparable version and
+     * is assumed current, as is a host that doesn't report one.
+     */
+    private static function visualEditorSupportsTocSource(): bool
+    {
+        if (! class_exists(InstalledVersions::class) || ! InstalledVersions::isInstalled('artisanpack-ui/visual-editor')) {
+            return true;
+        }
+
+        $version = InstalledVersions::getVersion('artisanpack-ui/visual-editor');
+
+        if (! is_string($version) || ! preg_match('/^\d+\.\d+\.\d+/', $version, $match)) {
+            return true;
+        }
+
+        return version_compare($match[0], self::TOC_SOURCE_MIN_VISUAL_EDITOR, '>=');
     }
 
     /**
