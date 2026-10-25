@@ -1,0 +1,9 @@
+/*
+ * Loaded only when the host's visual-editor predates 1.18.0 (see
+ * Theme::frontendStyles()). Those versions ignore the post meta rail TOC's
+ * `source: post-content`, so it would also list the template's and footer's
+ * headings. The "On this page" section is hidden instead.
+ */
+.is-post-meta-rail .wp-block-group:has(> .ap-toc) {
+    display: none;
+}

@@ -97,7 +97,7 @@
 <!-- /wp:artisanpack/column -->
 
 <!-- wp:artisanpack/column -->
-<div class="wp-block-artisanpack-column wp-block-column"><!-- wp:artisanpack/group {"backgroundColor":"surface","style":{"position":{"value":"sticky","offsets":{"top":{"value":1.5,"unit":"rem"}}},"border":{"width":"3px","style":"solid","radius":"12px","gradient":"neon"},"spacing":{"padding":{"top":"2rem","bottom":"2rem","left":"2rem","right":"2rem"},"blockGap":"0.875rem"}},"layout":{"type":"default"}} -->
+<div class="wp-block-artisanpack-column wp-block-column"><!-- wp:artisanpack/group {"backgroundColor":"surface","style":{"position":{"value":"sticky","offsets":{"top":{"value":6.3125,"unit":"rem"}}},"border":{"width":"3px","style":"solid","radius":"12px","gradient":"neon"},"spacing":{"padding":{"top":"2rem","bottom":"2rem","left":"2rem","right":"2rem"},"blockGap":"0.875rem"}},"layout":{"type":"default"}} -->
 <div class="wp-block-artisanpack-group wp-block-group has-surface-background-color has-background" style="border-style:solid;border-width:3px;border-radius:12px;padding-top:2rem;padding-right:2rem;padding-bottom:2rem;padding-left:2rem"><!-- wp:artisanpack/icon {"iconRef":{"set":"fas","name":"headset"},"size":20,"iconColor":"#FFFFFF","isDecorative":true,"gradient":"brand","className":"is-style-tile","style":{"spacing":{"padding":"1rem"}}} /-->
 
 <!-- wp:artisanpack/heading {"level":3,"fontSize":"card-title","style":{"typography":{"fontWeight":"700","lineHeight":"1.35"}}} -->
