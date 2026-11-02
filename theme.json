@@ -296,6 +296,26 @@
                     }
                 }
             },
+            "artisanpack/code": {
+                "color": { "background": "var:preset|color|surface", "text": "var:preset|color|text" },
+                "border": { "color": "var:preset|color|border", "style": "solid", "width": "1px", "radius": "12px" },
+                "spacing": { "padding": { "top": "1.375rem", "bottom": "1.375rem", "left": "1.375rem", "right": "1.375rem" } },
+                "typography": {
+                    "fontFamily": "var:preset|font-family|mono",
+                    "fontSize":   "0.84375rem",
+                    "lineHeight": "1.7"
+                }
+            },
+            "artisanpack/preformatted": {
+                "color": { "background": "var:preset|color|surface", "text": "var:preset|color|text" },
+                "border": { "color": "var:preset|color|border", "style": "solid", "width": "1px", "radius": "12px" },
+                "spacing": { "padding": { "top": "1.375rem", "bottom": "1.375rem", "left": "1.375rem", "right": "1.375rem" } },
+                "typography": {
+                    "fontFamily": "var:preset|font-family|mono",
+                    "fontSize":   "0.84375rem",
+                    "lineHeight": "1.7"
+                }
+            },
             "artisanpack/quote": {
                 "spacing": { "margin": { "left": "0", "right": "0" } },
                 "typography": {
@@ -428,6 +448,7 @@
         "text-media-bento",
         "text-media-stacked",
         "text-media-spotlight",
+        "screenshot-showcase", "screenshot-tabs", "screenshot-gallery", "screenshot-steps", "screenshot-carousel",
 
         "home-full",
         "about-full",

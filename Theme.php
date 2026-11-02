@@ -120,6 +120,12 @@ final class Theme extends BaseTheme
                 'defer' => true,
                 'ver' => '1.0.0',
             ],
+            [
+                'handle' => 'artisanpack-ui-screenshots',
+                'src' => 'js/screenshots.js',
+                'defer' => true,
+                'ver' => '1.0.0',
+            ],
         ];
     }
 

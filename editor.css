@@ -41,3 +41,33 @@
     color: var(--wp--preset--color--text);
     font-family: var(--wp--preset--font-family--display);
 }
+
+/* The canvas baseline paints every `pre` and `code` a hard-coded #f3f4f6,
+ * which leaves the theme's white text on a near-white ground (visual-editor
+ * #1051). It out-ranks
+ * theme.json's zero-specificity block rules, so the Code and Preformatted
+ * panels from `styles.blocks` are restated here. Inspector picks still win
+ * (their preset classes are !important and their values are inline), but a
+ * Global Styles change to these two blocks only shows on the front end. */
+
+.editor-styles-wrapper pre.wp-block-code,
+.editor-styles-wrapper pre.wp-block-preformatted {
+    margin: 0;
+    padding: 1.375rem;
+    border-radius: 12px;
+    background: var(--wp--preset--color--surface);
+}
+
+.editor-styles-wrapper pre.wp-block-verse {
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+}
+
+.editor-styles-wrapper pre code {
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+    font-family: inherit;
+    font-size: inherit;
+}
