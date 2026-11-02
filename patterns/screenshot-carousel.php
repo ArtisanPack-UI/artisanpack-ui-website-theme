@@ -25,7 +25,7 @@
 <!-- /wp:artisanpack/group -->
 
 <!-- wp:artisanpack/tabs {"className":"is-style-carousel"} -->
-<div class="wp-block-artisanpack-tabs ap-tabs align-tabs-horizontal space-tabs-start is-style-carousel"><div class="ap-tabs__container"><!-- wp:artisanpack/tab-section {"label":"Overview","tabId":"screenshot-carousel-overview"} -->
+<div class="wp-block-artisanpack-tabs ap-tabs align-tabs-horizontal space-tabs-start is-style-carousel"><div class="ap-tabs__container"><!-- wp:artisanpack/tab-section {"label":"Overview"} -->
 <div class="wp-block-artisanpack-tab-section ap-tab-section"><!-- wp:artisanpack/group {"style":{"spacing":{"padding":{"left":"1.125rem"},"blockGap":"0.5rem"},"border":{"left":{"color":"var:preset|color|primary","width":"2px","style":"solid"}}},"layout":{"type":"default"}} -->
 <div class="wp-block-artisanpack-group wp-block-group" style="border-left-color:var(--wp--preset--color--primary);border-left-style:solid;border-left-width:2px;padding-left:1.125rem"><!-- wp:artisanpack/paragraph {"textColor":"text-muted","style":{"typography":{"fontFamily":"var:preset|font-family|mono","fontSize":"0.75rem","letterSpacing":"0.06em","textTransform":"uppercase"}}} -->
 <p class="wp-block-paragraph has-text-muted-color has-text-color" style="font-family:var(--wp--preset--font-family--mono);font-size:0.75rem;letter-spacing:0.06em;text-transform:uppercase">01 / 04</p>
@@ -61,7 +61,7 @@
 <!-- /wp:artisanpack/group --></div>
 <!-- /wp:artisanpack/tab-section -->
 
-<!-- wp:artisanpack/tab-section {"label":"Detail view","tabId":"screenshot-carousel-detail"} -->
+<!-- wp:artisanpack/tab-section {"label":"Detail view"} -->
 <div class="wp-block-artisanpack-tab-section ap-tab-section"><!-- wp:artisanpack/group {"style":{"spacing":{"padding":{"left":"1.125rem"},"blockGap":"0.5rem"},"border":{"left":{"color":"var:preset|color|primary","width":"2px","style":"solid"}}},"layout":{"type":"default"}} -->
 <div class="wp-block-artisanpack-group wp-block-group" style="border-left-color:var(--wp--preset--color--primary);border-left-style:solid;border-left-width:2px;padding-left:1.125rem"><!-- wp:artisanpack/paragraph {"textColor":"text-muted","style":{"typography":{"fontFamily":"var:preset|font-family|mono","fontSize":"0.75rem","letterSpacing":"0.06em","textTransform":"uppercase"}}} -->
 <p class="wp-block-paragraph has-text-muted-color has-text-color" style="font-family:var(--wp--preset--font-family--mono);font-size:0.75rem;letter-spacing:0.06em;text-transform:uppercase">02 / 04</p>
@@ -97,7 +97,7 @@
 <!-- /wp:artisanpack/group --></div>
 <!-- /wp:artisanpack/tab-section -->
 
-<!-- wp:artisanpack/tab-section {"label":"Configuration","tabId":"screenshot-carousel-configuration"} -->
+<!-- wp:artisanpack/tab-section {"label":"Configuration"} -->
 <div class="wp-block-artisanpack-tab-section ap-tab-section"><!-- wp:artisanpack/group {"style":{"spacing":{"padding":{"left":"1.125rem"},"blockGap":"0.5rem"},"border":{"left":{"color":"var:preset|color|primary","width":"2px","style":"solid"}}},"layout":{"type":"default"}} -->
 <div class="wp-block-artisanpack-group wp-block-group" style="border-left-color:var(--wp--preset--color--primary);border-left-style:solid;border-left-width:2px;padding-left:1.125rem"><!-- wp:artisanpack/paragraph {"textColor":"text-muted","style":{"typography":{"fontFamily":"var:preset|font-family|mono","fontSize":"0.75rem","letterSpacing":"0.06em","textTransform":"uppercase"}}} -->
 <p class="wp-block-paragraph has-text-muted-color has-text-color" style="font-family:var(--wp--preset--font-family--mono);font-size:0.75rem;letter-spacing:0.06em;text-transform:uppercase">03 / 04</p>
@@ -133,7 +133,7 @@
 <!-- /wp:artisanpack/group --></div>
 <!-- /wp:artisanpack/tab-section -->
 
-<!-- wp:artisanpack/tab-section {"label":"Notifications","tabId":"screenshot-carousel-notifications"} -->
+<!-- wp:artisanpack/tab-section {"label":"Notifications"} -->
 <div class="wp-block-artisanpack-tab-section ap-tab-section"><!-- wp:artisanpack/group {"style":{"spacing":{"padding":{"left":"1.125rem"},"blockGap":"0.5rem"},"border":{"left":{"color":"var:preset|color|primary","width":"2px","style":"solid"}}},"layout":{"type":"default"}} -->
 <div class="wp-block-artisanpack-group wp-block-group" style="border-left-color:var(--wp--preset--color--primary);border-left-style:solid;border-left-width:2px;padding-left:1.125rem"><!-- wp:artisanpack/paragraph {"textColor":"text-muted","style":{"typography":{"fontFamily":"var:preset|font-family|mono","fontSize":"0.75rem","letterSpacing":"0.06em","textTransform":"uppercase"}}} -->
 <p class="wp-block-paragraph has-text-muted-color has-text-color" style="font-family:var(--wp--preset--font-family--mono);font-size:0.75rem;letter-spacing:0.06em;text-transform:uppercase">04 / 04</p>

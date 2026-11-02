@@ -1617,12 +1617,14 @@ html {
     overflow: hidden;
 }
 
+/* A long caption can outgrow a short screen, so the dialog scrolls. The
+   padding keeps the image's glow inside the area that scrolling clips. */
 .ap-lightbox {
-    width: min(68.75rem, 100% - 3rem);
+    width: min(73.25rem, 100%);
     max-width: none;
-    max-height: none;
-    padding: 0;
-    overflow: visible;
+    max-height: 100dvh;
+    padding: 2.25rem min(2.25rem, 6vw);
+    overflow: auto;
     border: 0;
     background: transparent;
     color: var(--wp--preset--color--text);

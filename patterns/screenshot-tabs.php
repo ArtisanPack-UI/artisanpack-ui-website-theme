@@ -24,7 +24,7 @@
 <!-- /wp:artisanpack/group -->
 
 <!-- wp:artisanpack/tabs {"tabsSpacing":"center","className":"is-style-pill"} -->
-<div class="wp-block-artisanpack-tabs ap-tabs align-tabs-horizontal space-tabs-center is-style-pill"><div class="ap-tabs__container"><!-- wp:artisanpack/tab-section {"label":"Dashboard","tabId":"screenshot-tabs-dashboard"} -->
+<div class="wp-block-artisanpack-tabs ap-tabs align-tabs-horizontal space-tabs-center is-style-pill"><div class="ap-tabs__container"><!-- wp:artisanpack/tab-section {"label":"Dashboard"} -->
 <div class="wp-block-artisanpack-tab-section ap-tab-section"><!-- wp:artisanpack/group {"style":{"spacing":{"margin":{"top":"2.5rem"},"blockGap":"1.25rem"}},"layout":{"type":"default"}} -->
 <div class="wp-block-artisanpack-group wp-block-group" style="margin-top:2.5rem"><!-- wp:artisanpack/group {"borderColor":"primary","backgroundColor":"base","style":{"border":{"width":"3px","radius":"12px","style":"solid"},"spacing":{"blockGap":"0","padding":{"top":"0","right":"0","bottom":"0","left":"0"}},"shadow":"var:preset|shadow|glow-primary"},"layout":{"type":"default"}} -->
 <div class="wp-block-artisanpack-group wp-block-group has-border-color has-primary-border-color has-base-background-color has-background" style="border-style:solid;border-width:3px;border-radius:12px;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;box-shadow:var(--wp--preset--shadow--glow-primary)"><!-- wp:artisanpack/group {"style":{"border":{"radius":"9px"},"spacing":{"blockGap":"0"}},"layout":{"type":"default"},"artisanpackEffects":{"overflowX":"hidden","overflowY":"hidden"}} -->
@@ -54,7 +54,7 @@
 <!-- /wp:artisanpack/group --></div>
 <!-- /wp:artisanpack/tab-section -->
 
-<!-- wp:artisanpack/tab-section {"label":"Settings","tabId":"screenshot-tabs-settings"} -->
+<!-- wp:artisanpack/tab-section {"label":"Settings"} -->
 <div class="wp-block-artisanpack-tab-section ap-tab-section"><!-- wp:artisanpack/group {"style":{"spacing":{"margin":{"top":"2.5rem"},"blockGap":"1.25rem"}},"layout":{"type":"default"}} -->
 <div class="wp-block-artisanpack-group wp-block-group" style="margin-top:2.5rem"><!-- wp:artisanpack/group {"borderColor":"primary","backgroundColor":"base","style":{"border":{"width":"3px","radius":"12px","style":"solid"},"spacing":{"blockGap":"0","padding":{"top":"0","right":"0","bottom":"0","left":"0"}},"shadow":"var:preset|shadow|glow-primary"},"layout":{"type":"default"}} -->
 <div class="wp-block-artisanpack-group wp-block-group has-border-color has-primary-border-color has-base-background-color has-background" style="border-style:solid;border-width:3px;border-radius:12px;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;box-shadow:var(--wp--preset--shadow--glow-primary)"><!-- wp:artisanpack/group {"style":{"border":{"radius":"9px"},"spacing":{"blockGap":"0"}},"layout":{"type":"default"},"artisanpackEffects":{"overflowX":"hidden","overflowY":"hidden"}} -->
@@ -84,7 +84,7 @@
 <!-- /wp:artisanpack/group --></div>
 <!-- /wp:artisanpack/tab-section -->
 
-<!-- wp:artisanpack/tab-section {"label":"Reports","tabId":"screenshot-tabs-reports"} -->
+<!-- wp:artisanpack/tab-section {"label":"Reports"} -->
 <div class="wp-block-artisanpack-tab-section ap-tab-section"><!-- wp:artisanpack/group {"style":{"spacing":{"margin":{"top":"2.5rem"},"blockGap":"1.25rem"}},"layout":{"type":"default"}} -->
 <div class="wp-block-artisanpack-group wp-block-group" style="margin-top:2.5rem"><!-- wp:artisanpack/group {"borderColor":"primary","backgroundColor":"base","style":{"border":{"width":"3px","radius":"12px","style":"solid"},"spacing":{"blockGap":"0","padding":{"top":"0","right":"0","bottom":"0","left":"0"}},"shadow":"var:preset|shadow|glow-primary"},"layout":{"type":"default"}} -->
 <div class="wp-block-artisanpack-group wp-block-group has-border-color has-primary-border-color has-base-background-color has-background" style="border-style:solid;border-width:3px;border-radius:12px;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;box-shadow:var(--wp--preset--shadow--glow-primary)"><!-- wp:artisanpack/group {"style":{"border":{"radius":"9px"},"spacing":{"blockGap":"0"}},"layout":{"type":"default"},"artisanpackEffects":{"overflowX":"hidden","overflowY":"hidden"}} -->
