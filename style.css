@@ -950,6 +950,22 @@ body {
 
 /* ─── 12. Blog ──────────────────────────────────────────────────────── */
 
+/* Featured images. A definite width stops a wrapping flex column (every
+   `is-layout-flex` group wraps by default) from sizing the figure's height
+   at its intrinsic width and leaving it shorter than its image. Overflow
+   keeps the image's corners inside the figure's rounded border. */
+.wp-block-post-featured-image {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* A divider separates rows, so the last post in a list has none. The Post
+   Template repeats one row, so the border is an inline style on every post,
+   hence `!important`. Matching `border-bottom-width` leaves boxed cards alone. */
+.wp-block-post-template-item:last-child > [style*="border-bottom-width"] {
+    border-bottom-width: 0 !important;
+}
+
 /*
  * Term badges: each category as a Badge pill (primary tint, or the
  * brand-card gradient on overlay cards). Post Terms' colour supports reach
