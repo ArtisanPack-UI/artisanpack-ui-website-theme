@@ -34,9 +34,10 @@
  *      navigation link, the skip link and the social tiles' hover.
  *  15. Code: the inline code chip (theme.json has no `code` element), plus
  *      the Code block's scrolling line (no control sets white-space).
- *  16. Screenshots: the Lightbox and Carousel variations. The platform has
- *      no front-end lightbox and no carousel block, so assets/js/screenshots.js
- *      builds the dialog and the arrows, and the Carousel lays Tabs out in
+ *  16. Screenshots: the Lightbox and Carousel variations. The renderer's
+ *      lightbox opens one image at a time and there is no carousel block, so
+ *      assets/js/screenshots.js builds the dialog (taking over any image that
+ *      has "Enlarge on click") and the arrows, and the Carousel lays Tabs out in
  *      two columns (Tabs renders one flow, with no slot for the side heading).
  *
  * Font Awesome is enqueued from Theme.php. Editor-only overrides live in
