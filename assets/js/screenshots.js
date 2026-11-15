@@ -97,12 +97,21 @@
         };
 
         shots.forEach((shot, index) => {
+            const figure = shot.image.closest('figure');
+            // An image with "Enlarge on click" also gets the renderer's own
+            // lightbox. Claim it so one dialog opens, and so the renderer's
+            // `.wp-lightbox-container button` rule can't hide our trigger.
+            figure.classList.remove('wp-lightbox-container');
+            figure.querySelector(':scope > .lightbox-trigger')?.remove();
+
+            // Wrap the whole <picture>: an <img> pulled out of it loses its sources.
+            const media = shot.image.parentElement.matches('picture') ? shot.image.parentElement : shot.image;
             const trigger = document.createElement('button');
             trigger.type = 'button';
             trigger.className = 'ap-lightbox-trigger';
             trigger.setAttribute('aria-label', `Enlarge ${shot.caption || shot.image.alt || 'screenshot'}`);
-            shot.image.replaceWith(trigger);
-            trigger.append(shot.image);
+            media.replaceWith(trigger);
+            trigger.append(media);
             trigger.addEventListener('click', () => {
                 ensureDialog();
                 show(index);
